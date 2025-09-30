@@ -1,6 +1,33 @@
 <script>
     import '../app.css';
     import VideoSection from './home/VideoSection.svelte';
+    
+
+    // Get images
+
+    import { storage } from "$lib/firebase.client.client";
+    import { ref, listAll, getDownloadURL } from "firebase/storage";
+    import { onMount } from "svelte";
+
+
+   let images = [];
+
+  onMount(async () => {
+    const folderRef = ref(storage, "home/");
+    const res = await listAll(folderRef);
+
+    // Hämta downloadURL för varje fil
+    images = await Promise.all(
+      res.items.map(async (itemRef) => {
+        return await getDownloadURL(itemRef);
+     })
+    );
+  });
+
+        console.log(images)
+
+
+//   -----------------
 
 </script>
 
@@ -13,15 +40,15 @@
   </h2>
 
   <!-- Enstaka bild under texten -->
-  <img 
+  <!-- <img 
     src="/path-to-your-image-1.jpg" 
     alt="Eldshow 1" 
     class="w-full max-w-3xl mb-6 object-cover rounded-lg"
-  />
+  /> -->
 
   <!-- Två bilder bredvid varandra -->
   <div class="flex flex-col md:flex-row gap-4 w-full max-w-3xl">
-    <img 
+    <!-- <img 
       src="/path-to-your-image-2.jpg" 
       alt="Eldshow 2" 
       class="w-full md:w-1/2 object-cover rounded-lg"
@@ -30,7 +57,7 @@
       src="/path-to-your-image-3.jpg" 
       alt="Eldshow 3" 
       class="w-full md:w-1/2 object-cover rounded-lg"
-    />
+    /> -->
   </div>
 </section>
 

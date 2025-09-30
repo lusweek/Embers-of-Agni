@@ -1,6 +1,8 @@
 # EGNA ANTECKNINGAR
 
 todo: 
+Firebase setup snart klar. Behöver nycklarna i firebase.js
+Finns troligtvis på firebase hemsida i konsollen
 
 # sv
 
