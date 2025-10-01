@@ -1,5 +1,7 @@
 <script>
   import { onMount, onDestroy } from "svelte";
+  import lukasSmile from '$lib/images/home/lukas_karna_pose_smile.JPG' 
+
 
   let headlines = [
     "Firmafesten?",
@@ -42,11 +44,16 @@
     muted
     playsinline
   ></video> -->
+  <img 
+    src={lukasSmile} 
+    alt=""
+  class="absolute top-0 left-0 w-full h-full object-cover"  
+  >
 
   <!-- Video temp bakgrund -->
-  <div class="absolute top-0 left-0 w-full h-full object-cover bg-red-100">
+  <!-- <div class="absolute top-0 left-0 w-full h-full object-cover bg-red-100">
 
-  </div>
+  </div> -->
 
 
   <!-- Overlay -->

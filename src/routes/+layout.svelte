@@ -15,7 +15,7 @@
   <Navigation />
 
   <!-- Content -->
-  <main class="flex-1 py-16">
+  <main class="flex-1">
 	{@render children?.()}  
 </main>
 </div>

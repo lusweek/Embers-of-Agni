@@ -76,8 +76,8 @@
 
 
 <!-- Navbar (fixed top) ta bort fixed om den inte ska följa med scroll -->
-<!-- <nav class="navbar bg-base-200"> EJ FIXED NAVBAR -->
-<nav class="navbar bg-base-200 fixed top-0 left-0 right-0 z-50">  
+<nav class="navbar bg-base-200">
+<!-- <nav class="navbar bg-base-200 fixed h-6 top-0 left-0 right-0 z-50">  FIXED NAVBAR -->
   <div class="flex-1">
     <a href="/" class="btn btn-ghost normal-case text-xl">Embers of Agni</a>
   </div>

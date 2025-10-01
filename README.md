@@ -1,8 +1,13 @@
 # EGNA ANTECKNINGAR
 
 todo: 
-Firebase setup snart klar. Behöver nycklarna i firebase.js
-Finns troligtvis på firebase hemsida i konsollen
+Sidan krachar av raden
+import { storage } from "$lib/firebase.js";
+finns i home: routes/+page.svelte
+
+firabace.js:
+import { getStorage } from "firebase/storage";
+Får läsa på om get storage
 
 # sv
 

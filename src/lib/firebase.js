@@ -1,19 +1,33 @@
-// src/lib/firebase.js
-import { initializeApp } from "firebase/app";
+// Import the functions you need from the SDKs you need
+import {  deleteApp, getApp, getApps, initializeApp  } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Din Firebase-config från Firebase Console
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "DIN_API_KEY",
-  authDomain: "DITT_PROJECT.firebaseapp.com",
-  projectId: "DITT_PROJECT_ID",
-  storageBucket: "DITT_PROJECT_ID.appspot.com",
-  messagingSenderId: "DIN_SENDER_ID",
-  appId: "DIN_APP_ID"
+  apiKey: "AIzaSyDY8D7G_UAhPTlAlFkZhmrGUQYUKbgYAo4",
+  authDomain: "embers-of-agni-15e17.firebaseapp.com",
+  projectId: "embers-of-agni-15e17",
+  storageBucket: "embers-of-agni-15e17.firebasestorage.app",
+  messagingSenderId: "180163991869",
+  appId: "1:180163991869:web:34c2f883c4c2b6a9c38d54",
+  measurementId: "G-W77Z331HX7"
 };
 
-// Initiera app
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+let firebaseApp;
+if (!getApps().length) {
+    firebaseApp = initializeApp(firebaseConfig)
+} else {
+    firebaseApp = getApp()
+    deleteApp(firebaseApp)
+    firebaseApp = initializeApp(firebaseConfig)
+}
 
-// Initiera storage
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 export const storage = getStorage(app);
