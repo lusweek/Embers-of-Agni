@@ -7,7 +7,7 @@
 <a href={href}>
 
     <button 
-    class="h-6 custom-button px-8 py-5 my-10 flex align-center items-center rounded"    
+    class="h-6 custom-button px-8 py-4 my-3 flex align-center items-center rounded"    
     >
     {label}
 </button>

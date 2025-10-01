@@ -3,6 +3,7 @@
 	import lukasFans from '$lib/images/home/lukas_roots_fans.jpeg';
 	import elinBurnoff from '$lib/images/om_oss/elin_burnoff.jpeg';
 
+
 	import Button from '$lib/assets/button.svelte';
 </script>
 
@@ -13,42 +14,76 @@
 	</h2>
 
 	<!-- Kort nr 1 -->
-<div class="card card-bg w-[95%] max-w-[300px] shadow-sm">
-  <figure>
-    <img
-      src={elinSerUpp}
-      alt="Elin gör en pose med eldfacklor" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">Eldshower</h2>
-    <p>Det som skiljer våra eldshower från andra är hur vi implementerar musiken i showen</p>
-    <div class="card-actions justify-end">
-	  	<Button 
-			href="/"
-			label="Se eldshower"
-		/>
-    </div>
-  </div>
-</div>
-
-	<!-- Kort nr 1 slut -->
-
-
-	<!-- Enstaka bild under texten -->
-	<img src={elinSerUpp} alt="Eldshow 1" class="mb-6 w-full max-w-3xl rounded-lg object-cover" />
-
-	<!-- Två bilder bredvid varandra -->
-	<div class="flex w-full max-w-3xl flex-wrap justify-between gap-4">
-		<img src={lukasFans} alt="Eldshow 2" class="w-[45%] rounded-lg object-cover" />
-		<!-- Istället för bild -->
-		<img src={elinBurnoff} alt="Eldshow 3" class="w-[45%] rounded-lg object-cover" />
+	<div class="card card-bg m-3 w-[90%] max-w-[400px] shadow-sm">
+	<figure>
+		<img
+		src={elinSerUpp}
+		alt="Elin gör en pose med eldfacklor" />
+	</figure>
+	<div class="card-body flex items-center">
+		<h2 class="card-title">Eldshower</h2>
+		<p>Det som skiljer våra eldshower från andra är hur vi implementerar musiken i showen</p>
+		<div class="card-actions justify-end">
+			<Button 
+				href="/"
+				label="Läs mer"
+			/>
+		</div>
 	</div>
-	
+	</div>
+
+		<!-- Kort nr 1 slut -->
+	<!-- Wrappar de 2 små korten -->
+	<div class="flex flex-wrap justify-between w-[95%] max-w-400px">
+		<!-- Kort nr 2 start -->
+		<div class="card card-bg m-3 w-[42%] max-w-[300px] shadow-sm">
+		<figure>
+			<img
+			src={elinBurnoff}
+			alt="Elin gör en pose med eldfacklor" />
+		</figure>
+		<div class="card-body p-2 flex items-center text-center">
+			<h2 class="card-title flex items-center">LED-show</h2>
+			<p>Effektfull färgglad dans som lyser i mörkret</p>
+			<div class="card-actions justify-end">
+				<Button 
+					href="/"
+					label="Läs mer"
+				/>
+			</div>
+		</div>
+		</div>
+
+		<!-- Kort nr 2 slut -->
+		<!-- Kort nr 3 start  -->
+
+		<div class="card card-bg m-3 w-[42%] max-w-[300px] shadow-sm">
+		<figure>
+			<img
+			src={lukasFans}
+			alt="Elin gör en pose med eldfacklor" />
+		</figure>
+		<div class="card-body p-2 flex items-center text-center">
+			<h2 class="card-title flex items-center">Prova på flowarts</h2>
+			<p>Upplev känslan av flow med stav, poi och rockring</p>
+			<div class="card-actions justify-end">
+				<Button 
+					href="/"
+					label="Läs mer"
+				/>
+			</div>
+		</div>
+		</div>
+
+		<!-- Kort nr 3 slut -->
+	<!-- Stänger kort-wrappen -->
+	</div>
+
 </section>
 
-
 <style>
+
 	.card-bg {
-		background: linear-gradient(97deg,rgba(13, 9, 47, 1) 0%, rgba(9, 6, 31, 1) 100%);
+	background: linear-gradient(97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
 	}
 </style>
