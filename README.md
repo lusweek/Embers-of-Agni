@@ -1,13 +1,7 @@
 # EGNA ANTECKNINGAR
 
 todo: 
-Sidan krachar av raden
-import { storage } from "$lib/firebase.js";
-finns i home: routes/+page.svelte
 
-firabace.js:
-import { getStorage } from "firebase/storage";
-Får läsa på om get storage
 
 # sv
 

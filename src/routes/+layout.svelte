@@ -1,10 +1,11 @@
 <script>
 	import '../app.css';
   import Navigation from '$lib/navigation.svelte';
+	import Footer from '$lib/Footer.svelte';
+  import { page } from '$app/stores';
 	
 	let { children } = $props();
-
-  import { page } from '$app/stores';
+  
 </script>
 
 
@@ -18,6 +19,9 @@
   <main class="flex-1">
 	{@render children?.()}  
 </main>
+
+<Footer />
+
 </div>
 
 

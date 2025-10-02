@@ -25,7 +25,7 @@
 		<p>Det som skiljer våra eldshower från andra är hur vi implementerar musiken i showen</p>
 		<div class="card-actions justify-end">
 			<Button 
-				href="/"
+				href="/eldshower"
 				label="Läs mer"
 			/>
 		</div>
@@ -47,7 +47,7 @@
 			<p>Effektfull färgglad dans som lyser i mörkret</p>
 			<div class="card-actions justify-end">
 				<Button 
-					href="/"
+					href="/LED-shower"
 					label="Läs mer"
 				/>
 			</div>
@@ -68,7 +68,7 @@
 			<p>Upplev känslan av flow med stav, poi och rockring</p>
 			<div class="card-actions justify-end">
 				<Button 
-					href="/"
+					href="/prova_pa_flowarts"
 					label="Läs mer"
 				/>
 			</div>

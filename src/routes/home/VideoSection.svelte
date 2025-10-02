@@ -7,7 +7,8 @@
     "Firmafesten?",
     "Barnkalaset?",
     "50-års festen?",
-    "Kulturevenemanget?"
+    "Kulturevenemanget?",
+    "Festivalen"
   ];
 
   function duplicateList(list, times) {
