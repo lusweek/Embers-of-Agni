@@ -76,7 +76,7 @@
 
 
 <!-- Navbar (fixed top) ta bort fixed om den inte ska följa med scroll -->
-<nav class="navbar bg-base-200">
+<nav class="navbar bg-base-200 z-1">
 <!-- <nav class="navbar bg-base-200 fixed h-6 top-0 left-0 right-0 z-50">  FIXED NAVBAR -->
   <div class="flex-1">
     <a href="/" class="btn btn-ghost normal-case text-xl">Embers of Agni</a>
@@ -87,10 +87,10 @@
     <ul class="menu menu-horizontal px-1">
       {#each menuItems as item}
         {#if item.children}
-          <li class="dropdown relative"
+          <li class="dropdown relative cursor-pointer"
               on:mouseenter={() => (isDropdownOpen = true)}
               on:mouseleave={() => (isDropdownOpen = false)}>
-            <button class="flex items-center gap-1">
+            <button class="flex items-center gap-1 cursor-pointer">
               {item.label}
               <svg class="w-4 h-4 transition-transform {isDropdownOpen ? 'rotate-180' : ''}"
                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -175,7 +175,7 @@
           {#if item.children}
             <div>
               <button
-                class="flex items-center justify-between w-full text-left py-2"
+                class="flex items-center justify-between w-full text-left py-2 cursor-pointer"
                 on:click={() => openMobileDropdown = openMobileDropdown === item.label ? null : item.label}
                 aria-expanded={openMobileDropdown === item.label}
                 aria-controls={item.label.replace(/\s+/g, "-") + "-submenu"}>
@@ -224,4 +224,5 @@
     font-weight: 600;
     color: var(--your-accent-color, #e25822); /* byt till färg om du vill */
   }
+
 </style>

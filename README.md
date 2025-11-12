@@ -1,6 +1,22 @@
 # EGNA ANTECKNINGAR
 
-todo: 
+Jobbar på just nu: 
+Eldshower
+
+
+Kvar att göra till minimal viable product:
+- Vi är embers of agni
+- Eldshower
+- LED shower
+- Prova på Flowarts
+- Priser
+- Info innan bokning
+- Kontakta oss
+
+Har gjort minimal viabal product:
+- Footer
+- Navigation
+- Home - bilder behöver fixas
 
 
 # sv
