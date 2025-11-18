@@ -1,6 +1,6 @@
 <script>
-    export let href
-    export let label
+    export let href = ""
+    export let label = ""
 
 </script>
 

@@ -13,7 +13,7 @@
   // Menydata (ändra här i framtiden)
   const menuItems = [
     { label: "Hem", href: "/" },
-    { label: "Vi är Empers of Agni", href: "/om_oss" },
+    { label: "Vi är Embers of Agni", href: "/om_oss" },
     {
       label: "Erbjudanden",
       children: [
