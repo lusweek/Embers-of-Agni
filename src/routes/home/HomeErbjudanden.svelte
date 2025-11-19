@@ -3,7 +3,6 @@
 	import lukasFans from '$lib/images/home/lukas_roots_fans.jpeg';
 	import elinBurnoff from '$lib/images/om_oss/elin_burnoff.jpeg';
 
-
 	import Button from '$lib/assets/button.svelte';
 </script>
 
