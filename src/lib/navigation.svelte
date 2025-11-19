@@ -18,7 +18,7 @@
       label: "Erbjudanden",
       children: [
         { label: "Eldshower", href: "/eldshower" },
-        { label: "LED show", href: "/LED-shower" },
+        // { label: "LED show", href: "/LED-shower" },
         { label: "Prova på flowarts", href: "/prova_pa_flowarts" }
       ]
     },

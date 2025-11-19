@@ -1,6 +1,6 @@
 <script>
   export let width = "80vw";
-  export let margin = "100px auto";
+  export let margin = "70px auto";
 </script>
 
 <hr

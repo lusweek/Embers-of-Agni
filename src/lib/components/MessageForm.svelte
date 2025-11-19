@@ -63,6 +63,8 @@
   <!-- Meddelande -->
   <textarea bind:value={message} placeholder="Skriv ditt meddelande här..." rows="6" required></textarea>
 
+  <p class="text-center text-[12px]">Din email sparas inte i någon mail-lista.<br>Du kommer inte få några automatiska mail-utskick.</p>
+
   <!-- Skicka-knapp -->
   <button type="submit" class="custom-button form-button">Skicka</button>
 
@@ -89,19 +91,7 @@
     border-radius: 4px;
   }
 
-  button {
-    padding: 0.75rem;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-  }
 
-  button:hover {
-    background-color: #555;
-  }
 
   .form-button{
     height: 41.33px;
@@ -110,6 +100,12 @@
     justify-content: center;
     margin: 10px auto;
     align-items: center;
+  }
+
+  .small-info-text{
+    text-align: center;
+    font-size: 12px;
+
   }
 
 </style>
