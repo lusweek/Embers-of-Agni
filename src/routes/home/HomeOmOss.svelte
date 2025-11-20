@@ -52,21 +52,21 @@
     class="overlay box-border w-[70%] md:w-[400px] sm:left-[20%]" 
     role="region" 
     bind:this={overlayEl} 
-    aria-label="AgniShowArts - info"
+    aria-label="embersofagni - info"
   >
     <h1 class="p-4 sm:p-6 pb-0 text-sm sm:text-base font-bold leading-tight">
-      AgniShowArts:
+      Embers of Agni:
       <span class="sub block font-semibold text-xs sm:text-sm">Lukas och Elin</span>
     </h1>
 
-    <p class="p-4 sm:p-6 text-xs sm:text-sm leading-snug">
+    <p class="p-4 ">
       Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi, Lukas och Elin, vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.
     </p>
   </div>
   
   
 </section>
-<div class="w-[100%] flex justify-center my-3">  
+<div class="w-[100%] flex justify-center my-8">  
   <Button 
   href="/om_oss"
   label="Läs mer om oss"
@@ -85,6 +85,7 @@
   .wrapper img{
     display: block;
     margin-left: 10%;
+    border-radius: 2px;
   }
 
   /* Overlay (grå textruta) */
@@ -98,11 +99,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 2px;
   }
 
   .overlay h1 {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1;
     font-weight: 700;
   }
@@ -115,7 +117,7 @@
 
   .overlay p {
     margin: 0;
-    font-size: 0.65rem;
+    font-size: 0.9rem;
     line-height: 1;
   }
 

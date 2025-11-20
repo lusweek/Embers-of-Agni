@@ -1,6 +1,6 @@
 <script>
     import VideoSection from './home/VideoSection.svelte';
-    import HomeErbjudanden from './home/HomeErbjudanden.svelte';
+    import HomeErbjudandenUtanLed from './home/HomeErbjudandenUtanLed.svelte';
     import HomeOmOss from './home/HomeOmOss.svelte';
     import HomeBilder from './home/HomeBilder.svelte';
 
@@ -9,7 +9,7 @@
 
 <VideoSection />
 
-<HomeErbjudanden />
+<HomeErbjudandenUtanLed />
 
 <HomeOmOss />
 

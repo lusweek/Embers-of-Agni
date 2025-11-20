@@ -13,7 +13,6 @@
   // Menydata (ändra här i framtiden)
   const menuItems = [
     { label: "Hem", href: "/" },
-    { label: "Vi är Embers of Agni", href: "/om_oss" },
     {
       label: "Erbjudanden",
       children: [
@@ -22,8 +21,10 @@
         { label: "Prova på flowarts", href: "/prova_pa_flowarts" }
       ]
     },
-    { label: "Priser", href: "/priser" },
+    { label: "Vi är Embers of Agni", href: "/om_oss" },
+    { label: "Bilder & Filmer", href: "/Media" },
     { label: "Info innan bokning", href: "/info_innan_bokning" },
+    { label: "Priser", href: "/priser" },
     { label: "Kontakta oss", href: "/kontakta_oss" }
   ];
 
@@ -155,7 +156,7 @@
 <!-- mobilmeny -->
 {#if isMobileMenuOpen}
   <aside 
-    class="fixed top-0 right-0 h-full w-4/5 bg-base-100 shadow-lg z-50 p-6 overflow-y-auto"
+    class="fixed top-0 right-0 h-full w-[60vw] bg-base-100 shadow-lg z-50 p-6 overflow-y-auto"
     in:fly={{ x: 300, duration: 500, easing: cubicOut }}
     out:fly={{ x: 300, duration: 500, easing: cubicOut }}>
 

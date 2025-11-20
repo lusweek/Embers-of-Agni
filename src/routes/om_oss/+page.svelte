@@ -16,12 +16,14 @@
 <h1 class="h1-title">Vilka är vi?</h1>
 <Devider />
 
+<!-- Into om oss -->
+
 <div class="about-info-container">
     <h2 class="h2-title">Lukas och Elin är Embers of Agni</h2>
     <p class="paragraf">Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi, Lukas och Elin, vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.</p>
 </div>
 
-<div class="img-container">
+<div class="img-container-1">
     <img src={lukas1} alt="">
     <img src={lukas2} alt="">
     <img src={elin1} alt="">
@@ -30,26 +32,41 @@
 
 <Devider />
 
-<div class="lukas-container">
-    <div>
-        <h2 class="h2-title">Mer om Lukas</h2>
-        <p>Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi, Lukas och Elin, vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.</p>
-    </div>
+<!-- Om Lukas -->
 
-    <div class="images-container">
-        <img class="lukas-img1" src={lukas1} alt="">
-        <img class="lukas-img2" src={lukas2} alt="">
-        <img class="lukas-img3" src={lukas3} alt="">
+<h2 class="h2-title">Mer om Lukas</h2>
+<p class="paragraf text-start w-[500px]">Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi, Lukas och Elin, vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.</p>
+
+<div class="img-container-2">
+    <div>
+        <img  src={lukas2} alt="">
+        <img  src={lukas3} alt="">
     </div>
+    <img class="lukas-img1" src={lukas1} alt="">
 </div>
 
-<Devider margin="200px auto" />
+<Devider />
+
+<!-- Om Elin -->
+
+<h2 class="h2-title">Mer om Elin</h2>
+<p class="paragraf text-start w-[500px]">Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi, Lukas och Elin, vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.</p>
+
+
+<div class="img-container-2">
+    <img class="elin-img3" src={elin1} alt="">
+    <img  src={elin3} alt="">
+    <img  src={elin2} alt="">
+</div>
+
+
+<Devider />
 
 <style>
 
     .about-info-container{
         width: 500px;
-        max-width: 90vw;
+        max-width: 80vw;
         margin: auto;
     }
     
@@ -57,67 +74,41 @@
         text-align: start;
     }
 
-    .img-container{
+    .img-container-1{
         width: 500px;
-        max-width: 90vw;
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-
-    }
-
-    .img-container img{
-        width: 70px;
-        height: 70px;
-        max-width: 40vw;
-        max-height: 40vw;
-
-        background-size: cover;
-    }
-
-    .lukas-container{
-        width: 500px;
-        max-width: 90vw;
-        margin: auto;
+        max-width: 80vw;
+        margin: 50px auto;
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+    }
+
+   .img-container-2{
+    width: 500px;
+    max-width: 80vw;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+   }
+
+   .img-container-2 img{
+        border-radius: 2px;
+   }
+
+     .img-container-2 div{
+        display: grid;
         gap: 20px;
     }
 
-    .lukas-container h2{
-        margin-top: 0;
+    .elin-img3{
+        /* från kollumn 1 till 3 (trots att griden bara har 2 kolumner måste man skriva såhär) */
+        grid-column: 1 / 3;
+    }
+
+    .text-start{
         text-align: start;
-    }
-
-    .lukas-container p{
-
-    }
-
-   .images-container{
-
-   }
-
-   .images-container img{
-        position: relative;
-        border-radius: 5px;
-   }
-
-    .lukas-img1{
-        top: 23%;
-    }
-
-    .lukas-img2{
-        position: absolute;
-        top: 35%;
-
-    }
-    
-    .lukas-img3{
-        position: absolute;
-        
     }
 
 </style>
