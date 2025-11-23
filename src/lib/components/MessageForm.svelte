@@ -4,6 +4,7 @@
 
   let name = "";
   let email = "";
+  let phone = "";
   let company = "";
   let message = "";
   let status = ""; // för att visa tack-meddelande
@@ -16,6 +17,7 @@
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
+    formData.append("phone", phone);
     formData.append("company", company);
     formData.append("message", message);
     formData.append("_captcha", "false");
@@ -33,6 +35,7 @@
         // Rensa formuläret
         name = "";
         email = "";
+        phone = "";
         company = "";
         message = "";
       } else {
@@ -58,7 +61,7 @@
   <input type="email" bind:value={email} placeholder="Email *" required />
 
   <!-- telefon -->
-  <input type="tel" bind:value={email} placeholder="Telefon (frivillig)" />
+  <input type="tel" bind:value={phone} placeholder="Telefon (frivillig)" />
 
   <!-- Företag -->
   <input type="text" bind:value={company} placeholder="Företag (frivillig)" />
