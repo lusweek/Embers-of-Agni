@@ -1,6 +1,6 @@
 <script>
   import { onMount, onDestroy } from "svelte";
-  import lukasSmile from '$lib/images/home/lukas_karna_pose_smile.JPG' 
+  import lukasSmile from '$lib/images/home/lukas_karna_pose_smile.webp' 
 
 
   let headlines = [

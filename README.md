@@ -2,7 +2,9 @@
 
 Jobbar på just nu: 
 
+- 404 media
 
+- Krysset fortfarande för litet i navbaren
 
 
 Testa:

@@ -1,6 +1,6 @@
 <script>
 	import Button from '$lib/assets/button.svelte';
-  import bådaBurnoff from '$lib/images/home/båda_burnoff.jpg'
+  import bådaBurnoff from '$lib/images/home/båda_burnoff.webp'
 
   
 // Räknar ut höjden till wrapper paserat på höjden på bilden och text-overlayen

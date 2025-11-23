@@ -1,7 +1,7 @@
 <script>
-	import elinSerUpp from '$lib/images/home/elin_karna_serupp.jpg';
-	import lukasFans from '$lib/images/home/lukas_roots_fans.jpeg';
-	import elinBurnoff from '$lib/images/om_oss/elin_burnoff.jpeg';
+	import elinSerUpp from '$lib/images/home/elin_karna_serupp.webp';
+	import lukasFans from '$lib/images/home/lukas_roots_fans.webp';
+	import elinBurnoff from '$lib/images/om_oss/elin_burnoff.webp';
 
 	import Button from '$lib/assets/button.svelte';
 </script>

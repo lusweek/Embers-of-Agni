@@ -3,7 +3,7 @@
     import { fade } from "svelte/transition";
 
     // Hämta alla bilder i mappen
-    const imageFiles = import.meta.glob('/src/lib/images/bilder/*.{jpg,jpeg,png,webp,JPG}', {
+    const imageFiles = import.meta.glob('/src/lib/images/bilder/*.{webp,webp,png,webp,webp}', {
         eager: true,
         as: 'url'
     });
@@ -36,11 +36,11 @@
 
 <!-- Grid med alla bilder -->
 <div class="images-grid">
-    {#each images as img}
+    {#each images as img }
         {#if img}
             <img 
                 src={img} 
-                alt=""
+                alt="bild"
                 on:click={() => openImage(img)}
             >
         {/if}

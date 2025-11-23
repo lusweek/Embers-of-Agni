@@ -2,13 +2,13 @@
 
     import Devider from "$lib/assets/Devider.svelte"
 
-    import elin1 from "$lib/images/om_oss/elin_burnoff.jpeg"
-    import elin2 from "$lib/images/om_oss/elin_karna_pose.jpg"
-    import elin3 from "$lib/images/om_oss/elin_karna_pose_galen.jpg"
+    import elin1 from "$lib/images/om_oss/elin_burnoff.webp"
+    import elin2 from "$lib/images/om_oss/elin_karna_pose.webp"
+    import elin3 from "$lib/images/om_oss/elin_karna_pose_galen.webp"
     
-    import lukas1 from "$lib/images/om_oss/lukas_burnoff_roots.jpeg"
-    import lukas2 from "$lib/images/om_oss/lukas_karna_pose.jpg"
-    import lukas3 from "$lib/images/om_oss/lukas_karna_spin.jpg"
+    import lukas1 from "$lib/images/om_oss/lukas_burnoff_roots.webp"
+    import lukas2 from "$lib/images/om_oss/lukas_karna_pose.webp"
+    import lukas3 from "$lib/images/om_oss/lukas_karna_spin.webp"
 
 </script>
 

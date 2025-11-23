@@ -1,8 +1,8 @@
 <script>
 	import Devider from '$lib/assets/Devider.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
-    import ElinPose from '$lib/images/eldshower/elin_karna_pose_gap.jpg'
-    import LukasBurnoff from "$lib/images/eldshower/lukas_roots_burnof_spin.jpeg"
+    import ElinPose from '$lib/images/eldshower/elin_karna_pose_gap.webp'
+    import LukasBurnoff from "$lib/images/eldshower/lukas_roots_burnof_spin.webp"
 
 </script>
 
