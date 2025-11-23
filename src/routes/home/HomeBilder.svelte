@@ -5,15 +5,15 @@
     import Button from '$lib/assets/button.svelte';
 </script>
 
-<section class="flex w-full flex-col items-center px-4 py-16 md:px-0">
+<section class="home-bilder-section">
 	<!-- Bild nr 1 -->
-	<div class="m-3 w-[90%] max-w-[400px] shadow-sm">
+	<div class="m-3 max-w-[400px] shadow-sm">
 		<img src={elinSerUpp} alt="Elin gör en pose med eldfacklor" class="rounded" />
 	</div>
 
 	<!-- bild nr 1 slut -->
 	<!-- Wrappar de 2 små Bilderna -->
-	<div class="max-w-400px flex w-[95%] flex-wrap justify-between">
+	<div class="max-w-400px flex justify-between items-center">
 		<!-- bild nr 2 start -->
 		<div class="m-3 w-[42%] max-w-[300px] shadow-sm">
 			<img src={elinBurnoff} alt="Elin gör en pose med eldfacklor" class="rounded" />
@@ -34,3 +34,22 @@
 		<Button href="/om_oss" label="Se fler bilder och videos" />
 	</div>
 </section>
+
+
+<style>
+	.home-bilder-section{
+		width: 100%;
+		max-width: 400px;
+		width: 80vw;
+		margin: 50px auto;
+
+	}
+
+	@media (min-width: 768px) {
+  		.home-bilder-section {
+			padding-left: 0;
+			padding-right: 0;   /* md:px-0 */
+		}
+}
+
+</style>

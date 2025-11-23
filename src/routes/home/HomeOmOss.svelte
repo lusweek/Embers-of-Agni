@@ -66,7 +66,7 @@
   
   
 </section>
-<div class="w-[100%] flex justify-center my-8">  
+<div class="w-[100%] flex justify-center my-8 lg:my-2 md:my-6">  
   <Button 
   href="/om_oss"
   label="Läs mer om oss"

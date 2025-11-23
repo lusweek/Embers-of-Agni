@@ -8,7 +8,7 @@
     "Barnkalaset?",
     "50-års festen?",
     "Kulturevenemanget?",
-    "Festivalen"
+    "Festivalen?"
   ];
 
   function duplicateList(list, times) {

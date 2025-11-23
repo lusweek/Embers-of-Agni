@@ -9,11 +9,7 @@
 <!-- Titel + undertitel -->
 <h1 class="h1-title">Eldshower</h1>
 
-<p class="undertitle">
-	Här kan du läsa om PAOW, PAOW och PAOW! Vi kan även fixa PAOW och även PAOW!
-
-Vi är helt fantastiska och underbara så boka oss nu!
-</p>
+<p class="undertitle">Vilken passar ditt tillfälle? Här hittar du våra eldshower och kan läsa mer om dem.</p>
 
 <Devider />
 
@@ -36,8 +32,7 @@ title = "Duoshow"
 image = {ElinPose}
 imageAlt = "Eldtrix tillsammans"
 >
-<p class="paragraf">Här intar vi scenen med samma redskap som i soloshowen plus Elins eldrockring, eldsolfjädrar och palm torches. Vi turas om att framträda och möts även i partnertricks. Denna show blir mer flytande och dynamisk med smidiga övergångar och hela tiden något nytt och spännande.</p>
-<p class="paragraf">Denna show är ca 15 min, musik och känsla är samma som beskrivit i soloshowen fast  med fler tekniska trix och interaktion mellan Lukas och Elin. Även här kan mindre anpassningar i musik och känsla göras för att passa just ert tillfälle</p>
+<p class="paragraf">Här intar vi scenen tillsammans och bjuder på en 15 minuter lång föreställning full av känsla, dans, lek och framförallt - massor av eld! Vi rör oss både var för sig och möts i partertricks. Denna show är flytande och dynamisk med smidiga övergångar och hela tiden något nytt och spännande. Vi har färdig musik till denna show.</p>
 </InfoBox>
 
 <Devider />

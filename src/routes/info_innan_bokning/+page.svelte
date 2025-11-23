@@ -15,7 +15,7 @@
 
     <div class="booking-info-container">
         <h2 class="h2-title">Eldvakt</h2>
-        <p class="paragraf">Vi önskar att en av er är ansvarig eldvakt åt oss om något skulle hända under showen, inga förkunskaper krävs och vi informerar på plats. Om ni har vill vi gärna ha en brandsläckare (helst kolsyra) ståendes nära till hands. </p>
+        <p class="paragraf">Vi önskar att en av er är ansvarig eldvakt åt oss. Ett enkelt men viktigt jobb utan krav på förkunskaper. Vi ger all information på plats eller över telefon om ni önskar. Det handlar om att stå vid brandfilt, vattenhink eller brandsläckare och vara beredd ifall något skulle hända.</p>
     </div>
         
     <div class="booking-info-container">

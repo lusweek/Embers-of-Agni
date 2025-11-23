@@ -6,11 +6,7 @@
 <!-- Titel + undertitel -->
 <h1 class="h1-title">Prova på flowarts</h1>
 
-<p class="undertitle">
-	Här kan du läsa om PAOW, PAOW och PAOW! Vi kan även fixa PAOW och även PAOW!
-
-Vi är helt fantastiska och underbara så boka oss nu!
-</p>
+<p class="undertitle">Visst ser det roligt ut! Vi lär gärna dig, dina vänner, kollegor, barn och ungdomar. Läs mer här under.</p>
 
 <Devider />
 

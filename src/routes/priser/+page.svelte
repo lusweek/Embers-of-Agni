@@ -22,8 +22,8 @@
     <p><span>Duoshow eld</span><span>6 000 kr</span></p>
     <Devider width="100%" margin = "0" />
     
-    <p><span>Duoshow LED</span><span>4 000 kr</span></p>
-    <Devider width="100%" margin = "0" />
+    <!-- <p><span>Duoshow LED</span><span>4 000 kr</span></p>
+    <Devider width="100%" margin = "0" /> -->
     
     <p><span>Soloshow eld</span><span>4 000 kr</span></p>
     <Devider width="100%" margin = "0" />
