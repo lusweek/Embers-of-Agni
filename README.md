@@ -3,23 +3,13 @@
 Jobbar på just nu: 
 
 
-Prova annan font på första sidan
 
 
+Testa:
 
-Kvar att göra till minimal viable product:
-- Vi är embers of agni
-- Eldshower
-- LED shower
-- Prova på Flowarts
-- Priser
-- Info innan bokning
-- Kontakta oss
+- message form: kolla om texten fortfarande blir vit
 
-Har gjort minimal viabal product:
-- Footer
-- Navigation
-- Home - bilder behöver fixas
+- Krachar media
 
 
 # sv

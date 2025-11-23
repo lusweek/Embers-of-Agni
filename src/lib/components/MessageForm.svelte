@@ -57,8 +57,11 @@
   <!-- Email -->
   <input type="email" bind:value={email} placeholder="Email *" required />
 
+  <!-- telefon -->
+  <input type="tel" bind:value={email} placeholder="Telefon (frivillig)" />
+
   <!-- Företag -->
-  <input type="text" bind:value={company} placeholder="Företag" />
+  <input type="text" bind:value={company} placeholder="Företag (frivillig)" />
 
   <!-- Meddelande -->
   <textarea bind:value={message} placeholder="Skriv ditt meddelande här..." rows="6" required></textarea>
@@ -89,6 +92,7 @@
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    color: black;
   }
 
 

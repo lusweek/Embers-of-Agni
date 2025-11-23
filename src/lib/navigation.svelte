@@ -22,7 +22,7 @@
       ]
     },
     { label: "Vi är Embers of Agni", href: "/om_oss" },
-    { label: "Bilder & Filmer", href: "/Media" },
+    { label: "Bilder & Filmer", href: "/media" },
     { label: "Info innan bokning", href: "/info_innan_bokning" },
     { label: "Priser", href: "/priser" },
     { label: "Kontakta oss", href: "/kontakta_oss" }
@@ -84,7 +84,7 @@
   </div>
 
   <!-- Desktop: visas från md och upp -->
-  <div class="hidden md:flex">
+  <div class="hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       {#each menuItems as item}
         {#if item.children}
@@ -128,7 +128,7 @@
   </div>
 
   <!-- Mobile hamburger -->
-  <div class="md:hidden">
+  <div class="lg:hidden">
     <button on:click={() => (isMobileMenuOpen = !isMobileMenuOpen)} class="btn btn-ghost" aria-label="Öppna meny">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor">
@@ -156,7 +156,7 @@
 <!-- mobilmeny -->
 {#if isMobileMenuOpen}
   <aside 
-    class="fixed top-0 right-0 h-full w-[60vw] bg-base-100 shadow-lg z-50 p-6 overflow-y-auto"
+    class="fixed top-0 right-0 h-full max-w-[60vw] w-[300px] bg-base-100 shadow-lg z-50 p-6 overflow-y-auto"
     in:fly={{ x: 300, duration: 500, easing: cubicOut }}
     out:fly={{ x: 300, duration: 500, easing: cubicOut }}>
 
@@ -167,7 +167,7 @@
     >
       <button 
         on:click={() => (isMobileMenuOpen = false)} 
-        class="btn btn-sm btn-ghost absolute top-4 right-4" 
+        class="btn btn-sm btn-ghost absolute top-4 right-4 text-[12px]" 
         aria-label="Stäng meny">✕
       </button>
 

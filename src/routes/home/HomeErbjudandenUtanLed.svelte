@@ -8,9 +8,9 @@
 
 <section class="flex w-full flex-col items-center px-4 py-16 md:px-0">
 	<!-- Semerubrik / bold text -->
-	<h2 class="mb-8 max-w-3xl text-center text-xl font-bold md:text-3xl">
+	<p class="mb-8 max-w-2xl text-center text-xl md:text-3xl">
 		Proffsiga och välkoreograferade eldshower med dans och teknik med känsla av kraft, lek och flow
-	</h2>
+	</p>
 
 	<!-- Kort nr 1 -->
 	<div class="card card-bg m-3 w-[90%] max-w-[400px] shadow-sm">

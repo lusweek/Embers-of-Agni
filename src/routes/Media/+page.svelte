@@ -10,12 +10,6 @@
 
     const images = Object.values(imageFiles);
 
-    // 🔥 PRELOAD ALLA BILDER (fixar klick-laggen)
-    images.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-
     // Modal state
     let active = null;
 
@@ -38,14 +32,18 @@
 
 <Devider />
 
+<p class="my-8 text-center">Klicka för att förstora</p>
+
 <!-- Grid med alla bilder -->
 <div class="images-grid">
     {#each images as img}
-        <img 
-            src={img} 
-            alt=""
-            on:click={() => openImage(img)}
-        >
+        {#if img}
+            <img 
+                src={img} 
+                alt=""
+                on:click={() => openImage(img)}
+            >
+        {/if}
     {/each}
 </div>
 
@@ -72,6 +70,7 @@
     .images-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        align-items: center;
         gap: 20px;
         width: 700px;
         max-width: 80vw;

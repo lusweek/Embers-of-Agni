@@ -31,7 +31,7 @@
 	</div>
 
 	<div class="my-3 flex w-[100%] justify-center">
-		<Button href="/om_oss" label="Se fler bilder och videos" />
+		<Button href="/media" label="Se fler bilder och videos" />
 	</div>
 </section>
 
