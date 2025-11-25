@@ -1,6 +1,9 @@
 <script>
 	import Devider from '$lib/assets/Devider.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
+
+	import prova_pa_flowartsImg from '$lib/images/Prova på flowarts/prova_pa_flowarts.webp'
+
 </script>
 
 <!-- Titel + undertitel -->
@@ -14,8 +17,8 @@
 
 <InfoBox
 title = "Prova på flowarts"
-image = ""
-imageAlt = ""
+image = {prova_pa_flowartsImg}
+imageAlt = "Bild på Elin under workshop"
 >
 <p class="paragraf">Vi tar med rockringar, pois och stavar och lär ut hur man kan använda och leka med dessa redskap. Ser vi att någon har bra kontroll kan den personen dessutom få testa med eld (sjävklart i nyktert tillstånd). Passande antal deltagare till detta är upp till 25 personer.</p>
 <p class="paragraf">Vi lär ut i 90 min och anpassar strukturen efter deltagarna.</p>

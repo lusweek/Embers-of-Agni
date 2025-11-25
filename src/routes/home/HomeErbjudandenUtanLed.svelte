@@ -1,7 +1,7 @@
 <script>
-	import elinSerUpp from '$lib/images/home/elin_karna_serupp.webp';
-	import lukasFans from '$lib/images/home/lukas_roots_fans.webp';
-	import elinBurnoff from '$lib/images/om_oss/elin_burnoff.webp';
+	import eldshowImg from '$lib/images/home/eldshower.webp';
+	import provaPaFlowartsImg from '$lib/images/home/prova_pa_flowarts.webp';
+
 
 	import Button from '$lib/assets/button.svelte';
 </script>
@@ -16,8 +16,10 @@
 	<div class="card card-bg m-3 w-[90%] max-w-[400px] shadow-sm">
 	<figure>
 		<img
-		src={elinSerUpp}
-		alt="Elin gör en pose med eldfacklor" />
+			src={eldshowImg}
+			alt="Elin gör en pose med eldfacklor" 
+			loading="lazy"
+		/>
 	</figure>
 	<div class="card-body flex items-center">
 		<h2 class="card-title">Eldshower</h2>
@@ -37,8 +39,10 @@
         <div class="card card-bg m-3 w-[90%] max-w-[400px] shadow-sm">
 	<figure>
 		<img
-		src={elinSerUpp}
-		alt="Elin gör en pose med eldfacklor" />
+			src={provaPaFlowartsImg}
+			alt="Elin gör en pose med eldfacklor" 
+			loading="lazy"
+		/>
 	</figure>
 	<div class="card-body flex items-center">
 		<h2 class="card-title">Prova på flowarts</h2>

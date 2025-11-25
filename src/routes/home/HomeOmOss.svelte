@@ -1,6 +1,6 @@
 <script>
 	import Button from '$lib/assets/button.svelte';
-  import bådaBurnoff from '$lib/images/home/båda_burnoff.webp'
+  import aboutImg from '$lib/images/home/embers_of_agni.webp'
 
   
 // Räknar ut höjden till wrapper paserat på höjden på bilden och text-overlayen
@@ -43,9 +43,10 @@
     <img 
       class="image block w-[70%] md:w-[400px] max-w-400px mx-auto" 
       bind:this={imgEl} 
-      src={bådaBurnoff} 
+      src={aboutImg} 
       alt="Elin gör en burnoff" 
       on:load={onImageLoad} 
+      loading="lazy"
     />
 
   <div 

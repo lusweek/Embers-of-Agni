@@ -1,6 +1,6 @@
 <script>
   import { onMount, onDestroy } from "svelte";
-  import lukasSmile from '$lib/images/home/lukas_karna_pose_smile.webp' 
+  import heroImg from '$lib/images/home/hero.webp' 
 
 
   let headlines = [
@@ -46,10 +46,11 @@
     playsinline
   ></video> -->
   <img 
-    src={lukasSmile} 
+    src={heroImg} 
     alt=""
   class="absolute top-0 left-0 w-full h-full object-cover"  
   >
+  <div class="absolute inset-0 bg-black/50"></div>
 
   <!-- Video temp bakgrund -->
   <!-- <div class="absolute top-0 left-0 w-full h-full object-cover bg-red-100">

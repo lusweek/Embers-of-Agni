@@ -3,7 +3,7 @@
     import { fade } from "svelte/transition";
 
     // Hämta alla bilder i mappen
-    const imageFiles = import.meta.glob('/src/lib/images/bilder/*.{webp,webp,png,webp,webp}', {
+    const imageFiles = import.meta.glob('/src/lib/images/bilder/*.webp', {
         eager: true,
         as: 'url'
     });
@@ -78,14 +78,15 @@
     }
 
     .images-grid img {
-        width: 100%;
-        border-radius: 2px;
-        cursor: pointer;
-        transition: opacity 0.1s ease;
+       	border-radius: 2px;
+		cursor: pointer;
+		transition-duration: 0.2s;
     }
 
     .images-grid img:hover {
-        opacity: 0.8;
+        transform: scale(1.03);
+		box-shadow:
+		0 12px 28px rgba(0, 0, 0, 0.506);
     }
 
     /* Modal backdrop */
@@ -101,8 +102,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        max-width: 90vw;
-        max-height: 90vh;
+        max-width: 80vw;
+        max-height: 80vh;
         z-index: 20;
         border-radius: 4px;
         cursor: pointer;

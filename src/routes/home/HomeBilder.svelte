@@ -1,55 +1,99 @@
 <script>
-	import elinSerUpp from '$lib/images/home/elin_karna_serupp.webp';
-	import lukasFans from '$lib/images/home/lukas_roots_fans.webp';
-	import elinBurnoff from '$lib/images/om_oss/elin_burnoff.webp';
-    import Button from '$lib/assets/button.svelte';
+    import { fade } from "svelte/transition";
+	import Button from '$lib/assets/button.svelte';
+
+	import seMer1 from '$lib/images/home/se_mer_1.webp';
+	import seMer2 from '$lib/images/home/se_mer_2.webp';
+	import seMer3 from '$lib/images/home/se_mer_3.webp';
+	import seMer4 from '$lib/images/home/se_mer_4.webp';
+
+
+	// öppna bild när man klickar på den 
+    let active = null;
+
+	function openImage(img) {
+        active = img;
+    }
+
+    function closeImage() {
+        active = null;
+    }
 </script>
 
 <section class="home-bilder-section">
-	<!-- Bild nr 1 -->
-	<div class="m-3 max-w-[400px] shadow-sm">
-		<img src={elinSerUpp} alt="Elin gör en pose med eldfacklor" class="rounded" />
-	</div>
+	<img src={seMer1} alt="Elin gör en pose med eldfacklor" loading="lazy" on:click={() => openImage(seMer1)} />
 
-	<!-- bild nr 1 slut -->
-	<!-- Wrappar de 2 små Bilderna -->
-	<div class="max-w-400px flex justify-between items-center">
-		<!-- bild nr 2 start -->
-		<div class="m-3 w-[42%] max-w-[300px] shadow-sm">
-			<img src={elinBurnoff} alt="Elin gör en pose med eldfacklor" class="rounded" />
-		</div>
+	<img src={seMer2} alt="Elin gör en pose med eldfacklor" loading="lazy" on:click={() => openImage(seMer2)} />
 
-		<!-- bild nr 2 slut -->
-		<!-- bild nr 3 start  -->
+	<img src={seMer3} alt="Elin gör en pose med eldfacklor" loading="lazy" on:click={() => openImage(seMer3)} />
 
-		<div class="m-3 w-[42%] max-w-[300px] shadow-sm">
-			<img src={lukasFans} alt="Elin gör en pose med eldfacklor" class="rounded" />
-		</div>
+	<img src={seMer4} alt="Elin gör en pose med eldfacklor" loading="lazy" on:click={() => openImage(seMer4)} />
 
-		<!-- bild nr 3 slut -->
-		<!-- Stänger bild-wrappen -->
-	</div>
-
-	<div class="my-3 flex w-[100%] justify-center">
+	<div class="button">
 		<Button href="/Media" label="Se fler bilder och videos" />
 	</div>
 </section>
 
 
-<style>
-	.home-bilder-section{
-		width: 100%;
-		max-width: 400px;
-		width: 80vw;
-		margin: 50px auto;
+<!-- Modal + fade animation -->
+{#if active}
+    <div class="backdrop" on:click={closeImage} transition:fade></div>
 
+    <img 
+        src={active} 
+        alt=""
+        class="modal-img"
+        transition:fade
+        on:click={closeImage}
+    >
+{/if}
+
+<style>
+	.home-bilder-section {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		align-items: center;
+		max-width: 90vw;
+		width: 400px;
+		margin: 50px auto;
 	}
 
-	@media (min-width: 768px) {
-  		.home-bilder-section {
-			padding-left: 0;
-			padding-right: 0;   /* md:px-0 */
-		}
-}
+	.home-bilder-section img{
+		border-radius: 2px;
+		cursor: pointer;
+		transition-duration: 0.2s;
+	}
+
+	.home-bilder-section img:hover {
+		transform: scale(1.03);
+		box-shadow:
+		0 12px 28px rgba(0, 0, 0, 0.506);
+	}
+
+	.button{
+		grid-column: 1 / -1;
+		justify-self: center;
+	}
+
+	  /* Modal backdrop */
+    .backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 10;
+    }
+
+    .modal-img {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 80vw;
+        max-height: 80vh;
+        z-index: 20;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
 </style>
