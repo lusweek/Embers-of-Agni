@@ -45,9 +45,13 @@
     muted
     playsinline
   ></video> -->
+  <!-- Loading="eager" gör att bilden laddas först. motsatsen till
+   loading="lazy" och default. så igentligen onödigt att ha den -->
   <img 
     src={heroImg} 
-    alt=""
+    alt="Lukas och Elin närbild under eldshow"
+    fetchpriority="high"
+    loading="eager"
   class="absolute top-0 left-0 w-full h-full object-cover"  
   >
   <div class="absolute inset-0 bg-black/50"></div>

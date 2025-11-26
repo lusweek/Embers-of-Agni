@@ -1,6 +1,6 @@
 <script>
 	import Button from '$lib/assets/button.svelte';
-  import aboutImg from '$lib/images/home/embers_of_agni.webp'
+  import aboutImg from '$lib/images/home/embers_of_agni_small.webp'
 
   
 // Räknar ut höjden till wrapper paserat på höjden på bilden och text-overlayen

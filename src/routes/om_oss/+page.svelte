@@ -3,19 +3,19 @@
     import Devider from "$lib/assets/Devider.svelte"
 
     import ossImg_1 from "$lib/images/om_oss/oss_1.webp"
-    import ossImg_2 from "$lib/images/om_oss/oss_2.webp"
-    import ossImg_3 from "$lib/images/om_oss/oss_3.webp"
+    import ossImg_2 from "$lib/images/om_oss/oss_2_small.webp"
+    import ossImg_3 from "$lib/images/om_oss/oss_3_small.webp"
     import ossImg_4 from "$lib/images/om_oss/oss_4.webp"
     import ossImg_5 from "$lib/images/om_oss/oss_5.webp"
 
-    import lukasImg_1 from "$lib/images/om_oss/lukas_1.webp"
-    import lukasImg_2 from "$lib/images/om_oss/lukas_2.webp"
-    import lukasImg_3 from "$lib/images/om_oss/lukas_3.webp"
+    import lukasImg_1 from "$lib/images/om_oss/lukas_1_small.webp"
+    import lukasImg_2 from "$lib/images/om_oss/lukas_2_small.webp"
+    import lukasImg_3 from "$lib/images/om_oss/lukas_3_small.webp"
 
-    import elinImg_1 from "$lib/images/om_oss/elin_1.webp"
-    import elinImg_2 from "$lib/images/om_oss/elin_2.webp"
-    import elinImg_3 from "$lib/images/om_oss/elin_3.webp"
-    import elinImg_4 from "$lib/images/om_oss/elin_4.webp"
+    import elinImg_1 from "$lib/images/om_oss/elin_1_small.webp"
+    import elinImg_2 from "$lib/images/om_oss/elin_2_small.webp"
+    import elinImg_3 from "$lib/images/om_oss/elin_3_small.webp"
+    import elinImg_4 from "$lib/images/om_oss/elin_4_small.webp"
 
 </script>
 
@@ -31,13 +31,13 @@
 </div>
 
 <div class="image-grid-container">
-    <img src={ossImg_1} alt="">
+    <img src={ossImg_1} fetchpriority="high" alt="">
     <div class="small-images">
-        <img src={ossImg_2} alt="">
-        <img src={ossImg_3} alt="">
+        <img src={ossImg_2} fetchpriority="high" alt="">
+        <img src={ossImg_3} fetchpriority="high" alt="">
     </div>
-    <img src={ossImg_4} alt="">
-    <img src={ossImg_5} alt="">
+    <img src={ossImg_4} fetchpriority="high" alt="">
+    <img src={ossImg_5} fetchpriority="high" alt="">
 </div>
 
 <Devider />
@@ -49,10 +49,10 @@
 
 <div class="image-grid-container">
     <div class="small-images">
-        <img  src={lukasImg_1} alt="">
-        <img  src={lukasImg_3} alt="">
+        <img  src={lukasImg_1} loading = "lazy" alt="">
+        <img  src={lukasImg_3} loading = "lazy" alt="">
     </div>
-    <img  src={lukasImg_2} alt="">
+    <img  src={lukasImg_2} loading = "lazy" alt="">
 </div>
 
 <Devider />
@@ -64,10 +64,10 @@
 
 
 <div class="image-grid-container">
-    <img  src={elinImg_1} alt="">
-    <img  src={elinImg_2} alt="">
-    <img  src={elinImg_3} alt="">
-    <img  src={elinImg_4} alt="">
+    <img  src={elinImg_1} loading = "lazy" alt="">
+    <img  src={elinImg_2} loading = "lazy" alt="">
+    <img  src={elinImg_3} loading = "lazy" alt="">
+    <img  src={elinImg_4} loading = "lazy" alt="">
 </div>
 
 

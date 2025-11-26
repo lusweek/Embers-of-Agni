@@ -1,6 +1,6 @@
 <script>
-	import eldshowImg from '$lib/images/home/eldshower.webp';
-	import provaPaFlowartsImg from '$lib/images/home/prova_pa_flowarts.webp';
+	import eldshowImg from '$lib/images/home/eldshower_small.webp';
+	import provaPaFlowartsImg from '$lib/images/home/prova_pa_flowarts_small.webp';
 
 
 	import Button from '$lib/assets/button.svelte';

@@ -3,8 +3,8 @@
 	import Button from '$lib/assets/button.svelte';
 
 	import seMer1 from '$lib/images/home/se_mer_1.webp';
-	import seMer2 from '$lib/images/home/se_mer_2.webp';
-	import seMer3 from '$lib/images/home/se_mer_3.webp';
+	import seMer2 from '$lib/images/home/se_mer_2_small.webp';
+	import seMer3 from '$lib/images/home/se_mer_3_small.webp';
 	import seMer4 from '$lib/images/home/se_mer_4.webp';
 
 

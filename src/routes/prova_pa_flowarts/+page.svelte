@@ -18,6 +18,7 @@
 <InfoBox
 title = "Prova på flowarts"
 image = {prova_pa_flowartsImg}
+fetchpriority = "high"
 imageAlt = "Bild på Elin under workshop"
 >
 <p class="paragraf">Vi tar med rockringar, pois och stavar och lär ut hur man kan använda och leka med dessa redskap. Ser vi att någon har bra kontroll kan den personen dessutom få testa med eld (sjävklart i nyktert tillstånd). Passande antal deltagare till detta är upp till 25 personer.</p>

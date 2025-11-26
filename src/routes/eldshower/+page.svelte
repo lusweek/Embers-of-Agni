@@ -3,7 +3,7 @@
 	import InfoBox from '$lib/components/InfoBox.svelte';
 
     import duoshow from '$lib/images/eldshower/duoshow.webp'
-    import duoshow_med_tema from '$lib/images/eldshower/duoshow_med_tema.webp'
+    import duoshow_med_tema from '$lib/images/eldshower/duoshow_med_tema_small.webp'
     import soloshow from '$lib/images/eldshower/soloshow.webp'
 
 </script>
@@ -17,9 +17,12 @@
 
 <!-- Duowhow -->
 
+
+
 <InfoBox
 title = "Duoshow"
 image = {duoshow}
+fetchpriority="high"
 imageAlt = "Bild på Lukas som krönar Elin med en eldkrona"
 >
 <p class="paragraf">Här intar vi scenen tillsammans och bjuder på en 15 minuter lång föreställning full av känsla, dans, lek och framförallt - massor av eld! Vi rör oss både var för sig och möts i partertricks. Denna show är flytande och dynamisk med smidiga övergångar och hela tiden något nytt och spännande. Vi har färdig musik till denna show.</p>
@@ -32,6 +35,7 @@ imageAlt = "Bild på Lukas som krönar Elin med en eldkrona"
 <InfoBox
 title = "Duoshow med tema"
 image = {duoshow_med_tema}
+loading = "lazy"
 imageAlt = "Bild på Lukas utklädd till troll under eldshow"
 >
 <p class="paragraf">Önska ett tema på showen, t.ex. pirater, vikingar eller barnkalas. Vi kommer med kostym, smink och den perfekta musiken, bara fantasin sätter gränserna! För detta behöver vi minst en månads framförhållning. </p>
@@ -45,6 +49,7 @@ imageAlt = "Bild på Lukas utklädd till troll under eldshow"
 title = "Soloshow"
 image = {soloshow}
 imageAlt = "Lukas burnoff"
+loading = "lazy"
 imageHeight = "400px"
 >
 <p class="paragraf">Vår soloshow står Lukas för.  Han använder eldredskapen: snurrstav, dubbelstav och kontaktstav. Dans har länge varit en stor del av Lukas liv vilket tydligt syns när han står på scen.</p>

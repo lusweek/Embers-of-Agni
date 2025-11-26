@@ -1,4 +1,8 @@
 <script>
+
+// DENNA FIL ANVÄNDS INTE. HomeErbjudandenUtanLED ANVÄNDS ISTÄLLET. 
+// SKILLNADEN ÄR HUR KORTEN ÄR BYGGDA SAMT UPPDATERINGAR SOM EJ ÄR GJORDA HÄR
+
 	import elinSerUpp from '$lib/images/home/elin_karna_serupp.webp';
 	import lukasFans from '$lib/images/home/lukas_roots_fans.webp';
 	import elinBurnoff from '$lib/images/om_oss/elin_burnoff.webp';

@@ -1,6 +1,8 @@
 <script>
   export let title = "";
   export let image = "";
+  export let fetchpriority = ""
+  export let loading = ""
   export let imageAlt = "";
   export let imageHeight = ""
 </script>
@@ -11,7 +13,9 @@
   {#if image}
     <img 
       src={image} 
-      alt={imageAlt} 
+      alt={imageAlt}
+      fetchpriority = {fetchpriority}
+      loading={loading}
       class="image mb-8" 
       style={`height: ${imageHeight};`}   
     />
