@@ -22,10 +22,10 @@
     }
 </script>
 
-<h1 class="h1-title">Bilder och Filmer</h1>
+<h1 class="h1-title">Bilder</h1>
 
 <p class="undertitle">
-    Här kan du se bilder och videor på vår eldkonst.<br>
+    Här kan du se bilder på vår eldkonst.<br>
     Glöm inte kolla in vår 
     <a href="https://www.instagram.com/embersofagni" class="link-decoration" target="_blank">instagram!</a>
 </p>

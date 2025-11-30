@@ -27,9 +27,9 @@
 
 <div class="about-info-container">
     <h2 class="h2-title">Lukas och Elin är Embers of Agni</h2>
-    <p class="paragraf">Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi, Lukas och Elin, vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.
+    <p class="paragraf">Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.
         <br><br>
-        Det var på <a target="_blank" class="link-decoration" href="https://cirkuson.n.nu/lager">cirkuslägret Våreld 2024</a> som vi träffade varandra. Elin hade kontakterna till showerna och Lukas fick haka på helt enkelt. Ett år senare så hittade vi en djup kärlek till varandra och att uppträda med eld och dans! 
+        Det var på <a target="_blank" class="link-decoration" href="https://5elementsdance.se/">cirkuslägret Våreld</a> 2024 som vi lärde känna varandra och upptäckte att vi båda leker med eld. Senare den sommaren fick Elin ett eldgig med sin bror utanför Göteborg där Lukas bodde. Han tackade direkt ja när frågan kom om han ville haka på. Detta var första showen och workshop vi tillsammans gjorde. Detta ville vi göra mer. Ett år senare har vi en djup kärlek till varandra och att uppträda tillsammans med eld och dans!
     </p>
 </div>
 

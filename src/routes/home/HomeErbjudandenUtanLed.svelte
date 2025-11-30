@@ -8,8 +8,8 @@
 
 <section class="flex w-full flex-col items-center px-4 py-16 md:px-0">
 	<!-- Semerubrik / bold text -->
-	<p class="mb-8 max-w-2xl text-center text-xl md:text-3xl">
-		Proffsiga och välkoreograferade eldshower med dans och teknik med känsla av kraft, lek och flow
+	<p class="mb-8 max-w-2xl text-center text-xl md:text-3xl italic">
+		Eldshower med dans, glöd och känsla <br> för alla tillfällen
 	</p>
 
 	<!-- Kort nr 1 -->
@@ -23,7 +23,7 @@
 	</figure>
 	<div class="card-body flex items-center">
 		<h2 class="card-title">Eldshower</h2>
-		<p>Det som skiljer våra eldshower från andra är hur vi implementerar musik och dans i uppträdandet</p>
+		<p>Framträdanden du sent kommer glömma</p>
 		<div class="card-actions justify-end">
 			<Button 
 				href="/eldshower"
@@ -49,7 +49,7 @@
 		<p>Upplev känslan av flow med stav, poi och rockring</p>
 		<div class="card-actions justify-end">
 			<Button 
-				href="/eldshower"
+				href="/prova_pa_flowarts"
 				label="Läs mer"
 			/>
 		</div>

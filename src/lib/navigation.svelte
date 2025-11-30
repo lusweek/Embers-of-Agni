@@ -22,9 +22,9 @@
       ]
     },
     { label: "Vi är Embers of Agni", href: "/om_oss" },
-    { label: "Bilder & Filmer", href: "/Media" },
+    { label: "Bilder", href: "/Media" },
     { label: "Info innan bokning", href: "/info_innan_bokning" },
-    { label: "Priser", href: "/priser" },
+    { label: "Priser & bokning", href: "/priser" },
     { label: "Kontakta oss", href: "/kontakta_oss" }
   ];
 

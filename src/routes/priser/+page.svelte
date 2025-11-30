@@ -66,7 +66,11 @@
 
 </div>
 
-<h2 class="h2-title">För bokning, frågor eller annat <br>Skicka ett meddelande</h2>
+<h2 class="h2-title w-[400px]">Boka här</h2>
+<p class="undertitle">Skicka ett meddelande, vi hör vi av oss inom kort. 
+<br><br>
+Läs gärna igenom <a class="link-decoration" href="/info_innan_bokning">info innan bokning</a> först.
+</p>
 
 <MessageForm />
 
