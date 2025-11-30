@@ -13,7 +13,7 @@
 	</p>
 
 	<!-- Kort nr 1 -->
-	<div class="card card-bg m-3 w-[90%] max-w-[400px] shadow-sm">
+	<div class="card card-bg m- w-[90%] max-w-[400px] shadow-sm">
 	<figure>
 		<img
 			src={eldshowImg}
@@ -23,7 +23,7 @@
 	</figure>
 	<div class="card-body flex items-center">
 		<h2 class="card-title">Eldshower</h2>
-		<p>Det som skiljer våra eldshower från andra är hur vi implementerar musiken i showen</p>
+		<p>Det som skiljer våra eldshower från andra är hur vi implementerar musik och dans i uppträdandet</p>
 		<div class="card-actions justify-end">
 			<Button 
 				href="/eldshower"
@@ -36,7 +36,7 @@
 		<!-- Kort nr 1 slut -->
          <!-- Kort nummer 2 start -->
 
-        <div class="card card-bg m-3 w-[90%] max-w-[400px] shadow-sm">
+        <div class="card card-bg m-[50px] w-[90%] max-w-[400px] shadow-sm">
 	<figure>
 		<img
 			src={provaPaFlowartsImg}
@@ -62,7 +62,5 @@
 
 <style>
 
-	.card-bg {
-	background: linear-gradient(97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
-	}
+
 </style>

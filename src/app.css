@@ -82,3 +82,12 @@ p, .undertitle{
     background: linear-gradient(97deg, rgba(178, 63, 0, 1) 0%, rgba(255, 140, 0, 1) 100%);
     transform: translateY(-2px);
 }
+
+.link-decoration{
+    color: #FB923C;
+    text-decoration: underline;
+}
+
+.card-bg {
+	background: linear-gradient(97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
+}

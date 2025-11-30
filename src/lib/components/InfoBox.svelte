@@ -33,7 +33,6 @@
 }
 
 .image{
-  /* max-height: 80vh; */
   margin: auto;
 }
 

@@ -7,7 +7,6 @@
 	import seMer3 from '$lib/images/home/se_mer_3_small.webp';
 	import seMer4 from '$lib/images/home/se_mer_4.webp';
 
-
 	// öppna bild när man klickar på den 
     let active = null;
 

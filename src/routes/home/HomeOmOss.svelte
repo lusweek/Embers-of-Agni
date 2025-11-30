@@ -50,7 +50,7 @@
     />
 
   <div 
-    class="overlay box-border w-[70%] md:w-[400px] sm:left-[20%]" 
+    class="overlay box-border w-[70%] md:w-[400px] sm:left-[20%] card-bg" 
     role="region" 
     bind:this={overlayEl} 
     aria-label="embersofagni - info"
@@ -60,14 +60,14 @@
       <span class="sub block font-semibold text-xs sm:text-sm">Lukas och Elin</span>
     </h1>
 
-    <p class="p-4 ">
+    <p class="p-4 paragraf">
       Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi, Lukas och Elin, vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.
     </p>
   </div>
   
   
 </section>
-<div class="w-[100%] flex justify-center my-8 lg:my-2 md:my-6">  
+<div class="w-[100%] flex justify-center my-[60px] lg:my-2 md:my-6">  
   <Button 
   href="/om_oss"
   label="Läs mer om oss"
@@ -92,9 +92,9 @@
   /* Overlay (grå textruta) */
   .overlay {
     position: absolute;
-    left: 20%;               /* börjar 90% in från vänster */
-    top: 40%;                /* sitter i nederkant */
-    background: rgba(128,128,128,0.85); /* grå, lite genomskinlig */
+    left: 20%;
+    top: 40%;
+    background: linear-gradient(-97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
     color: white;
     box-sizing: border-box;
     display: flex;
@@ -110,16 +110,11 @@
     font-weight: 700;
   }
 
-  /* .overlay h1 .sub {
-    display: block;
-    font-weight: 600;
-    font-size: 0.85rem;
-  } */
-
   .overlay p {
+    text-align: start;
     margin: 0;
-    font-size: 0.9rem;
-    line-height: 1;
+    font-size: 0.9rem; 
+    line-height: 1.1;
   }
 
 </style>

@@ -27,7 +27,7 @@
 <p class="undertitle">
     Här kan du se bilder och videor på vår eldkonst.<br>
     Glöm inte kolla in vår 
-    <a href="https://www.instagram.com/embersofagni" class="instagram-link" target="_blank">instagram!</a>
+    <a href="https://www.instagram.com/embersofagni" class="link-decoration" target="_blank">instagram!</a>
 </p>
 
 <Devider />
@@ -63,9 +63,6 @@
 <Devider />
 
 <style>
-    .instagram-link {
-        text-decoration: underline;
-    }
 
     .images-grid {
         display: grid;

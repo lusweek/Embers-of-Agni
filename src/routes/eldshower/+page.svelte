@@ -17,8 +17,6 @@
 
 <!-- Duowhow -->
 
-
-
 <InfoBox
 title = "Duoshow"
 image = {duoshow}
@@ -33,12 +31,12 @@ imageAlt = "Bild på Lukas som krönar Elin med en eldkrona"
 <!-- Duowhow med tema -->
 
 <InfoBox
-title = "Duoshow med tema"
-image = {duoshow_med_tema}
-loading = "lazy"
-imageAlt = "Bild på Lukas utklädd till troll under eldshow"
+    title = "Duoshow med tema"
+    image = {duoshow_med_tema}
+    loading = "lazy"
+    imageAlt = "Bild på Lukas utklädd till troll under eldshow"
 >
-<p class="paragraf">Önska ett tema på showen, t.ex. pirater, vikingar eller barnkalas. Vi kommer med kostym, smink och den perfekta musiken, bara fantasin sätter gränserna! För detta behöver vi minst en månads framförhållning. </p>
+    <p class="paragraf">Önska ett tema på showen, t.ex. pirater, vikingar eller barnkalas. Vi kommer med kostym, smink och den perfekta musiken, bara fantasin sätter gränserna! För detta behöver vi minst en månads framförhållning. </p>
 </InfoBox>
 
 <Devider />
@@ -46,16 +44,15 @@ imageAlt = "Bild på Lukas utklädd till troll under eldshow"
 <!-- Soloshow -->
 
 <InfoBox
-title = "Soloshow"
-image = {soloshow}
-imageAlt = "Lukas burnoff"
-loading = "lazy"
-imageHeight = "400px"
+    title = "Soloshow"
+    image = {soloshow}
+    imageAlt = "Lukas burnoff"
+    loading = "lazy"
+    imageHeight = "400px"
 >
-<p class="paragraf">Vår soloshow står Lukas för.  Han använder eldredskapen: snurrstav, dubbelstav och kontaktstav. Dans har länge varit en stor del av Lukas liv vilket tydligt syns när han står på scen.</p>
-<p class="paragraf">Denna show är ca 12 min och musiken består av mjuka melodier, tunga beats och lekfullhet. </p>
-<p class="paragraf">Känslan i denna show är rörelseglädje, contemporary dans, skönhet och styrka.
-Mindre anpassningar i musik och känsla kan göras för att passa just ert tillfälle. </p>
+    <p class="paragraf">Vår soloshow står Lukas för.  Han använder eldredskapen: snurrstav, dubbelstav och kontaktstav. Dans har länge varit en stor del av Lukas liv vilket tydligt syns när han står på scen.</p>
+    <p class="paragraf">Denna show är ca 12 min och musiken består av mjuka melodier, tunga beats och lekfullhet. </p>
+    <p class="paragraf">Känslan i denna show är rörelseglädje, contemporary dans, skönhet och styrka. Mindre anpassningar i musik och känsla kan göras för att passa just ert tillfälle. </p>
 </InfoBox>
 
 <Devider />
