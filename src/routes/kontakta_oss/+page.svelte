@@ -1,3 +1,9 @@
+<svelte:head>
+    <title>Kontakta oss – Embers of Agni Eldshow</title>
+	<meta name="description" content="Kontakta Embers of Agni för bokning av eldshow eller workshops i flowarts och cirkus. Snabb återkoppling för event, festivaler och grupper." />
+
+</svelte:head>
+
 <script>
 	import Devider from "$lib/assets/Devider.svelte";
 	import MessageForm from "$lib/components/MessageForm.svelte";

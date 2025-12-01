@@ -1,4 +1,5 @@
 <script>
+
   import { onMount, onDestroy } from "svelte";
   import heroImg from '$lib/images/home/hero.webp' 
 
@@ -19,7 +20,7 @@
     return result;
   }
 
-  let duplicatedHeadlines = duplicateList(headlines, 20)
+  let duplicatedHeadlines = duplicateList(headlines, 10)
 
   let current = 0;
   let interval;

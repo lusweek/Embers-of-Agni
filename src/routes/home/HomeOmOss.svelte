@@ -67,7 +67,7 @@
   
   
 </section>
-<div class="w-[100%] flex justify-center my-[60px] lg:my-2 md:my-6">  
+<div class="w-[100%] flex justify-center my-[60px] lg:my-6 md:my-6">  
   <Button 
   href="/om_oss"
   label="Läs mer om oss"
@@ -85,7 +85,7 @@
 
   .wrapper img{
     display: block;
-    margin-left: 10%;
+    margin-left: 15%;
     border-radius: 2px;
   }
 
@@ -93,7 +93,7 @@
   .overlay {
     position: absolute;
     left: 20%;
-    top: 40%;
+    top: 53%;
     background: linear-gradient(-97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
     color: white;
     box-sizing: border-box;

@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>Bilder på Eldshower & elduppträdanden – Embers of Agni</title>
+    <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Galleriet visar upp eldperformance, flowarts och spektakulära shower från olika event." />
+</svelte:head>
+
 <script>
     import Devider from "$lib/assets/Devider.svelte";
     import { fade } from "svelte/transition";

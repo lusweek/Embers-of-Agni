@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>Info inför bokning av Eldshow – Embers of Agni</title>
+    <meta name="description" content="All viktig information inför bokning av eldshow: säkerhet, platskrav, förberedelser och vad du behöver tänka på innan eventet." />
+</svelte:head>
+
 <script>
 	import Devider from "$lib/assets/Devider.svelte";
 

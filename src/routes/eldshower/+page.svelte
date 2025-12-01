@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>Eldshow för Event & Festivaler – Embers of Agni</title>
+    <meta name="description" content="Läs om våra eldshower och elduppträdanden. Vi erbjuder professionella eldshower för event, bröllop, festivaler och företagsevent." />
+</svelte:head>
+
 <script>
 	import Devider from '$lib/assets/Devider.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';

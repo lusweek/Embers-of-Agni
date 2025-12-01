@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>Priser på Eldshow och workshops samt Bokning – Embers of Agni</title>
+    <meta name="description" content="Se priser på våra eldshower och gör en bokningsförfrågan. Anpassade paket för event, festivaler och privata tillställningar." />
+</svelte:head>
+
 <script>
 	import Devider from "$lib/assets/Devider.svelte";
     import MessageForm from "$lib/components/MessageForm.svelte";
