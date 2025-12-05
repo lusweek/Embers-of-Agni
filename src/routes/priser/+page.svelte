@@ -1,15 +1,20 @@
-<svelte:head>
-    <title>Priser på Eldshow och workshops samt Bokning – Embers of Agni</title>
-    <meta name="description" content="Se priser på våra eldshower och gör en bokningsförfrågan. Anpassade paket för event, festivaler och privata tillställningar." />
-</svelte:head>
-
 <script>
+    import { priser } from "$lib/seo/priser";
+
 	import Devider from "$lib/assets/Devider.svelte";
     import MessageForm from "$lib/components/MessageForm.svelte";
 
 
 </script>
 
+<!-- SEO -->
+<svelte:head>
+    <script type="application/ld+json">
+        {JSON.stringify(priser)}
+    </script>
+    <title>Priser på Eldshow och workshops samt Bokning – Embers of Agni</title>
+    <meta name="description" content="Se priser på våra eldshower och gör en bokningsförfrågan. Anpassade paket för event, festivaler och privata tillställningar." />
+</svelte:head>
 
 <!-- Titel + undertitel -->
 <h1 class="h1-title">Priser & bokning</h1>

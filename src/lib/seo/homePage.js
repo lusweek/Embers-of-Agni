@@ -1,5 +1,6 @@
-// För bättre SEO
-export const performingGroup = {
+// Homepage
+export const homePage = 
+{
   "@context": "https://schema.org",
   "@type": "PerformingGroup",
 

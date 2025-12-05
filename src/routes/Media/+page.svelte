@@ -1,9 +1,6 @@
-<svelte:head>
-    <title>Bilder på Eldshower & elduppträdanden – Embers of Agni</title>
-    <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Galleriet visar upp eldperformance, flowarts och spektakulära shower från olika event." />
-</svelte:head>
-
 <script>
+    import { mediaPage } from "$lib/seo/mediaPage";
+
     import Devider from "$lib/assets/Devider.svelte";
     import { fade } from "svelte/transition";
 
@@ -26,6 +23,15 @@
         active = null;
     }
 </script>
+
+<!-- SEO -->
+<svelte:head>
+    <script type="application/ld+json">
+        {JSON.stringify(mediaPage)}
+    </script>
+    <title>Bilder på Eldshower & elduppträdanden – Embers of Agni</title>
+    <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Galleriet visar upp eldperformance, flowarts och spektakulära shower från olika event." />
+</svelte:head>
 
 <h1 class="h1-title">Bilder</h1>
 

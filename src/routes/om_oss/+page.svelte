@@ -1,9 +1,5 @@
-<svelte:head>
-    <title>Om oss – Eldartister & Flowartsinstruktörer – Embers of Agni</title>
-    <meta name="description" content="Lär känna Embers of Agni. Vi är professionella eldartister som skapar säkra och spektakulära eldshower för alla typer av event." />
-</svelte:head>
-
 <script>
+    import { about } from "$lib/seo/about"
 
     import Devider from "$lib/assets/Devider.svelte"
 
@@ -24,6 +20,14 @@
 
 </script>
 
+<!-- SEO -->
+<svelte:head>
+    <title>Om oss – Eldartister & Flowartsinstruktörer – Embers of Agni</title>
+    <meta name="description" content="Lär känna Embers of Agni. Vi är professionella eldartister som skapar säkra och spektakulära eldshower för alla typer av event." />
+    <script type="application/ld+json">
+        {JSON.stringify(about)}
+    </script>
+</svelte:head>
 
 <h1 class="h1-title">Vilka är vi?</h1>
 <Devider />

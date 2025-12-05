@@ -36,7 +36,7 @@
   });
 </script>
 
-<section class="relative w-full h-[90vh] overflow-hidden">
+<section class="relative w-full h-[83vh] overflow-hidden">
   <!-- Video background -->
   <!-- <video
     class="absolute top-0 left-0 w-full h-full object-cover"

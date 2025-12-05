@@ -1,13 +1,17 @@
+<script>
+    import { innanBokning } from "$lib/seo/innanBokning";
+
+	import Devider from "$lib/assets/Devider.svelte";
+</script>
+
+<!-- SEO -->
 <svelte:head>
     <title>Info inför bokning av Eldshow – Embers of Agni</title>
     <meta name="description" content="All viktig information inför bokning av eldshow: säkerhet, platskrav, förberedelser och vad du behöver tänka på innan eventet." />
+    <script type="application/ld+json">
+        {JSON.stringify(innanBokning)}
+    </script>
 </svelte:head>
-
-<script>
-	import Devider from "$lib/assets/Devider.svelte";
-
-
-</script>
 
 <h1 class="h1-title">Info innan boking</h1>
 <Devider />

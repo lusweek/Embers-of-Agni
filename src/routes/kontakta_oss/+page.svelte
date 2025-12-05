@@ -1,15 +1,17 @@
-<svelte:head>
-    <title>Kontakta oss – Embers of Agni Eldshow</title>
-	<meta name="description" content="Kontakta Embers of Agni för bokning av eldshow eller workshops i flowarts och cirkus. Snabb återkoppling för event, festivaler och grupper." />
-
-</svelte:head>
-
 <script>
+	import { contactPage } from "$lib/seo/contactPage";
 	import Devider from "$lib/assets/Devider.svelte";
 	import MessageForm from "$lib/components/MessageForm.svelte";
-
-
 </script>
+
+<!-- SEO -->
+<svelte:head>
+	<title>Kontakta oss – Embers of Agni Eldshow</title>
+	<meta name="description" content="Kontakta Embers of Agni för bokning av eldshow eller workshops i flowarts och cirkus. Snabb återkoppling för event, festivaler och grupper." />
+	<script type="application/ld+json">
+        {JSON.stringify(contactPage)}
+    </script>
+</svelte:head>
 
 <h1 class="h1-title">Kontakta oss</h1>
 <Devider />

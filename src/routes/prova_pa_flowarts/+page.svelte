@@ -1,15 +1,21 @@
-<svelte:head>
-	<title>Prova på Flowarts – Workshops & Eldkonst – Embers of Agni</title>
-	<meta name="description" content="Prova på flowarts! Lär dig poi, stav, rockring och kreativ rörelse på ett tryggt och roligt sätt. Passar grupper, skolor, event och alla nivåer." />
-</svelte:head>
-
 <script>
+	import { provaPaFlowarts } from '$lib/seo/provaPaFlowartsPage';
+
 	import Devider from '$lib/assets/Devider.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 
 	import prova_pa_flowartsImg from '$lib/images/Prova på flowarts/prova_pa_flowarts.webp'
 
 </script>
+
+<!-- SEO -->
+<svelte:head>
+	<script type="application/ld+json">
+        {JSON.stringify(provaPaFlowarts)}
+    </script>
+	<title>Prova på Flowarts – Workshops & Eldkonst – Embers of Agni</title>
+	<meta name="description" content="Prova på flowarts! Lär dig poi, stav, rockring och kreativ rörelse på ett tryggt och roligt sätt. Passar grupper, skolor, event och alla nivåer." />
+</svelte:head>
 
 <!-- Titel + undertitel -->
 <h1 class="h1-title">Prova på flowarts</h1>

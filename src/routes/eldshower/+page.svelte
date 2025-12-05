@@ -1,9 +1,6 @@
-<svelte:head>
-    <title>Eldshow för Event & Festivaler – Embers of Agni</title>
-    <meta name="description" content="Läs om våra eldshower och elduppträdanden. Vi erbjuder professionella eldshower för event, bröllop, festivaler och företagsevent." />
-</svelte:head>
-
 <script>
+    import { fireshowOffer } from '$lib/seo/fireshowOfferPage';
+
 	import Devider from '$lib/assets/Devider.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 
@@ -12,6 +9,15 @@
     import soloshow from '$lib/images/eldshower/soloshow.webp'
 
 </script>
+
+<!-- SEO -->
+<svelte:head>
+    <title>Eldshow för Event & Festivaler – Embers of Agni</title>
+    <meta name="description" content="Läs om våra eldshower och elduppträdanden. Vi erbjuder professionella eldshower för event, bröllop, festivaler och företagsevent." />
+    <script type="application/ld+json">
+        {JSON.stringify(fireshowOffer)}
+    </script>
+</svelte:head>
 
 <!-- Titel + undertitel -->
 <h1 class="h1-title">Eldshower</h1>
