@@ -1,61 +1,23 @@
 <script>
-	import Button from '$lib/assets/button.svelte';
+	import Button from "$lib/assets/button.svelte";
   import aboutImg from '$lib/images/home/embers_of_agni_small.webp'
 
-  
-// Räknar ut höjden till wrapper paserat på höjden på bilden och text-overlayen
-  import { onMount } from 'svelte'
-
-  let imgEl
-  let overlayEl
-  let wrapperEl
-  let imgHeight = 0
-
-  function updateHeight() {
-    if (imgEl && wrapperEl && overlayEl) {
-      const imgHeight = imgEl.clientHeight
-      const overlayHeight = overlayEl.clientHeight * 0.6  // OBS punkt istället för komma
-      
-      wrapperEl.style.height = (imgHeight + overlayHeight) + 'px'
-    }
-  }
-
-  // Uppdatera höjden när bilden laddats
-  function onImageLoad() {
-    updateHeight()
-  }
-
-  onMount(() => {
-    // Fånga resize också (om viewport ändras)
-    const observer = new ResizeObserver(() => updateHeight())
-    if (imgEl) observer.observe(imgEl)
-
-    return () => observer.disconnect()
-  })
-// ---------
 
 </script>
+<section class="parent" >
 
-<section 
-  class="wrapper relative block w-[100vw] sm:w-[65vw]" 
-  bind:this={wrapperEl}
->
-    <img 
-      class="image block w-[70%] md:w-[400px] max-w-400px mx-auto" 
-      bind:this={imgEl} 
+   <img 
+      class="div1" 
       src={aboutImg} 
       alt="Elin gör en burnoff" 
-      on:load={onImageLoad} 
       loading="lazy"
     />
 
   <div 
-    class="overlay box-border w-[70%] md:w-[400px] sm:left-[20%] card-bg" 
-    role="region" 
-    bind:this={overlayEl} 
+    class="div2 overlay" 
     aria-label="embersofagni - info"
   >
-    <h1 class="p-4 sm:p-6 pb-0 text-sm sm:text-base font-bold leading-tight">
+      <h1 class="p-4 sm:p-6 pb-0 text-sm sm:text-base font-bold leading-tight">
       Embers of Agni:
       <span class="sub block font-semibold text-xs sm:text-sm">Lukas och Elin</span>
     </h1>
@@ -65,35 +27,39 @@
     </p>
   </div>
   
+  <div class="w-[100%] flex justify-center lg:my-6 md:my-6 div3">  
+    <Button 
+    href="/om_oss"
+    label="Läs mer om oss"
+    />
+  </div>
   
 </section>
-<div class="w-[100%] flex justify-center my-[60px] lg:my-6 md:my-6">  
-  <Button 
-  href="/om_oss"
-  label="Läs mer om oss"
-  />
-</div>
 
 
   <style>
 
-  .wrapper {
-      position: relative;
-      display: block;
-      margin: auto;
-  }
+.parent {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+grid-template-rows: auto repeat(5, 10%) repeat(4, auto);
+grid-column-gap: 0px;
+grid-row-gap: 10px;
+}
 
-  .wrapper img{
-    display: block;
-    margin-left: 15%;
-    border-radius: 2px;
-  }
+.div1 { grid-area: 1 / 1 / 7 / 7; }
+.div2 { grid-area: 5 / 2 / 10 / 8; }
+.div3 { grid-area: 10 / 2 / 11 / 7; }
+
+.parent{
+  max-width: 80vw;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 90px;
+}
 
   /* Overlay (grå textruta) */
   .overlay {
-    position: absolute;
-    left: 20%;
-    top: 53%;
     background: linear-gradient(-97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
     color: white;
     box-sizing: border-box;
@@ -103,7 +69,7 @@
     border-radius: 2px;
   }
 
-  .overlay h1 {
+.overlay h1 {
     margin: 0;
     font-size: 1rem;
     line-height: 1;

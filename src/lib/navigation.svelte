@@ -61,7 +61,12 @@
     openMobileDropdown = parentLabelForPath(currentPath);
 
     window.addEventListener("click", handleClickOutside);
-    return () => window.removeEventListener("click", handleClickOutside);
+    window.addEventListener("scroll", handleDesktopScroll);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("scroll", handleDesktopScroll);
+    };
   });
 
   onDestroy(() => {
@@ -73,12 +78,43 @@
     isMobileMenuOpen = false;
     openMobileDropdown = null;
   }
+
+  /* ====== NYTT: scroll-logik för mobilmenyns navbar ====== */
+  let mobileMenuContent;
+  let lastScrollTop = 0;
+  let hideMobileNavbar = false;
+
+  function handleMobileMenuScroll() {
+    const currentScroll = mobileMenuContent.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 20) {
+      hideMobileNavbar = true;
+    } else {
+      hideMobileNavbar = false;
+    }
+
+    lastScrollTop = currentScroll;
+  }
+
+  /* ====== NYTT: scroll-logik för DESKTOP navbar ====== */
+  let lastWindowScroll = 0;
+  let hideDesktopNavbar = false;
+
+  function handleDesktopScroll() {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastWindowScroll && currentScroll > 40) {
+      hideDesktopNavbar = true;
+    } else {
+      hideDesktopNavbar = false;
+    }
+
+    lastWindowScroll = currentScroll;
+  }
 </script>
 
 
-<!-- Navbar (fixed top) ta bort fixed om den inte ska följa med scroll -->
-<nav class="navbar bg-base-200 z-1">
-<!-- <nav class="navbar bg-base-200 fixed h-6 top-0 left-0 right-0 z-50">  FIXED NAVBAR -->
+<nav class="navbar bg-base-200 desktop-navbar glass-effect {hideDesktopNavbar ? 'is-hidden' : ''}">
   <div class="flex-1">
     <a href="/" class="btn btn-ghost normal-case text-xl">Embers of Agni</a>
   </div>
@@ -91,7 +127,7 @@
           <li class="dropdown relative cursor-pointer"
               on:mouseenter={() => (isDropdownOpen = true)}
               on:mouseleave={() => (isDropdownOpen = false)}>
-            <button class="flex items-center gap-1 cursor-pointer">
+            <button class="flex items-center gap-5 cursor-pointer">
               {item.label}
               <svg class="w-4 h-4 transition-transform {isDropdownOpen ? 'rotate-180' : ''}"
                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -101,11 +137,11 @@
             </button>
 
             {#if isDropdownOpen}
-              <ul class="absolute bg-base-100 rounded-t-none p-2 shadow"
+              <ul class="desktop-dropdown rund-kant"
                 in:slide={{ x: 300, duration: 500, easing: cubicOut }}
                 out:slide={{ x: 300, duration: 500, easing: cubicOut }}>
                 {#each item.children as child}
-                  <li>
+                  <li class="my-[10px]">
                     <a href={child.href}
                        on:click={() => (isDropdownOpen = false)}
                        class:active={currentPath === child.href}>
@@ -156,21 +192,26 @@
 <!-- mobilmeny -->
 {#if isMobileMenuOpen}
   <aside 
-    class="fixed top-0 right-0 h-full max-w-[60vw] w-[300px] bg-base-100 shadow-lg z-50 p-6 overflow-y-auto"
+    class="mobile-aside glass-effect "
     in:fly={{ x: 300, duration: 500, easing: cubicOut }}
     out:fly={{ x: 300, duration: 500, easing: cubicOut }}>
 
+  <div class="mobile-navbar {hideMobileNavbar ? 'is-hidden' : ''}">
+      <button 
+        on:click={() => (isMobileMenuOpen = false)} 
+        class="btn btn-sm btn-ghost" 
+        aria-label="Stäng meny">✕
+      </button>
+    </div>
+
     <div 
+      class="mobile-menu-content"
+      bind:this={mobileMenuContent}
+      on:scroll={handleMobileMenuScroll}
       role="presentation" 
       tabindex="-1" 
       on:click|stopPropagation
     >
-      <button 
-        on:click={() => (isMobileMenuOpen = false)} 
-        class="btn btn-sm btn-ghost absolute top-4 right-4 text-[12px]" 
-        aria-label="Stäng meny">✕
-      </button>
-
       <nav class="space-y-4 mt-8">
         {#each menuItems as item}
           {#if item.children}
@@ -194,7 +235,7 @@
                     in:slide={{ duration: 400, easing: cubicOut }}
                     out:slide={{ duration: 300, easing: cubicOut }}>
                   {#each item.children as child}
-                    <li>
+                    <li class="my-[20px]">
                       <a href={child.href}
                          on:click={() => closeMobileMenu()}
                          class:active={currentPath === child.href}>
@@ -223,7 +264,78 @@
   /* Om du vill kan du justera .active, t.ex.: */
   :global(.active) {
     font-weight: 600;
-    color: var(--your-accent-color, #e25822); /* byt till färg om du vill */
+    color: var(--your-accent-color, #e14304);
   }
+
+
+  .mobile-aside{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: 60vw;
+    width: 300px;
+    background-color: #ffffff; 
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-menu-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+
+
+  /* ====== NYTT: Gemensam glas-effekt för navbarer ====== */
+
+.glass-effect{
+  background: rgba(255, 255, 255, 0.6);      
+  backdrop-filter: blur(10px);             
+  -webkit-backdrop-filter: blur(10px);    
+}
+
+.glass-effect-strong{
+  background: rgba(255, 255, 255, 0.9);      
+  backdrop-filter: blur(20px);             
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.desktop-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+.mobile-navbar {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+/* Scroll-hidden state */
+.desktop-navbar.is-hidden,
+.mobile-navbar.is-hidden {
+  transform: translateY(-100%);
+}
+
+.desktop-dropdown{
+   position: absolute;
+  background-color: #b9b0ac; /* halvtransparent vit */
+  padding: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* Safari */
+}
 
 </style>

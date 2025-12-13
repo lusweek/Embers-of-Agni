@@ -37,9 +37,9 @@ imageAlt = "Bild på Lukas som krönar Elin med en eldkrona"
 <p class="paragraf">
     Vi intar scenen tillsammans och bjuder på en 15 minuter lång föreställning full av känsla, dans, lek och framförallt - massor av eld! 
    <br><br> 
-Temat för denna show är tribal. Både musiken och sminket får oss att känna oss som vikingar och magiker.
+    Temat för denna show är tribal. Både musiken och sminket får oss att känna oss som vikingar och magiker.
     <br><br> 
-    Vi rör oss både var för sig och möts i partertricks. Denna show är flytande och dynamisk med smidiga övergångar och hela tiden något nytt och spännande. Vi har färdig musik till denna show.
+    Vi rör oss både var för sig och möts i partnertricks. Denna show är flytande och dynamisk med smidiga övergångar och hela tiden något nytt och spännande. Vi har färdig musik till denna show.
 </p>
 </InfoBox>
 

@@ -54,7 +54,7 @@
 		gap: 20px;
 		align-items: center;
 		max-width: 90vw;
-		width: 400px;
+		width: 500px;
 		margin: 50px auto;
 	}
 

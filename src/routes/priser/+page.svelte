@@ -47,7 +47,7 @@
 
 <h2 class="h2-title">Paketpriser</h2>
 
-<p class="undertitle">Nedan är exepmel på paket. <br> Andra kan skapas vid förfrågan</p>
+<p class="undertitle">Nedan är exempel på paket. <br> Andra kan skapas vid förfrågan</p>
 
 <div class="price-container">
     <p><span>Duoshow + <br> Prova på flowarts</span><span>11 000 kr</span></p>

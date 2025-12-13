@@ -36,7 +36,7 @@
   });
 </script>
 
-<section class="relative w-full h-[83vh] overflow-hidden">
+<section class="relative w-full h-[90vh] overflow-hidden">
   <!-- Video background -->
   <!-- <video
     class="absolute top-0 left-0 w-full h-full object-cover"
@@ -67,7 +67,7 @@
   <div class="absolute inset-0 flex flex-col justify-between items-center text-white px-4">
     <!-- Top heading -->
     <div class="mt-12 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold">Underhållning till</h1>
+      <h1 class="text-4xl md:text-6xl font-bold mt-[50px]">Underhållning till</h1>
 
       <div class="relative w-screen h-16 overflow-hidden mt-4">
         {#each duplicatedHeadlines as text, index}

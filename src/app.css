@@ -41,7 +41,7 @@ p, .undertitle{
 .h1-title{
    font-weight: 700;
    text-align: center;
-   margin: 50px 0 10px 0;
+   margin: 100px 0 10px 0;
    font-size: 35px;
 }
 
@@ -70,7 +70,7 @@ p, .undertitle{
 
 .custom-button {
     background: #4C1B00;
-    background: linear-gradient(97deg,rgba(76, 27, 0, 1) 0%, rgba(178, 63, 0, 1) 100%);
+    background: linear-gradient(128deg,rgba(178, 63, 0, 1) 0%, rgba(76, 27, 0, 1) 100%);
     color: rgb(236, 236, 236);
     transition: 0.3s ease, transform 0.2s ease;
 
@@ -97,4 +97,8 @@ p, .undertitle{
 
 .card-bg {
 	background: linear-gradient(97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
+}
+
+.rund-kant{
+    border-radius: 2px;
 }

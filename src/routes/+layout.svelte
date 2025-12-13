@@ -16,14 +16,10 @@
   <Navigation />
 
   <!-- Content -->
-  <main class="flex-1">
+  <main class="flex-1 padding-top">
 	{@render children?.()}  
 </main>
 
 <Footer />
 
 </div>
-
-
-
-
