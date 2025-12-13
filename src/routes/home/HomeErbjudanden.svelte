@@ -10,7 +10,7 @@
 	import Button from '$lib/assets/button.svelte';
 </script>
 
-<section class="marginal-bott flex w-full flex-col items-center md:px-0">
+<section class="flex w-full flex-col items-center md:px-0">
 	<!-- Semerubrik / bold text -->
 	<p class="undertitle">
 		Proffsiga och välkoreograferade eldshower med dans och teknik med känsla av kraft, lek och flow
@@ -90,7 +90,4 @@
 	background: linear-gradient(97deg, rgb(122 95 90) 0%, rgb(115 38 38) 100%);
 	}
 
-	.marginal-bott{
-		/* margin-bottom: 50px; */
-	}
 </style>
