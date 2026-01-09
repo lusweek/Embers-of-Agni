@@ -24,7 +24,7 @@
     { label: "Vi är Embers of Agni", href: "/om_oss" },
     { label: "Bilder", href: "/Media" },
     { label: "Info innan bokning", href: "/info_innan_bokning" },
-    { label: "Priser & bokning", href: "/priser" },
+    // { label: "Priser & bokning", href: "/priser" },
     { label: "Kontakta oss", href: "/kontakta_oss" }
   ];
 

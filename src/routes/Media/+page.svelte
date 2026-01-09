@@ -80,7 +80,6 @@
         grid-template-columns: 1fr 1fr;
         align-items: center;
         gap: 20px;
-        width: 700px;
         max-width: 80vw;
         margin: auto;
     }
