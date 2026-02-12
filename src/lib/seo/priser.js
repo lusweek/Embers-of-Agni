@@ -10,7 +10,7 @@ export const priser =
   "description": "Se priser och boka eldshower eller flowartsworkshops.",
   "offers": {
     "@type": "Offer",
-    "url": "https://embersofagni.se/priser",
+    "url": "https://embersofagni.se/bokning",
     "priceCurrency": "SEK"
   }
 }

@@ -29,7 +29,7 @@
 	<img src={seMer4} alt="Elin gör en pose med eldfacklor" loading="lazy" on:click={() => openImage(seMer4)} />
 
 	<div class="button">
-		<Button href="/Media" label="Se fler bilder och videos" />
+		<Button href="/Media" label="Se fler bilder" />
 	</div>
 </section>
 

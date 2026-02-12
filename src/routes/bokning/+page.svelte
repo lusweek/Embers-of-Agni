@@ -17,23 +17,22 @@
 </svelte:head>
 
 <!-- Titel + undertitel -->
-<h1 class="h1-title">Priser & bokning</h1>
+<h1 class="h1-title">Bokning</h1>
 
 <p class="undertitle"></p>
 
 <Devider />
 
-<h2 class="h2-title">Priser</h2>
+<!-- HAR KOMMENTERAT UT ALLT SOM HANDLAR OM PRISER -->
 
-<div class="price-container">
+<!-- <h2 class="h2-title">Priser</h2> -->
+
+<!-- <div class="price-container">
     <p><span>Duoshow eld med tema</span><span>10 000 kr</span></p>
     <Devider width="100%" margin = "0" />
     
     <p><span>Duoshow eld</span><span>6 000 kr</span></p>
     <Devider width="100%" margin = "0" />
-    
-    <!-- <p><span>Duoshow LED</span><span>4 000 kr</span></p>
-    <Devider width="100%" margin = "0" /> -->
     
     <p><span>Soloshow eld</span><span>4 000 kr</span></p>
     <Devider width="100%" margin = "0" />
@@ -74,11 +73,10 @@
     <p><span>5 Duoshower + <br> 5 Prova på flowarts</span><span>35 000 kr</span></p>
     <Devider width="100%" margin="0" />
 
-</div>
+</div> -->
 
-<h2 class="h2-title w-[400px]">Boka här</h2>
-<p class="undertitle">Skicka ett meddelande, vi hör vi av oss inom kort. 
-<br><br>
+<h2 class="h2-title w-[400px]">Skicka ett meddelande så hör vi av oss inom kort</h2>
+<p class="undertitle">
 Läs gärna igenom <a class="link-decoration" href="/info_innan_bokning">info innan bokning</a> först.
 </p>
 
