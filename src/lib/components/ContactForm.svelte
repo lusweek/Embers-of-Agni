@@ -155,7 +155,7 @@
     background: none;
     border: none;
     color: var(--text-secondary);
-    font-family: 'Crimson Pro', serif;
+    font-family: 'EB Garamond', serif;
     font-size: 0.9rem;
     cursor: pointer;
     padding: 0;

@@ -1,39 +1,18 @@
 <script>
   import { t } from '$lib/i18n.svelte.js';
   import heroImg from '$lib/images/home/hero.webp';
-
-  const videoId = 'yyTSYqBIXRQ';
 </script>
 
 <section id="hero" class="hero">
-  <!-- Background video -->
-  <div class="video-bg" aria-hidden="true">
-    <iframe
-      src="https://www.youtube.com/embed/{videoId}?autoplay=1&mute=1&loop=1&playlist={videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3"
-      title=""
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen
-    ></iframe>
-  </div>
+  <img src={heroImg} alt="" class="hero-bg" aria-hidden="true" />
+  <div class="hero-border" aria-hidden="true"></div>
 
-  <!-- Fallback image -->
-  <img
-    src={heroImg}
-    alt=""
-    class="hero-fallback"
-    aria-hidden="true"
-  />
-
-  <!-- Cinematic vignette overlays -->
-  <div class="vignette-radial" aria-hidden="true"></div>
-  <div class="vignette-bottom" aria-hidden="true"></div>
-
-  <!-- Content: bottom-aligned -->
   <div class="hero-content">
-    <h1 class="text-glow">{t('hero.title')}</h1>
+    <h1 class="hero-title"><span class="first-letter">E</span>mbers<br/>of Agni</h1>
     <p class="hero-subtitle">{t('hero.subtitle')}</p>
   </div>
+
+  <div class="hero-descend" aria-hidden="true">↓</div>
 </section>
 
 <style>
@@ -41,71 +20,69 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-  }
-
-  .video-bg {
-    position: absolute;
-    inset: 0;
     overflow: hidden;
-    pointer-events: none;
   }
 
-  .video-bg iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120vw;
-    height: 120vh;
-    min-width: 177.78vh;
-    min-height: 56.25vw;
-    transform: translate(-50%, -50%);
-    border: 0;
-  }
-
-  .hero-fallback {
+  .hero-bg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    opacity: 0.15;
+    z-index: 0;
   }
 
-  .vignette-radial {
+  .hero-border {
     position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, transparent 30%, rgba(8,6,4,0.7) 100%);
+    inset: 1.5rem;
+    border: 1px solid rgba(196,84,26,0.15);
     pointer-events: none;
-  }
-
-  .vignette-bottom {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(8,6,4,0.85) 90%, var(--bg-deep) 100%);
-    pointer-events: none;
+    z-index: 1;
   }
 
   .hero-content {
     position: relative;
-    z-index: 10;
+    z-index: 2;
     text-align: center;
-    padding: 0 1.5rem 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+  }
+
+  .first-letter {
+    color: var(--flame);
+    animation: gentle-glow 4s ease-in-out infinite;
   }
 
   .hero-subtitle {
-    font-family: 'Cinzel', serif;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
     font-size: clamp(1rem, 2vw, 1.4rem);
-    color: var(--text-accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 400;
+    color: var(--stone);
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+
+  .hero-descend {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: var(--stone);
+    animation: breathe 3s ease-in-out infinite;
+    z-index: 2;
   }
 </style>

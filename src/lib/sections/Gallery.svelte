@@ -1,13 +1,12 @@
 <script>
   import { t } from '$lib/i18n.svelte.js';
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-  import SectionDivider from '$lib/components/SectionDivider.svelte';
   import Lightbox from '$lib/components/Lightbox.svelte';
 
   const allModules = import.meta.glob('$lib/images/bilder/*.webp', { eager: true });
   const allImages = Object.entries(allModules).map(([path, mod]) => ({
     src: mod.default,
-    alt: 'Embers of Agni eldshow',
+    alt: 'Embers of Agni',
   }));
 
   const step = Math.max(1, Math.floor(allImages.length / 12));
@@ -27,21 +26,15 @@
     <h2 class="section-title">{t('gallery.title')}</h2>
   </ScrollReveal>
 
-  <SectionDivider />
-
   <ScrollReveal>
     <div class="gallery-grid">
       {#each images as image, i}
         <button
           class="gallery-item"
           onclick={() => openLightbox(i)}
-          aria-label="Visa bild {i + 1}"
+          aria-label="View image {i + 1}"
         >
-          <img
-            src={image.src}
-            alt={image.alt}
-            loading="lazy"
-          />
+          <img src={image.src} alt={image.alt} loading="lazy" />
         </button>
       {/each}
     </div>
@@ -56,9 +49,9 @@
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
+    gap: 1px;
     max-width: 80rem;
-    margin: 1rem auto 0;
+    margin: 2rem auto 0;
   }
 
   .gallery-item {

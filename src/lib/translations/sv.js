@@ -8,92 +8,71 @@ export const sv = {
   },
   hero: {
     title: 'Embers of Agni',
-    subtitle: 'Eldshow & Flowarts',
+    subtitle: 'Vi uppträder inte. Vi åkallar.',
+  },
+  runeBand: {
+    text: '✦ ELD ✦ RITUAL ✦ FLOWARTS ✦ EMBERS OF AGNI ✦ FIRE ✦ CEREMONI ✦ ',
   },
   services: {
-    title: 'Våra shower',
+    title: 'Riterna',
     duoshow: {
       title: 'Duoshow',
-      description: 'En kraftfull och synkroniserad eldshow med två artister. Perfekt för större event och tillställningar.',
-      details: 'Vår duoshow är en visuellt slående upplevelse där två artister samspelar med eld och musik. Showen kan anpassas efter ert events tema och inkluderar professionell utrustning, säkerhetsutrustning och brandvakt. Längd: ca 15–25 minuter.',
+      symbol: 'II',
+      tag: 'Två kroppar, en eld',
+      description: 'Synkroniserad eldshow. Två artister som rör sig som en kraft — för event som kräver spektakel.',
     },
     soloshow: {
       title: 'Soloshow',
-      description: 'En intim och fascinerande show med en artist. Idealisk för mindre event och privata fester.',
-      details: 'Vår soloshow erbjuder en personlig och gripande upplevelse. En artist uppträder med ett urval av eldredskap till musik. Perfekt för privata fester, bröllop och mindre företagsevent. Inkluderar all utrustning och säkerhet. Längd: ca 10–20 minuter.',
+      symbol: 'I',
+      tag: 'En artist, total närvaro',
+      description: 'En enda utövare som behärskar eld och rum. Intimt, intensivt, oförglömligt.',
     },
     workshop: {
-      title: 'Prova på Flowarts',
-      description: 'En interaktiv workshop där era gäster får testa poi, stavar och andra flowarts-redskap.',
-      details: 'Låt era gäster prova på flowarts! Vi tar med LED-redskap och guidar alla deltagare genom grunderna i poi, stavar och ringar. Passar alla åldrar och kräver ingen förkunskap. En uppskattad aktivitet för teambuilding, festivaler och fester. Längd: 30–60 minuter.',
+      title: 'Flowarts-invigning',
+      symbol: '◯',
+      tag: 'Era gäster blir elden',
+      description: 'Praktisk workshop med poi, stavar och ringar. LED-redskap, ingen erfarenhet krävs. Alla åldrar.',
     },
   },
   gallery: {
-    title: 'Se oss i aktion',
+    title: 'Arkiv',
   },
   about: {
-    title: 'Om oss',
-    story: 'Vi är Lukas och Elin — två passionerade eldartister som tillsammans bildar Embers of Agni. Vår resa började med en gemensam kärlek till flowarts och scenkonstens magi. Sedan dess har vi uppträtt på allt från intima bröllop till stora festivaler, alltid med målet att skapa oförglömliga ögonblick.',
-    stats: {
-      experience: '7+ års erfarenhet',
-      coverage: 'Hela Sverige',
-      shows: '100+ föreställningar',
-    },
+    title: 'Stammen',
+    manifesto: 'Vi är inte underhållare. Vi är väktare av en uråldrig dialog mellan mänskliga kroppar och öppen eld.',
     lukas: {
       name: 'Lukas',
       specialty: 'Stavar & Poi',
-      bio: 'Lukas har fascinerats av eld sedan barnsben och har ägnat år åt att förfina sin konst med stavar och poi. Hans energiska stil och tekniska precision gör varje show till en upplevelse.',
     },
     elin: {
       name: 'Elin',
       specialty: 'Poi & Rockring',
-      bio: 'Elin kombinerar dans med flowarts och skapar ett uttrycksfullt och hypnotiskt uppträdande. Med poi och rockring som sina huvudredskap skapar hon visuella mönster som fängslar publiken.',
     },
   },
   testimonials: {
-    title: 'Vad våra kunder säger',
     items: [
       {
-        quote: 'Embers of Agni gjorde vår firmafest till årets höjdpunkt! Alla gäster var helt hänförda av eldshow.',
+        quote: 'Embers of Agni gjorde vår firmafest till årets höjdpunkt. Alla gäster var helt hänförda.',
         name: 'Anna',
         event: 'Företagsevent',
       },
       {
         quote: 'En magisk upplevelse på vårt bröllop. Lukas och Elin överträffade alla förväntningar.',
         name: 'Marcus',
-        event: 'Bröllopsfest',
+        event: 'Bröllop',
       },
       {
-        quote: 'Publikens reaktion var fantastisk! En perfekt avslutning på festivalkvällen.',
+        quote: 'Publikens reaktion var overklig. En perfekt avslutning på festivalkvällen.',
         name: 'Sofia',
         event: 'Festival',
       },
     ],
   },
-  practicalInfo: {
-    title: 'Praktisk info',
-    items: [
-      {
-        title: 'Bäst i skymning/mörker',
-        description: 'Eldshower gör sig allra bäst när det är mörkt ute — perfekt för kvällsevent.',
-      },
-      {
-        title: '6×6m / 7×7m yta',
-        description: 'Soloshow kräver minst 6×6m, duoshow 7×7m fri yta för säker framförande.',
-      },
-      {
-        title: 'Brandvakt & säkerhet',
-        description: 'Vi medför alltid egen brandvakt och all nödvändig säkerhetsutrustning.',
-      },
-      {
-        title: 'Eget PA-system',
-        description: 'Vi har eget PA-system med musik — ni behöver inte ordna ljud.',
-      },
-    ],
-  },
   contact: {
-    title: 'Boka er show',
-    subtitle: 'Berätta om ert event så återkommer vi med ett förslag.',
+    title: 'Åkalla',
+    subtitle: 'Berätta om ert event.',
+    cta: 'Träd in i elden',
+    ctaConfirm: 'Är ni redo?',
     form: {
       name: 'Namn',
       email: 'E-post',
@@ -115,17 +94,18 @@ export const sv = {
       },
       submit: 'Skicka förfrågan',
       sending: 'Skickar...',
-      success: 'Tack! Vi återkommer inom kort.',
+      success: 'Tack. Vi finner er.',
       error: 'Något gick fel. Försök igen eller kontakta oss direkt.',
     },
     info: {
       phone: '073 854 64 07',
       email: 'embersofagni@gmail.com',
       instagram: '@embersofagni',
-      coverage: 'Vi täcker hela Sverige',
+      coverage: 'Hela Sverige',
     },
   },
   footer: {
+    tagline: 'Eld är det äldsta språket',
     copyright: '© 2026 Embers of Agni',
     backToTop: 'Till toppen',
   },

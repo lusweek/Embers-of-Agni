@@ -8,92 +8,71 @@ export const en = {
   },
   hero: {
     title: 'Embers of Agni',
-    subtitle: 'Fire Show & Flowarts',
+    subtitle: 'We do not perform. We invoke.',
+  },
+  runeBand: {
+    text: '✦ FIRE ✦ RITUAL ✦ FLOWARTS ✦ EMBERS OF AGNI ✦ ELD ✦ CEREMONY ✦ ',
   },
   services: {
-    title: 'Our shows',
+    title: 'The Rites',
     duoshow: {
       title: 'Duo Show',
-      description: 'A powerful and synchronized fire show with two artists. Perfect for larger events and celebrations.',
-      details: 'Our duo show is a visually stunning experience where two artists interact with fire and music. The show can be customized to match your event\'s theme and includes professional equipment, safety gear, and a fire guard. Duration: approx. 15–25 minutes.',
+      symbol: 'II',
+      tag: 'Two bodies, one flame',
+      description: 'Synchronized fire. Two artists moving as one force — for events that demand spectacle.',
     },
     soloshow: {
       title: 'Solo Show',
-      description: 'An intimate and mesmerizing show with one artist. Ideal for smaller events and private parties.',
-      details: 'Our solo show offers a personal and captivating experience. One artist performs with a selection of fire props to music. Perfect for private parties, weddings, and smaller corporate events. Includes all equipment and safety. Duration: approx. 10–20 minutes.',
+      symbol: 'I',
+      tag: 'One artist, total presence',
+      description: 'A single performer commanding fire and space. Intimate, intense, unforgettable.',
     },
     workshop: {
-      title: 'Try Flowarts',
-      description: 'An interactive workshop where your guests get to try poi, staffs, and other flowarts props.',
-      details: 'Let your guests try flowarts! We bring LED props and guide all participants through the basics of poi, staffs, and hoops. Suitable for all ages with no prior experience needed. A popular activity for team building, festivals, and parties. Duration: 30–60 minutes.',
+      title: 'Flowarts Initiation',
+      symbol: '◯',
+      tag: 'Your guests become the fire',
+      description: 'Hands-on with poi, staffs, and hoops. LED props, no experience needed. All ages.',
     },
   },
   gallery: {
-    title: 'See us in action',
+    title: 'Archive',
   },
   about: {
-    title: 'About us',
-    story: 'We are Lukas and Elin — two passionate fire artists who together form Embers of Agni. Our journey began with a shared love for flowarts and the magic of performing arts. Since then, we\'ve performed at everything from intimate weddings to large festivals, always aiming to create unforgettable moments.',
-    stats: {
-      experience: '7+ years of experience',
-      coverage: 'All of Sweden',
-      shows: '100+ performances',
-    },
+    title: 'The Tribe',
+    manifesto: 'We are not entertainers. We are keepers of an ancient conversation between human bodies and open flame.',
     lukas: {
       name: 'Lukas',
       specialty: 'Staffs & Poi',
-      bio: 'Lukas has been fascinated by fire since childhood and has spent years refining his craft with staffs and poi. His energetic style and technical precision make every show an experience.',
     },
     elin: {
       name: 'Elin',
       specialty: 'Poi & Hoop',
-      bio: 'Elin combines dance with flowarts, creating an expressive and hypnotic performance. With poi and hoop as her main props, she creates visual patterns that captivate the audience.',
     },
   },
   testimonials: {
-    title: 'What our clients say',
     items: [
       {
-        quote: 'Embers of Agni made our corporate party the highlight of the year! All guests were completely captivated by the fire show.',
+        quote: 'Embers of Agni made our corporate party the highlight of the year. Every guest was completely captivated.',
         name: 'Anna',
         event: 'Corporate event',
       },
       {
         quote: 'A magical experience at our wedding. Lukas and Elin exceeded all expectations.',
         name: 'Marcus',
-        event: 'Wedding reception',
+        event: 'Wedding',
       },
       {
-        quote: 'The audience reaction was amazing! A perfect ending to the festival evening.',
+        quote: 'The audience reaction was unreal. A perfect ending to the festival night.',
         name: 'Sofia',
         event: 'Festival',
       },
     ],
   },
-  practicalInfo: {
-    title: 'Practical info',
-    items: [
-      {
-        title: 'Best at dusk/dark',
-        description: 'Fire shows look their best when it\'s dark outside — perfect for evening events.',
-      },
-      {
-        title: '6×6m / 7×7m area',
-        description: 'Solo show requires at least 6×6m, duo show 7×7m of clear area for safe performance.',
-      },
-      {
-        title: 'Fire guard & safety',
-        description: 'We always bring our own fire guard and all necessary safety equipment.',
-      },
-      {
-        title: 'Own PA system',
-        description: 'We have our own PA system with music — you don\'t need to arrange sound.',
-      },
-    ],
-  },
   contact: {
-    title: 'Book your show',
-    subtitle: 'Tell us about your event and we\'ll get back to you with a proposal.',
+    title: 'Summon',
+    subtitle: 'Tell us about your event.',
+    cta: 'Enter the Fire',
+    ctaConfirm: 'Are you certain?',
     form: {
       name: 'Name',
       email: 'Email',
@@ -115,17 +94,18 @@ export const en = {
       },
       submit: 'Send inquiry',
       sending: 'Sending...',
-      success: 'Thank you! We\'ll get back to you shortly.',
+      success: 'Thank you. We will find you.',
       error: 'Something went wrong. Try again or contact us directly.',
     },
     info: {
       phone: '073 854 64 07',
       email: 'embersofagni@gmail.com',
       instagram: '@embersofagni',
-      coverage: 'We cover all of Sweden',
+      coverage: 'All of Sweden',
     },
   },
   footer: {
+    tagline: 'Fire is the oldest language',
     copyright: '© 2026 Embers of Agni',
     backToTop: 'Back to top',
   },

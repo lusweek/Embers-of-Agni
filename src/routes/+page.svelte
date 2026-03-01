@@ -1,7 +1,9 @@
 <script>
   import { homePage } from '$lib/seo/homePage.js';
+  import { t } from '$lib/i18n.svelte.js';
 
   import Hero from '$lib/sections/Hero.svelte';
+  import RuneBand from '$lib/components/RuneBand.svelte';
   import Services from '$lib/sections/Services.svelte';
   import Gallery from '$lib/sections/Gallery.svelte';
   import About from '$lib/sections/About.svelte';
@@ -16,8 +18,11 @@
 </svelte:head>
 
 <Hero />
+<RuneBand text={t('runeBand.text')} />
 <Services />
 <Gallery />
+<RuneBand text={t('runeBand.text')} reverse={true} />
 <About />
 <Contact />
+<RuneBand text={t('runeBand.text')} reverse={true} />
 <Footer />

@@ -1,10 +1,11 @@
 <script>
   import { t } from '$lib/i18n.svelte.js';
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-  import SectionDivider from '$lib/components/SectionDivider.svelte';
-  import ossImg from '$lib/images/om_oss/oss_1.webp';
-  import lukasImg from '$lib/images/om_oss/lukas_1_small.webp';
-  import elinImg from '$lib/images/om_oss/elin_1_small.webp';
+
+  const performers = [
+    { key: 'lukas' },
+    { key: 'elin' },
+  ];
 </script>
 
 <section id="about" class="section-padding">
@@ -12,186 +13,123 @@
     <h2 class="section-title">{t('about.title')}</h2>
   </ScrollReveal>
 
-  <SectionDivider />
-
   <div class="about-layout">
-    <!-- Image / Text split -->
+    <!-- Manifesto -->
     <ScrollReveal>
-      <div class="about-split">
-        <div class="about-image">
-          <img src={ossImg} alt="Embers of Agni" />
-        </div>
-        <div class="about-text">
-          <p class="story">{t('about.story')}</p>
+      <blockquote class="manifesto">
+        <p>{t('about.manifesto')}</p>
+      </blockquote>
+    </ScrollReveal>
 
-          <!-- Static stats -->
-          <div class="stats-row">
-            <span class="stat">{t('about.stats.experience')}</span>
-            <span class="stat-dot"></span>
-            <span class="stat">{t('about.stats.coverage')}</span>
-            <span class="stat-dot"></span>
-            <span class="stat">{t('about.stats.shows')}</span>
+    <!-- Tribe grid -->
+    <ScrollReveal>
+      <div class="tribe-grid">
+        {#each performers as performer}
+          <div class="tribe-member">
+            <h3 class="member-name">{t(`about.${performer.key}.name`)}</h3>
+            <span class="member-craft">{t(`about.${performer.key}.specialty`)}</span>
           </div>
-
-          <!-- Testimonial blockquote -->
-          <blockquote class="testimonial-quote">
-            <p>"{t('testimonials.items')[0].quote}"</p>
-            <cite>— {t('testimonials.items')[0].name}, {t('testimonials.items')[0].event}</cite>
-          </blockquote>
-        </div>
+        {/each}
       </div>
     </ScrollReveal>
 
-    <!-- Performer photos -->
+    <!-- Testimonial saga -->
     <ScrollReveal>
-      <div class="performers">
-        <div class="performer">
-          <img src={lukasImg} alt={t('about.lukas.name')} />
-          <div class="performer-info">
-            <h3>{t('about.lukas.name')}</h3>
-            <span class="performer-specialty">{t('about.lukas.specialty')}</span>
-          </div>
-        </div>
-        <div class="performer">
-          <img src={elinImg} alt={t('about.elin.name')} />
-          <div class="performer-info">
-            <h3>{t('about.elin.name')}</h3>
-            <span class="performer-specialty">{t('about.elin.specialty')}</span>
-          </div>
-        </div>
-      </div>
+      <blockquote class="saga">
+        <p>"{t('testimonials.items')[0].quote}"</p>
+        <cite>— {t('testimonials.items')[0].name}, {t('testimonials.items')[0].event}</cite>
+      </blockquote>
     </ScrollReveal>
   </div>
 </section>
 
 <style>
   .about-layout {
-    max-width: 72rem;
-    margin: 1rem auto 0;
+    max-width: 56rem;
+    margin: 2rem auto 0;
   }
 
-  .about-split {
+  .manifesto {
+    margin: 0 0 4rem;
+    padding: 0;
+    border: none;
+    text-align: center;
+  }
+
+  .manifesto p {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    line-height: 1.6;
+    color: var(--bone);
+  }
+
+  .tribe-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    margin-bottom: 4rem;
   }
 
-  .about-image {
-    border-radius: 2px;
-    overflow: hidden;
+  .tribe-member {
+    background: var(--ash);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: background 0.3s ease;
+    cursor: default;
   }
 
-  .about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 4/5;
+  .tribe-member:hover {
+    background: var(--iron);
   }
 
-  .about-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .tribe-member:hover .member-name {
+    color: var(--flame);
   }
 
-  .story {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    line-height: 1.8;
+  .tribe-member:hover::after {
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: 1.5rem;
+    background: linear-gradient(90deg, transparent, var(--flame), transparent);
   }
 
-  .stats-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .stat {
+  .member-name {
     font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-accent);
+    letter-spacing: 0.1em;
+    color: var(--bone);
+    transition: color 0.3s ease;
+    margin-bottom: 0.5rem;
   }
 
-  .stat-dot {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: var(--text-secondary);
-    flex-shrink: 0;
+  .member-craft {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--stone);
   }
 
-  .testimonial-quote {
-    border-left: 3px solid var(--ember);
-    padding-left: 1.5rem;
+  .saga {
+    border-left: 2px solid var(--flame);
+    padding-left: 2rem;
     margin: 0;
   }
 
-  .testimonial-quote p {
+  .saga p {
+    font-family: 'EB Garamond', serif;
     font-style: italic;
-    color: var(--text-primary);
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     line-height: 1.7;
+    color: var(--bone);
     margin: 0 0 0.75rem;
   }
 
-  .testimonial-quote cite {
+  .saga cite {
     font-style: normal;
     font-size: 0.85rem;
-    color: var(--text-secondary);
-  }
-
-  .performers {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-top: 4rem;
-  }
-
-  .performer {
-    position: relative;
-    overflow: hidden;
-    border-radius: 2px;
-  }
-
-  .performer img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    display: block;
-  }
-
-  .performer-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem;
-    background: linear-gradient(to top, rgba(8,6,4,0.9) 0%, transparent 100%);
-  }
-
-  .performer-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .performer-specialty {
-    font-family: 'Crimson Pro', serif;
-    font-size: 0.9rem;
-    color: var(--text-accent);
-  }
-
-  @media (max-width: 768px) {
-    .about-split {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .stats-row {
-      justify-content: center;
-    }
+    color: var(--stone);
   }
 </style>

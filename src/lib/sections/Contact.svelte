@@ -1,95 +1,105 @@
 <script>
-  import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-  import SectionDivider from '$lib/components/SectionDivider.svelte';
-  import ContactForm from '$lib/components/ContactForm.svelte';
   import { t } from '$lib/i18n.svelte.js';
+  import ScrollReveal from '$lib/components/ScrollReveal.svelte';
+  import ContactForm from '$lib/components/ContactForm.svelte';
+
+  let ctaState = $state('idle'); // 'idle' | 'confirm' | 'open'
+
+  function handleCta() {
+    if (ctaState === 'idle') {
+      ctaState = 'confirm';
+    } else if (ctaState === 'confirm') {
+      ctaState = 'open';
+    }
+  }
 </script>
 
 <section id="contact" class="section-padding">
   <ScrollReveal>
     <h2 class="section-title">{t('contact.title')}</h2>
-    <p class="contact-subtitle">{t('contact.subtitle')}</p>
   </ScrollReveal>
 
-  <SectionDivider />
-
   <div class="contact-layout">
-    <ScrollReveal>
-      <ContactForm />
-    </ScrollReveal>
+    {#if ctaState !== 'open'}
+      <div class="cta-zone">
+        <button class="btn-summon" onclick={handleCta}>
+          {ctaState === 'idle' ? t('contact.cta') : t('contact.ctaConfirm')}
+        </button>
+      </div>
+    {:else}
+      <ScrollReveal>
+        <div class="form-zone">
+          <p class="contact-subtitle">{t('contact.subtitle')}</p>
+          <ContactForm />
+        </div>
+      </ScrollReveal>
+    {/if}
 
     <ScrollReveal>
       <div class="contact-info">
-        <div class="info-item">
-          <span class="info-label">{t('contact.form.phone')}</span>
-          <span class="info-value">{t('contact.info.phone')}</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">{t('contact.form.email')}</span>
-          <a href="mailto:embersofagni@gmail.com" class="info-value">{t('contact.info.email')}</a>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Instagram</span>
-          <a href="https://www.instagram.com/embersofagni" target="_blank" rel="noopener noreferrer" class="info-value">{t('contact.info.instagram')}</a>
-        </div>
-        <div class="info-item">
-          <span class="info-label">{t('about.stats.coverage').split(' ')[0]}</span>
-          <span class="info-value">{t('contact.info.coverage')}</span>
-        </div>
+        <a href="mailto:embersofagni@gmail.com" class="info-link">{t('contact.info.email')}</a>
+        <span class="info-sep">·</span>
+        <a href="tel:+46738546407" class="info-link">{t('contact.info.phone')}</a>
+        <span class="info-sep">·</span>
+        <a href="https://www.instagram.com/embersofagni" target="_blank" rel="noopener noreferrer" class="info-link">{t('contact.info.instagram')}</a>
+        <span class="info-sep">·</span>
+        <span class="info-coverage">{t('contact.info.coverage')}</span>
       </div>
     </ScrollReveal>
   </div>
 </section>
 
 <style>
-  .contact-subtitle {
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 0;
+  .contact-layout {
+    max-width: 40rem;
+    margin: 2rem auto 0;
   }
 
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 64rem;
-    margin: 1rem auto 0;
+  .cta-zone {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0;
+  }
+
+  .form-zone {
+    margin-bottom: 3rem;
+  }
+
+  .contact-subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
   }
 
   .contact-info {
     display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    padding-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
   }
 
-  .info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+  .info-link {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--stone);
+    transition: color 0.2s ease;
   }
 
-  .info-label {
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-accent);
+  .info-link:hover {
+    color: var(--flame);
   }
 
-  .info-value {
-    color: var(--text-primary);
-    font-size: 1.05rem;
+  .info-sep {
+    color: var(--smoke);
+    font-size: 0.8rem;
   }
 
-  a.info-value:hover {
-    color: var(--ember-glow);
-  }
-
-  @media (max-width: 768px) {
-    .contact-layout {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
+  .info-coverage {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--stone);
   }
 </style>

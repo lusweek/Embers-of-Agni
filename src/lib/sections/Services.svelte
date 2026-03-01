@@ -1,15 +1,11 @@
 <script>
   import { t } from '$lib/i18n.svelte.js';
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-  import SectionDivider from '$lib/components/SectionDivider.svelte';
-  import duoshowImg from '$lib/images/eldshower/duoshow.webp';
-  import soloshowImg from '$lib/images/eldshower/soloshow.webp';
-  import workshopImg from '$lib/images/Prova på flowarts/prova_pa_flowarts.webp';
 
   const services = [
-    { imgGetter: () => duoshowImg, titleKey: 'services.duoshow.title', descKey: 'services.duoshow.description', detailsKey: 'services.duoshow.details' },
-    { imgGetter: () => soloshowImg, titleKey: 'services.soloshow.title', descKey: 'services.soloshow.description', detailsKey: 'services.soloshow.details' },
-    { imgGetter: () => workshopImg, titleKey: 'services.workshop.title', descKey: 'services.workshop.description', detailsKey: 'services.workshop.details' },
+    { key: 'duoshow' },
+    { key: 'soloshow' },
+    { key: 'workshop' },
   ];
 </script>
 
@@ -18,135 +14,100 @@
     <h2 class="section-title">{t('services.title')}</h2>
   </ScrollReveal>
 
-  <SectionDivider />
-
-  <div class="services-list">
-    {#each services as service, i}
+  <div class="rites-list">
+    {#each services as service}
       <ScrollReveal>
-        <div class="service-row" class:reverse={i % 2 !== 0}>
-          <div class="service-image">
-            <img src={service.imgGetter()} alt={t(service.titleKey)} loading="lazy" />
-          </div>
-          <div class="service-text">
-            <h3>{t(service.titleKey)}</h3>
-            <p class="service-desc">{t(service.descKey)}</p>
-            <p class="service-details">{t(service.detailsKey)}</p>
-          </div>
+        <div class="rite-row">
+          <span class="rite-symbol">{t(`services.${service.key}.symbol`)}</span>
+          <span class="rite-title">{t(`services.${service.key}.title`)}</span>
+          <span class="rite-tag">{t(`services.${service.key}.tag`)}</span>
         </div>
+        <p class="rite-desc">{t(`services.${service.key}.description`)}</p>
       </ScrollReveal>
     {/each}
   </div>
 
-  <!-- Practical info row -->
-  <ScrollReveal>
-    <div class="practical-row">
-      {#each t('practicalInfo.items') as item}
-        <div class="practical-item">
-          <h3 class="practical-title">{item.title}</h3>
-          <p>{item.description}</p>
-        </div>
-      {/each}
-    </div>
-  </ScrollReveal>
+  <!-- Flame sigil ornament -->
+  <div class="flame-sigil" aria-hidden="true">
+    <svg viewBox="0 0 60 80" width="30" height="40">
+      <path d="M30 0 C30 0 50 30 50 50 C50 65 41 75 30 80 C19 75 10 65 10 50 C10 30 30 0 30 0Z" fill="none" stroke="var(--flame)" stroke-width="1" opacity="0.4"/>
+      <path d="M30 20 C30 20 40 38 40 50 C40 58 35 65 30 68 C25 65 20 58 20 50 C20 38 30 20 30 20Z" fill="none" stroke="var(--flame)" stroke-width="0.5" opacity="0.25"/>
+    </svg>
+  </div>
 </section>
 
 <style>
-  .services-list {
-    max-width: 72rem;
-    margin: 2rem auto 0;
+  .rites-list {
+    max-width: 56rem;
+    margin: 3rem auto 0;
+  }
+
+  .rite-row {
     display: flex;
-    flex-direction: column;
-    gap: 4rem;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: padding-left 0.3s ease, border-color 0.3s ease;
+    cursor: default;
   }
 
-  .service-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+  .rite-row:hover {
+    padding-left: 1rem;
+    border-color: var(--flame);
   }
 
-  .service-row.reverse {
-    direction: rtl;
-  }
-
-  .service-row.reverse > * {
-    direction: ltr;
-  }
-
-  .service-image {
-    overflow: hidden;
-    border-radius: 2px;
-  }
-
-  .service-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 4/3;
-  }
-
-  .service-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .service-text h3 {
-    color: var(--text-accent);
-  }
-
-  .service-desc {
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  .service-details {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .practical-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: 72rem;
-    margin: 5rem auto 0;
-    padding-top: 3rem;
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .practical-item {
-    text-align: center;
-  }
-
-  .practical-title {
+  .rite-symbol {
+    font-family: 'Cinzel', serif;
     font-size: 0.8rem;
-    color: var(--text-accent);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.12em;
+    color: var(--flame);
+    letter-spacing: 0.2em;
+    min-width: 2rem;
   }
 
-  .practical-item p {
-    font-size: 0.9rem;
+  .rite-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bone);
+    flex: 1;
+  }
+
+  .rite-tag {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--stone);
+  }
+
+  .rite-desc {
+    max-width: 40rem;
+    margin: 0.5rem 0 0 3.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 0.95rem;
     line-height: 1.6;
   }
 
+  .flame-sigil {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
   @media (max-width: 768px) {
-    .service-row {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    .rite-row {
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
     }
 
-    .service-row.reverse {
-      direction: ltr;
+    .rite-tag {
+      width: 100%;
+      padding-left: 3.5rem;
     }
 
-    .practical-row {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    .rite-desc {
+      margin-left: 0;
     }
   }
 </style>
