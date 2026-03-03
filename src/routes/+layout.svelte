@@ -1,25 +1,12 @@
 <script>
-	import '../app.css';
-  import Navigation from '$lib/navigation.svelte';
-	import Footer from '$lib/Footer.svelte';
-  import { page } from '$app/stores';
-	
-	let { children } = $props();
-  
+  import '../app.css';
+  import Navbar from '$lib/components/Navbar.svelte';
+  import EmberCanvas from '$lib/components/EmberCanvas.svelte';
+  let { children } = $props();
 </script>
 
-
-
-<div class="min-h-screen flex flex-col">
-
-  <!-- Navigation -->
-  <Navigation />
-
-  <!-- Content -->
-  <main class="flex-1 padding-top">
-	{@render children?.()}  
+<EmberCanvas />
+<Navbar />
+<main>
+  {@render children()}
 </main>
-
-<Footer />
-
-</div>

@@ -1,27 +1,28 @@
 <script>
-    import { homePage } from "$lib/seo/homePage.js";
+  import { homePage } from '$lib/seo/homePage.js';
+  import { t } from '$lib/i18n.svelte.js';
 
-    import VideoSection from './home/VideoSection.svelte';
-    import HomeErbjudandenUtanLed from './home/HomeErbjudandenUtanLed.svelte';
-    import HomeOmOss from './home/HomeOmOss.svelte';
-    import HomeBilder from './home/HomeBilder.svelte';
-
-    
+  import Hero from '$lib/sections/Hero.svelte';
+  import RuneBand from '$lib/components/RuneBand.svelte';
+  import Services from '$lib/sections/Services.svelte';
+  import Gallery from '$lib/sections/Gallery.svelte';
+  import About from '$lib/sections/About.svelte';
+  import Contact from '$lib/sections/Contact.svelte';
+  import Footer from '$lib/sections/Footer.svelte';
 </script>
 
-<!-- SEO -->
 <svelte:head>
-    <title>Eldshow, eldartister & stav, poi och hoop workshop – Embers of Agni</title>
-    <meta name="description" content="Professionella eldshower och inspirerande flowarts-workshops med poi, stav och rockring. Föreställningar och lärande för event och grupper." />
-    <script type="application/ld+json">
-        {JSON.stringify(homePage)}
-    </script>
+  <title>Eldshow, eldartister & flowarts — Embers of Agni</title>
+  <meta name="description" content="Professionella eldshower och flowarts-uppträdanden för bröllop, företagsevent och festivaler i hela Sverige. Boka Embers of Agni." />
+  {@html `<script type="application/ld+json">${JSON.stringify(homePage)}</script>`}
 </svelte:head>
 
-<VideoSection />
-
-<HomeErbjudandenUtanLed />
-
-<HomeOmOss />
-
-<HomeBilder />
+<Hero />
+<RuneBand text={t('runeBand.text')} />
+<Services />
+<Gallery />
+<RuneBand text={t('runeBand.text')} reverse={true} />
+<About />
+<Contact />
+<RuneBand text={t('runeBand.text')} reverse={true} />
+<Footer />
