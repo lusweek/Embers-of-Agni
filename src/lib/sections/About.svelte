@@ -10,7 +10,9 @@
 
 <section id="about" class="section-padding">
   <ScrollReveal>
-    <h2 class="section-title">{t('about.title')}</h2>
+    <a href="/tribe" class="title-link">
+      <h2 class="section-title">{t('about.title')}</h2>
+    </a>
   </ScrollReveal>
 
   <div class="about-layout">
@@ -33,6 +35,12 @@
       </div>
     </ScrollReveal>
 
+    <ScrollReveal>
+      <div class="tribe-link-wrapper">
+        <a href="/tribe" class="tribe-link">{t('nav.lasOmStammen')}</a>
+      </div>
+    </ScrollReveal>
+
     <!-- Testimonial saga -->
     <ScrollReveal>
       <blockquote class="saga">
@@ -44,6 +52,16 @@
 </section>
 
 <style>
+  .title-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .title-link:hover :global(.section-title) {
+    color: var(--flame);
+  }
+
   .about-layout {
     max-width: 56rem;
     margin: 2rem auto 0;
@@ -68,7 +86,26 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1px;
+    margin-bottom: 2rem;
+  }
+
+  .tribe-link-wrapper {
+    text-align: center;
     margin-bottom: 4rem;
+  }
+
+  .tribe-link {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    color: var(--flame);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .tribe-link:hover {
+    color: var(--ember-glow);
   }
 
   .tribe-member {

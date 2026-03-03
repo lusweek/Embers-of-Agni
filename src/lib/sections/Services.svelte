@@ -3,9 +3,9 @@
   import ScrollReveal from '$lib/components/ScrollReveal.svelte';
 
   const services = [
-    { key: 'duoshow' },
-    { key: 'soloshow' },
-    { key: 'workshop' },
+    { key: 'duoshow', slug: 'duoshow' },
+    { key: 'soloshow', slug: 'soloshow' },
+    { key: 'workshop', slug: 'workshop' },
   ];
 </script>
 
@@ -17,12 +17,15 @@
   <div class="rites-list">
     {#each services as service}
       <ScrollReveal>
-        <div class="rite-row">
-          <span class="rite-symbol">{t(`services.${service.key}.symbol`)}</span>
-          <span class="rite-title">{t(`services.${service.key}.title`)}</span>
-          <span class="rite-tag">{t(`services.${service.key}.tag`)}</span>
-        </div>
-        <p class="rite-desc">{t(`services.${service.key}.description`)}</p>
+        <a href="/rites/{service.slug}" class="rite-link">
+          <div class="rite-row">
+            <span class="rite-symbol">{t(`services.${service.key}.symbol`)}</span>
+            <span class="rite-title">{t(`services.${service.key}.title`)}</span>
+            <span class="rite-tag">{t(`services.${service.key}.tag`)}</span>
+          </div>
+          <p class="rite-desc">{t(`services.${service.key}.description`)}</p>
+          <span class="rite-read-more">{t('nav.lasMore')} →</span>
+        </a>
       </ScrollReveal>
     {/each}
   </div>
@@ -42,6 +45,12 @@
     margin: 3rem auto 0;
   }
 
+  .rite-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
   .rite-row {
     display: flex;
     align-items: baseline;
@@ -49,10 +58,9 @@
     padding: 1.25rem 0;
     border-bottom: 1px solid var(--border-subtle);
     transition: padding-left 0.3s ease, border-color 0.3s ease;
-    cursor: default;
   }
 
-  .rite-row:hover {
+  .rite-link:hover .rite-row {
     padding-left: 1rem;
     border-color: var(--flame);
   }
@@ -84,9 +92,25 @@
   .rite-desc {
     max-width: 40rem;
     margin: 0.5rem 0 0 3.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
+  }
+
+  .rite-read-more {
+    display: inline-block;
+    margin-left: 3.5rem;
+    padding-bottom: 1.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone);
+    transition: color 0.2s ease;
+  }
+
+  .rite-link:hover .rite-read-more {
+    color: var(--flame);
   }
 
   .flame-sigil {
@@ -107,6 +131,10 @@
     }
 
     .rite-desc {
+      margin-left: 0;
+    }
+
+    .rite-read-more {
       margin-left: 0;
     }
   }

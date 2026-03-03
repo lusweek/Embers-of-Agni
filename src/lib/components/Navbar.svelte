@@ -1,7 +1,10 @@
 <script>
+  import { page } from '$app/stores';
+  import { t } from '$lib/i18n.svelte.js';
   import LanguageToggle from './LanguageToggle.svelte';
 
   let scrolled = $state(false);
+  let isSubpage = $derived($page.url.pathname !== '/');
 
   $effect(() => {
     function onScroll() {
@@ -13,9 +16,13 @@
   });
 </script>
 
-<header class="navbar" class:scrolled>
+<header class="navbar" class:scrolled class:subpage={isSubpage}>
   <nav class="navbar-inner">
-    <a href="#hero" class="brand">Embers of Agni</a>
+    {#if isSubpage}
+      <a href="/" class="brand">{t('nav.tillbaka')}</a>
+    {:else}
+      <a href="#hero" class="brand">Embers of Agni</a>
+    {/if}
     <LanguageToggle />
   </nav>
 </header>
@@ -34,6 +41,12 @@
   }
 
   .navbar.scrolled {
+    background: var(--bg-elevated);
+    border-bottom-color: var(--border-subtle);
+    opacity: 1;
+  }
+
+  .navbar.subpage {
     background: var(--bg-elevated);
     border-bottom-color: var(--border-subtle);
     opacity: 1;
