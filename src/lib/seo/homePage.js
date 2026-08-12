@@ -1,23 +1,23 @@
 // Homepage
-export const homePage = 
+export const homePage =
 {
   "@context": "https://schema.org",
   "@type": "PerformingGroup",
 
-  "name": "Embers of Agni",
-  "url": "https://embersofagni.se/",
-  "description": "Professionella eldartister som erbjuder eldshower och workshops i flowarts, inklusive stav, poi och rockring, i hela Sverige.",
+  "name": "Vilda Flammor",
+  "url": "https://vildaflammor.se/",
+  "description": "Vilda Flammor bjuder på koreograferad elddans till folkmusik samt workshops i flowarts med stav, poi och rockring, i hela Sverige.",
 
   // När logga är klar:
-  // "logo": "https://embersofagni.se/images/logo.webp",
+  // "logo": "https://vildaflammor.se/images/logo.webp",
 
   "image": [
-    "https://embersofagni.se/images/home/hero.webp"
+    "https://vildaflammor.se/images/home/hero.webp"
   ],
 
   "areaServed": "SE",
   "sameAs": [
-    "https://www.instagram.com/embersofagni"
+    "https://www.instagram.com/vildaflammor"
   ],
 
   "founder": [
@@ -41,7 +41,6 @@ export const homePage =
     "Rockring",
     "Workshop",
     "Elddans",
-    "Cirkuskonst",
-    "LED-show"
+    "Cirkuskonst"
   ]
 }

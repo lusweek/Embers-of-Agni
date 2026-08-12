@@ -13,18 +13,16 @@
 	<script type="application/ld+json">
         {JSON.stringify(provaPaFlowarts)}
     </script>
-	<title>Prova på Flowarts – Workshops & Eldkonst – Embers of Agni</title>
+	<title>Workshops – Prova på Flowarts – Vilda Flammor</title>
 	<meta name="description" content="Prova på flowarts! Lär dig poi, stav, rockring och kreativ rörelse på ett tryggt och roligt sätt. Passar grupper, skolor, event och alla nivåer." />
 </svelte:head>
 
 <!-- Titel + undertitel -->
-<h1 class="h1-title">Prova på flowarts</h1>
+<h1 class="h1-title">Workshops</h1>
 
 <p class="undertitle">Visst ser det roligt ut! Vi lär gärna dig, dina vänner, kollegor, barn och ungdomar. Läs mer här under.</p>
 
 <Devider />
-
-<!-- Duowhow med tema -->
 
 <InfoBox
 title = "Prova på flowarts"
@@ -32,8 +30,9 @@ image = {prova_pa_flowartsImg}
 fetchpriority = "high"
 imageAlt = "Bild på Elin under workshop"
 >
-<p class="paragraf">Vi tar med rockringar, pois och stavar och lär ut hur man kan använda och leka med dessa redskap. Ser vi att någon har bra kontroll kan den personen dessutom få testa med eld (sjävklart i nyktert tillstånd). Passande antal deltagare till detta är upp till 25 personer.</p>
+<p class="paragraf">Vi tar med rockringar, pois och stavar och lär ut hur man kan använda och leka med dessa redskap. Ser vi att någon har bra kontroll kan den personen dessutom få testa med eld (självklart i nyktert tillstånd). Passande antal deltagare till detta är upp till 25 personer.</p>
 <p class="paragraf">Vi lär ut i 90 min och anpassar strukturen efter deltagarna.</p>
+<a class="btn-primary" href="/boka" style="margin-top:12px;">Boka workshop</a>
 </InfoBox>
 
 <Devider />

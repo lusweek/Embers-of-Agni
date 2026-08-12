@@ -1,17 +1,18 @@
 # EGNA ANTECKNINGAR
 
-Jobbar på just nu: 
+Rebrand "Vilda Flammor" (branch: vilda-flammor) — Embers of Agni har fått en ny, komplett design.
 
-- 404 media
+Nytt sedan rebranden:
 
-- Krysset fortfarande för litet i navbaren
+- Nya URL:er (/eldshow, /eldshow/stora-showen, /eldshow/lilla-showen, /workshops, /om-oss, /bibliotek, /info-innan-bokning, /boka). Gamla URL:er redirectar automatiskt.
+- Nytt designsystem i `src/app.css` (Bebas Neue + Work Sans, mörk kolsvart/vinröd/orange/guld-palett).
+- Kontakt/bokning slås ihop till en sida: /boka.
 
+Kvar att göra:
 
-Testa:
-
-- message form: kolla om texten fortfarande blir vit
-
-- Krachar media
+- Byt ut platshållar-citaten och "Har synts på"-loggorna på startsidan mot riktiga kundomdömen/loggor.
+- LED-show-sidan (/led-show) är fortfarande ett minimalt utkast, inte länkad i menyn.
+- Bekräfta domän (vildaflammor.se är en platshållare i SEO/sitemap tills riktig domän finns) och Instagram-handle (@vildaflammor antaget).
 
 
 # sv

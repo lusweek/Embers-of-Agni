@@ -1,17 +1,17 @@
-export const fireshowOffer =
+export const storaShowenPage =
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Eldshow",
+  "serviceType": "Eldshow – Stora showen",
   "provider": {
     "@type": "PerformingGroup",
     "name": "Vilda Flammor"
   },
-  "description": "Koreograferad elddans till folkmusik för event, festivaler, bröllop och firmafester — som stora showen (15 min) eller lilla showen (8 min).",
+  "description": "Stora showen är vår signaturupplevelse – 15 minuter fullständigt koreograferad elddans till folkmusik, byggd för scen och stor publik.",
   "areaServed": "SE",
   "offers": {
     "@type": "Offer",
-    "url": "https://vildaflammor.se/eldshow",
+    "url": "https://vildaflammor.se/eldshow/stora-showen",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "SEK"

@@ -26,14 +26,20 @@
 
 <style>
     .info-container {
-   margin: auto;
+   margin: 40px auto;
    width: 90%;
-   max-width: 400px;
-   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+   max-width: 460px;
+   background: var(--bg-alt);
+   border: 1px solid rgba(255, 201, 74, 0.15);
+   border-radius: var(--radius);
+   padding: 32px 34px 36px;
+   text-align: center;
 }
 
 .image{
-  margin: auto;
+  margin: 0 auto 20px auto;
+  border-radius: 14px;
+  max-width: 100%;
 }
 
 </style>

@@ -1,0 +1,122 @@
+<script>
+  import { lillaShowenPage } from "$lib/seo/lillaShowenPage";
+
+  import heroImg from "$lib/images/eldshower/duoshow_med_tema_small.webp";
+  import g1 from "$lib/images/bilder/IMG_8300.webp";
+  import g2 from "$lib/images/bilder/IMG_8359.webp";
+  import g3 from "$lib/images/bilder/IMG_8540_small.webp";
+  import g4 from "$lib/images/bilder/IMG_8575_small.webp";
+  import g5 from "$lib/images/bilder/IMG_8579_small.webp";
+</script>
+
+<!-- SEO -->
+<svelte:head>
+  <title>Lilla showen – 8 min Eldshow – Vilda Flammor</title>
+  <meta name="description" content="Lilla showen är en kortare, mer intim version av vår elddans: 8 minuter koreograferad elddans till folkmusik. Perfekt när tid eller yta är begränsad." />
+  <script type="application/ld+json">
+    {JSON.stringify(lillaShowenPage)}
+  </script>
+</svelte:head>
+
+<p class="wrap"><span class="breadcrumb"><a href="/eldshow">Eldshow</a> / <span>Lilla showen</span></span></p>
+
+<section class="hero-split">
+  <div class="hero-split-grid">
+    <div>
+      <span class="eyebrow">Eldshow · Kompakt akt</span>
+      <h1>Lilla showen</h1>
+      <div class="hero-meta"><span><b>8 min</b> · scenlängd</span><span><b>Ser bäst ut</b> i mörker</span><span><b>2 artister</b></span></div>
+      <p class="lead">En kortare, mer intim version av vår elddans — samma hantverk, samma känsla, komprimerad till en stark stund. Perfekt när tidsschemat är tight eller ytan mindre.</p>
+      <a class="btn-primary" href="/boka">Boka lilla showen</a>
+    </div>
+    <div class="hero-photo ph"><img src={heroImg} alt="Lilla showen - intim eldshow" /></div>
+  </div>
+</section>
+
+<section class="section lead-block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Om showen</span>
+      <h2>Kort, koncentrerad, minnesvärd</h2>
+    </div>
+    <p>Lilla showen är stora showens kompakta syskon — <b>8 minuter</b> koreograferad elddans till folkmusik, med samma kvalitet och närvaro som vår signaturshow. Den passar perfekt när ni vill ha eld som en stark del av kvällen utan att bygga hela schemat kring den.</p>
+    <p>Det viktiga är aldrig antalet minuter — det är känslan som stannar kvar. Åtta minuter räcker gott för att gästerna ska minnas showen långt efteråt.</p>
+    <p>Musik, tempo och kostym anpassas efter er stämning, precis som i stora showen.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Bibliotek</span>
+      <h2>Från tidigare framträdanden</h2>
+      <p>Bilder från lilla showen.</p>
+    </div>
+    <div class="gallery">
+      <div class="ph wide"><img src={g1} alt="Lilla showen - eldshow, silhuett" /></div>
+      <div class="ph"><img src={g2} alt="Porträtt under lilla showen" /></div>
+      <div class="ph"><img src={g3} alt="Elddans med glädje" /></div>
+      <div class="ph"><img src={g4} alt="Stämningsbild från lilla showen" /></div>
+      <div class="ph wide"><img src={g5} alt="Elddans i skymning" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Passar för</span>
+      <h2>Rätt val när tid eller yta är begränsad</h2>
+      <p>Mindre scen, kortare tidslucka i schemat, eller en show som ett tillägg snarare än huvudnummer — lilla showen ger samma kvalitet i mindre format.</p>
+    </div>
+    <div class="taglist">
+      <span>Företagsfest</span><span>Bröllop</span><span>Kulturevent</span><span>Festival</span><span>Födelsedagsfest</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Så funkar bokningen</span>
+      <h2>Det här behöver ni veta</h2>
+      <p>Allt du behöver känna dig trygg med innan ni bokar — vad vi tar hand om, och vad vi behöver av er.</p>
+    </div>
+
+    <div class="logistics">
+      <div class="logistics-grid">
+        <div class="logistics-col weown">
+          <h3>Det här sköter vi</h3>
+          <ul class="logi-list">
+            <li><span class="logi-mark">✓</span><p><b>Säkerhet.</b> Vi är utbildade i och erfarna av eldshower — säkerhet är alltid vår högsta prioritet, för både artister och publik.</p></li>
+            <li><span class="logi-mark">✓</span><p><b>Ljud.</b> Vi tar med eget ljudsystem, så ni behöver inte ordna det själva.</p></li>
+          </ul>
+        </div>
+        <div class="logistics-col youbring">
+          <h3>Det här behöver vi från er</h3>
+          <ul class="logi-list">
+            <li><span class="logi-mark">→</span><p><b>En bild på scenen/platsen.</b> Så vi kan planera showen utifrån ytan ni har.</p></li>
+            <li><span class="logi-mark">→</span><p><b>Förväntat antal i publiken.</b> Hjälper oss anpassa placering och säkerhetsavstånd.</p></li>
+            <li><span class="logi-mark">→</span><p><b>En eldvakt.</b> En frivillig person från er sida som håller en brandsläckare redo under showen.</p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-strip">
+        <span class="icon">*</span>
+        <p><b>Bra att veta:</b> mörker är inget krav — elden syns bara som allra bäst efter mörkrets inbrott. Vi har gjort uppskattade shower i dagsljus också, så vi hittar en lösning oavsett tid på dygnet. Läs mer i <a class="link-decoration" href="/info-innan-bokning">info innan bokning</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="ctaband">
+      <div>
+        <h2>Redo att boka lilla showen?</h2>
+        <p>Skicka en bild på platsen och ert förväntade antal gäster, så återkommer vi med förslag.</p>
+      </div>
+      <a class="btn-dark" href="/boka">Boka lilla showen</a>
+    </div>
+  </div>
+</section>

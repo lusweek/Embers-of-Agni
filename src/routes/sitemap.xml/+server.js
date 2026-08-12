@@ -4,15 +4,16 @@
 const pages = [
   "",
   "eldshow",
-  "kontakta-oss",
-  "bilder",
-  "prova-pa-flowarts",
+  "eldshow/stora-showen",
+  "eldshow/lilla-showen",
+  "workshops",
+  "om-oss",
+  "bibliotek",
   "info-innan-bokning",
-  "priser-och-bokning",
-  "om-oss"
+  "boka"
 ];
 
-const BASE_URL = "https://embersofagni.se";
+const BASE_URL = "https://vildaflammor.se";
 
 export function GET() {
   const body = `<?xml version="1.0" encoding="UTF-8"?>

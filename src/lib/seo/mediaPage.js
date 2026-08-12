@@ -2,7 +2,7 @@ export const mediaPage =
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Galleri",
+  "name": "Bibliotek",
   "description": "Bilder från våra eldshower, flowartsuppvisningar och workshops.",
-  "url": "https://embersofagni.se/bilder"
+  "url": "https://vildaflammor.se/bibliotek"
 }

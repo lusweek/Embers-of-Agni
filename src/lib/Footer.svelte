@@ -1,34 +1,42 @@
 <script>
   import { Phone, Instagram, Mail } from "lucide-svelte";
+
+  const links = [
+    { label: "Eldshow", href: "/eldshow" },
+    { label: "Workshops", href: "/workshops" },
+    { label: "Bibliotek", href: "/bibliotek" },
+    { label: "Om oss", href: "/om-oss" },
+    { label: "Kontakt", href: "/boka" }
+  ];
 </script>
 
+<footer class="vf-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="brand" href="/">Vilda<span>Flammor</span></a>
 
-<footer class="bg-gray-900 text-white p-6 h-[150px]">
-  <div class="max-w-6xl mx-auto flex sm:flex-row justify-around gap-4 h-full flex-wrap">
+      <ul class="foot-links">
+        {#each links as link}
+          <li><a href={link.href}>{link.label}</a></li>
+        {/each}
+      </ul>
 
-    <!-- Telefon -->
-    <a href="tel:0738546407" 
-       class="flex items-center gap-2 hover:text-orange-400 transition-colors">
-      <Phone size="20" />
-      <span>073 854 64 07</span>
-    </a>
+      <div class="foot-contact">
+        <a href="tel:+46738546407">
+          <Phone size="16" />
+          <span>073 854 64 07</span>
+        </a>
+        <a href="https://www.instagram.com/vildaflammor" title="Vilda Flammor" target="_blank" rel="noopener noreferrer">
+          <Instagram size="16" />
+          <span>Vilda Flammor</span>
+        </a>
+        <a href="mailto:vildaflammor@gmail.com">
+          <Mail size="16" />
+          <span>vildaflammor@gmail.com</span>
+        </a>
+      </div>
+    </div>
 
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/embersofagni"
-       title="Embers of Agni"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="flex items-center gap-2 hover:text-orange-400 transition-colors">
-      <Instagram size="20" />
-      <span>Embers of Agni</span>
-    </a>
-
-    <!-- Mail -->
-    <a href="mailto:embersofagni@gmail.com" 
-       class="flex items-center gap-2 hover:text-orange-400 transition-colors">
-      <Mail size="20" />
-      <span>embersofagni@gmail.com</span>
-    </a>
-
+    <p class="foot-note">© Vilda Flammor {new Date().getFullYear()} — Eldshow, workshops & elduppträdanden i hela Sverige.</p>
   </div>
 </footer>

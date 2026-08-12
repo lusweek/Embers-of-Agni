@@ -38,16 +38,16 @@
     <script type="application/ld+json">
         {JSON.stringify(mediaPage)}
     </script>
-    <title>Bilder på Eldshower & elduppträdanden – Embers of Agni</title>
-    <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Galleriet visar upp eldperformance, flowarts och spektakulära shower från olika event." />
+    <title>Bibliotek – Bilder på Eldshower & elduppträdanden – Vilda Flammor</title>
+    <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Biblioteket visar upp eldperformance, flowarts och spektakulära shower från olika event." />
 </svelte:head>
 
-<h1 class="h1-title">Bilder</h1>
+<h1 class="h1-title">Bibliotek</h1>
 
 <p class="undertitle">
     Här kan du se bilder på vår eldkonst.<br>
-    Glöm inte kolla in vår 
-    <a href="https://www.instagram.com/embersofagni" class="link-decoration" target="_blank">instagram!</a>
+    Glöm inte kolla in vår
+    <a href="https://www.instagram.com/vildaflammor" class="link-decoration" target="_blank">instagram!</a>
 </p>
 
 <Devider />
@@ -57,8 +57,8 @@
 <div class="images-grid">
     {#each images as img }
         {#if img}
-            <img 
-                src={img} 
+            <img
+                src={img}
                 alt="bild"
                 on:click={() => openImage(img)}
             >
@@ -69,25 +69,22 @@
 {#if active}
     <div class="backdrop" on:click={closeImage} transition:fade></div>
 
-    <!-- 🔹 ADDED (större klickyta) -->
     <div class="arrow left" on:click={prevImage} transition:fade>
         <span>❮</span>
     </div>
 
-    <img 
-        src={active} 
+    <img
+        src={active}
         alt=""
         class="modal-img"
         transition:fade
         on:click={closeImage}
     >
 
-    <!-- 🔹 ADDED (större klickyta) -->
     <div class="arrow right" on:click={nextImage} transition:fade>
         <span>❯</span>
     </div>
 
-    <!-- 🔹 ADDED (kryss) -->
     <div class="close-btn" on:click|stopPropagation={closeImage} transition:fade>
         <span>✕</span>
     </div>
@@ -113,7 +110,7 @@
     }
 
     .images-grid img {
-        border-radius: 2px;
+        border-radius: 14px;
         cursor: pointer;
         transition-duration: 0.2s;
     }
@@ -143,12 +140,11 @@
         cursor: pointer;
     }
 
-    /* 🔹 ADDED — STOR klickyta */
     .arrow {
         position: fixed;
         top: 0;
-        width: 20vw;              /* STOR klickyta */
-        height: 100vh;            /* Hela höjden */
+        width: 20vw;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -160,28 +156,23 @@
         transition: 0.2s;
     }
 
-    /* 🔹 ADDED */
     .arrow span {
         pointer-events: none;
     }
 
-    /* 🔹 ADDED */
     .arrow:hover {
         color: rgba(255, 255, 255, 1);
         background: rgba(0, 0, 0, 0.15);
     }
 
-    /* 🔹 ADDED */
     .arrow.left {
         left: 0;
     }
 
-    /* 🔹 ADDED */
     .arrow.right {
         right: 0;
     }
 
-    /* 🔹 ADDED — KRYSS */
     .close-btn {
         position: fixed;
         top: 25px;
@@ -199,7 +190,6 @@
         transition: 0.2s;
     }
 
-    /* 🔹 ADDED */
     .close-btn:hover {
         color: rgba(255, 255, 255, 1);
         background: rgba(0, 0, 0, 0.15);
