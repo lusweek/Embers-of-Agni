@@ -1,199 +1,123 @@
 <script>
-    import { mediaPage } from "$lib/seo/mediaPage";
+  import { mediaPage } from "$lib/seo/mediaPage";
 
-    import Devider from "$lib/assets/Devider.svelte";
-    import { fade } from "svelte/transition";
+  const imageFiles = import.meta.glob("/src/lib/images/design-reference/*.webp", {
+    eager: true,
+    import: "default"
+  });
 
-    const imageFiles = import.meta.glob('/src/lib/images/bilder/*.webp', {
-        eager: true,
-        as: 'url'
-    });
+  function img(name) {
+    return imageFiles[`/src/lib/images/design-reference/${name}.webp`];
+  }
 
-    const images = Object.values(imageFiles);
+  // Kurerad lista över bilder till biblioteket (samma urval som i designen)
+  const gallery = [
+    { file: "7r406884", alt: "Eldkonstnär med eldredskap" },
+    { file: "7r406899", alt: "Eldkonstnär med eldredskap" },
+    { file: "7r406925", alt: "Eldkonstnär med eldredskap" },
+    { file: "7r407255", alt: "Eldkonstnär med eldredskap" },
+    { file: "7r407277", alt: "Eldkonstnär med eldredskap" },
+    { file: "7r407395", alt: "Eldkonstnär med eldredskap" },
+    { file: "7r407493", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5580", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5625", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5677", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5717", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5743", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5913", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5936-8061093d", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5966", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a5977", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a6001", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a6080", alt: "Eldkonstnär med eldredskap" },
+    { file: "010a6180", alt: "Eldkonstnär med eldredskap" },
+    { file: "att-tm-43zde44nan2aiy9zeg-xlhfjqap2dcfeakv6c4z0", alt: "Eldshow bild" },
+    { file: "dubbelstav-bra-1-a1fe5e49", alt: "Duon med dubbelstav" },
+    { file: "dubbelstav-bra-5", alt: "Duon med dubbelstav" },
+    { file: "dubbelstav-bra-6", alt: "Duon med dubbelstav" },
+    { file: "dubbelstaw", alt: "Duon med dubbelstav" },
+    { file: "duoshow", alt: "Duon Vilda Flammor eldshow" },
+    { file: "duoshow-med-tema", alt: "Duon Vilda Flammor eldshow" },
+    { file: "eldshower", alt: "Eldshow" },
+    { file: "elin-1", alt: "Elin med eldredskap" },
+    { file: "elin-3", alt: "Elin med eldredskap" },
+    { file: "elin-4", alt: "Elin med eldredskap" },
+    { file: "image00001", alt: "Eldshow bild" },
+    { file: "img-1913", alt: "Eldshow bild" },
+    { file: "img-8300", alt: "Eldshow bild" },
+    { file: "img-8529", alt: "Eldshow bild" },
+    { file: "lukas-1", alt: "Lukas med eldredskap" },
+    { file: "lukas-karna-spin", alt: "Lukas med eldredskap" },
+    { file: "messenger-creation-cfcfee6e-04f6-4829-8cee-eb6c810bc84a", alt: "Eldshow bild" },
+    { file: "oss-1", alt: "Vilda Flammor porträtt" },
+    { file: "oss-2", alt: "Vilda Flammor porträtt" },
+    { file: "oss-3", alt: "Vilda Flammor porträtt" },
+    { file: "pxl-20260215-183824216", alt: "Eldshow bild" },
+    { file: "pxl-20260215-183825067", alt: "Eldshow bild" },
+    { file: "pxl-20260215-183826396", alt: "Eldshow bild" },
+    { file: "pxl-20260215-183919821", alt: "Eldshow bild" },
+    { file: "sa106044", alt: "Eldshow på scen" },
+    { file: "sa106163", alt: "Eldshow på scen" },
+    { file: "sa106203", alt: "Eldshow på scen" },
+    { file: "sa106223", alt: "Eldshow på scen" },
+    { file: "se-mer-2", alt: "Eldshow closeup" },
+    { file: "se-mer-3", alt: "Eldshow closeup" },
+    { file: "till-mail-2", alt: "Eldshow bild" },
+    { file: "turbostav-bra-1", alt: "Eldkonstnär med turbostav" },
+    { file: "turbostav-bra-2", alt: "Eldkonstnär med turbostav" },
+    { file: "turbostav-bra-4", alt: "Eldkonstnär med turbostav" },
+    { file: "turbostav-bra-5", alt: "Eldkonstnär med turbostav" }
+  ];
 
-    let active = null;
+  let lightboxItem = null;
 
-    function openImage(img) {
-        active = img;
-    }
+  function openLightbox(item) {
+    lightboxItem = item;
+  }
 
-    function closeImage() {
-        active = null;
-    }
-
-    function nextImage(e) {
-        e?.stopPropagation();
-        const index = images.indexOf(active);
-        active = images[(index + 1) % images.length];
-    }
-
-    function prevImage(e) {
-        e?.stopPropagation();
-        const index = images.indexOf(active);
-        active = images[(index - 1 + images.length) % images.length];
-    }
+  function closeLightbox() {
+    lightboxItem = null;
+  }
 </script>
 
 <svelte:head>
-    <script type="application/ld+json">
-        {JSON.stringify(mediaPage)}
-    </script>
-    <title>Bibliotek – Bilder på Eldshower & elduppträdanden – Vilda Flammor</title>
-    <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Biblioteket visar upp eldperformance, flowarts och spektakulära shower från olika event." />
+  <script type="application/ld+json">
+    {JSON.stringify(mediaPage)}
+  </script>
+  <title>Bibliotek – Bilder från tidigare shower – Vilda Flammor</title>
+  <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Biblioteket visar upp eldperformance, flowarts och spektakulära shower från olika event." />
 </svelte:head>
 
-<h1 class="h1-title">Bibliotek</h1>
+<section class="hero-simple">
+  <div class="wrap">
+    <span class="eyebrow">Bibliotek</span>
+    <h1>Bilder från tidigare shower</h1>
+    <p class="lead">Klicka på en bild för att se den i större format. Fler bilder fylls på allt eftersom.</p>
+  </div>
+</section>
 
-<p class="undertitle">
-    Här kan du se bilder på vår eldkonst.<br>
-    Glöm inte kolla in vår
-    <a href="https://www.instagram.com/vildaflammor" class="link-decoration" target="_blank">instagram!</a>
-</p>
-
-<Devider />
-
-<p class="my-8 text-center">Klicka för att förstora</p>
-
-<div class="images-grid">
-    {#each images as img }
-        {#if img}
-            <img
-                src={img}
-                alt="bild"
-                on:click={() => openImage(img)}
-            >
-        {/if}
+<div class="wrap">
+  <div class="masonry">
+    {#each gallery as item}
+      <figure on:click={() => openLightbox(item)}>
+        <img src={img(item.file)} alt={item.alt} loading="lazy" />
+      </figure>
     {/each}
+  </div>
 </div>
 
-{#if active}
-    <div class="backdrop" on:click={closeImage} transition:fade></div>
+<section style="padding:20px 0 70px;text-align:center;">
+  <div class="wrap">
+    <p style="color:var(--ink-dim);font-size:16px;margin-bottom:16px;">Fler bilder och klipp hittar du på vårt Instagram.</p>
+    <a href="https://www.instagram.com/vildaflammor/" target="_blank" rel="noopener" class="btn-primary">Följ oss på Instagram →</a>
+  </div>
+</section>
 
-    <div class="arrow left" on:click={prevImage} transition:fade>
-        <span>❮</span>
-    </div>
-
-    <img
-        src={active}
-        alt=""
-        class="modal-img"
-        transition:fade
-        on:click={closeImage}
-    >
-
-    <div class="arrow right" on:click={nextImage} transition:fade>
-        <span>❯</span>
-    </div>
-
-    <div class="close-btn" on:click|stopPropagation={closeImage} transition:fade>
-        <span>✕</span>
-    </div>
+{#if lightboxItem}
+  <div class="lightbox open" on:click={closeLightbox}>
+    <div class="lightbox-close" on:click|stopPropagation={closeLightbox}>✕</div>
+    <img src={img(lightboxItem.file)} alt={lightboxItem.alt} on:click|stopPropagation />
+  </div>
 {/if}
 
-<Devider />
-
-<style>
-
-    .images-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 20px;
-        max-width: 80vw;
-        margin: auto;
-    }
-
-    @media (max-width: 768px) {
-        .images-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    .images-grid img {
-        border-radius: 14px;
-        cursor: pointer;
-        transition-duration: 0.2s;
-    }
-
-    .images-grid img:hover {
-        transform: scale(1.03);
-        box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.506);
-    }
-
-    .backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 10;
-    }
-
-    .modal-img {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 80vw;
-        max-height: 80vh;
-        z-index: 20;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .arrow {
-        position: fixed;
-        top: 0;
-        width: 20vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        color: rgba(255, 255, 255, 0.7);
-        cursor: pointer;
-        z-index: 30;
-        user-select: none;
-        transition: 0.2s;
-    }
-
-    .arrow span {
-        pointer-events: none;
-    }
-
-    .arrow:hover {
-        color: rgba(255, 255, 255, 1);
-        background: rgba(0, 0, 0, 0.15);
-    }
-
-    .arrow.left {
-        left: 0;
-    }
-
-    .arrow.right {
-        right: 0;
-    }
-
-    .close-btn {
-        position: fixed;
-        top: 25px;
-        right: 25px;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        color: rgba(255, 255, 255, 0.7);
-        cursor: pointer;
-        z-index: 40;
-        user-select: none;
-        transition: 0.2s;
-    }
-
-    .close-btn:hover {
-        color: rgba(255, 255, 255, 1);
-        background: rgba(0, 0, 0, 0.15);
-        border-radius: 50%;
-    }
-
-</style>
+<svelte:window on:keydown={(e) => { if (e.key === "Escape") closeLightbox(); }} />

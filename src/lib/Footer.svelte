@@ -34,6 +34,7 @@
           <Mail size="16" />
           <span>vildaflammor@gmail.com</span>
         </a>
+        <span>Vilda Flammor AB</span>
       </div>
     </div>
 

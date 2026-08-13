@@ -1,154 +1,88 @@
 <script>
-    import { about } from "$lib/seo/about"
+  import { about } from "$lib/seo/about";
 
-    import Devider from "$lib/assets/Devider.svelte"
-
-    import ossImg_1 from "$lib/images/om_oss/oss_1.webp"
-    import ossImg_2 from "$lib/images/om_oss/oss_2_small.webp"
-    import ossImg_3 from "$lib/images/om_oss/oss_3_small.webp"
-    import ossImg_4 from "$lib/images/om_oss/oss_4.webp"
-    import ossImg_5 from "$lib/images/om_oss/oss_5.webp"
-
-    import lukasImg_1 from "$lib/images/om_oss/lukas_1_small.webp"
-    import lukasImg_2 from "$lib/images/om_oss/lukas_2_small.webp"
-    import lukasImg_3 from "$lib/images/om_oss/lukas_3_small.webp"
-
-    import elinImg_1 from "$lib/images/om_oss/elin_1_small.webp"
-    import elinImg_2 from "$lib/images/om_oss/elin_2_small.webp"
-    import elinImg_3 from "$lib/images/om_oss/elin_3_small.webp"
-    import elinImg_4 from "$lib/images/om_oss/elin_4_small.webp"
-
+  import storyImg1 from "$lib/images/design-reference/embers-of-agni.webp";
+  import storyImg2 from "$lib/images/design-reference/010a5936-8061093d.webp";
 </script>
 
 <!-- SEO -->
 <svelte:head>
-    <title>Om oss – Eldartister & Flowartsinstruktörer – Vilda Flammor</title>
-    <meta name="description" content="Lär känna Vilda Flammor. Vi är professionella eldartister som skapar säkra och spektakulära eldshower för alla typer av event." />
-    <script type="application/ld+json">
-        {JSON.stringify(about)}
-    </script>
+  <title>Om oss – Eldartister & Flowartsinstruktörer – Vilda Flammor</title>
+  <meta name="description" content="Lär känna Vilda Flammor. Eldkonstnärer som bygger varje show kring musiken och elden vi själva brinner för, med säkerhet som högsta prioritet." />
+  <script type="application/ld+json">
+    {JSON.stringify(about)}
+  </script>
 </svelte:head>
 
-<h1 class="h1-title">Vilka är vi?</h1>
-<Devider />
+<section class="hero-simple">
+  <div class="wrap">
+    <span class="eyebrow">Om oss</span>
+    <h1>Duon Vilda Flammor</h1>
+    <p class="lead">Eldkonstnärer som bygger varje show kring musiken och elden vi själva brinner för.</p>
+  </div>
+</section>
 
-<!-- Into om oss -->
-
-<div class="about-info-container">
-    <h2 class="h2-title">Lukas och Elin är Vilda Flammor</h2>
-    <p class="paragraf">Med 7 års gemensam erfarenhet av att uppträda på event, firmafester och födelsedagar vet vi vad som krävs för att väcka känslor hos en publik. Vi älskar att visa upp eldens skönhet samt spänningen i att hantera och dansa med det destruktiva elementet.
-        <br><br>
-        Det var på <a target="_blank" class="link-decoration" href="https://5elementsdance.se/">cirkuslägret Våreld</a> 2024 som vi lärde känna varandra och upptäckte att vi båda leker med eld. Senare den sommaren fick Elin ett eldgig med sin bror utanför Göteborg där Lukas bodde. Han tackade direkt ja när frågan kom om han ville haka på. Detta var första showen och workshop vi tillsammans gjorde. Detta ville vi göra mer. Ett år senare har vi en djup kärlek till både varandra och att uppträda tillsammans med eld och dans!
-    </p>
-</div>
-
-<div class="image-grid-container">
-    <img src={ossImg_1} fetchpriority="high" alt="">
-    <div class="small-images">
-        <img src={ossImg_2} fetchpriority="high" alt="">
-        <img src={ossImg_3} fetchpriority="high" alt="">
+<section class="section">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-img"><img src={storyImg1} alt="Eldkonstnär formar ett eldmoln med två eldstavar" /></div>
+      <div class="story-text">
+        <span class="eyebrow">Vår historia</span>
+        <h2 style="font-size:34px;margin-bottom:20px;">Elden som blev ett hantverk</h2>
+        <p>Vilda Flammor började som en fascination för elden själv — det farliga, vackra elementet som få vågar komma nära. Det som en gång var lek och nyfikenhet har blivit ett hantverk vi tränat och förfinat, show efter show.</p>
+        <p>Idag väver vi ihop eldkonst med <b>musik från olika kulturer och tempon</b> — musik vi själva älskar att uppträda till. Varje koreografi byggs med samma noggrannhet oavsett om scenen är en bröllopsfest eller ett stort företagsevent.</p>
+      </div>
     </div>
-    <img src={ossImg_4} fetchpriority="high" alt="">
-    <img src={ossImg_5} fetchpriority="high" alt="">
-</div>
+  </div>
+</section>
 
-<Devider />
-
-<!-- Om Lukas -->
-
-<h2 class="h2-title">Mer om Lukas</h2>
-<p class="paragraf text-start w-[500px]">
-    Jag började lära min tricks med snurrstav 2019 i samband med att jag flyttade till lund för att studera till brandman. Att bli brandman var min barndomsdröm som gick i uppfyllelse men djupare fanns en passion för dans och uppträdande.
-    <br /><br />
-    I en danslokal i göteborg på <a target="_blank" class="link-decoration" href="https://5elementsdance.se/">5 elements flow</a> skapades en djup kärlek till fridans. Musiken spelades och det krävdes inga särskilda fotsteg eller regler, bara dans rakt från hjärtat med musiken som inspirerar till rörelse. En av de bästa känslorna som finns är att komma in i just själva dansflowet på scen med eld!
-    <br /><br />
-    Efter att jag träffade Elin blev jag inspirerad att göra mer flowarts och intresset för dubbelstav blev stort. Så jag köpte ett par, tränade, dansade och uppträdde med dem. Jag upptäckte att snurra stavar och att kasta upp dem i luften är jättekul!
-    <br /><br />
-    Under vår resa till Portugal lärde Elin mig en hel del trix med poi. Jag tyckte det var svårare och det krävde mycket tålamod men SOM vi lekte med våra LED-pois på fester sen! Poi blev ännu en prop på min flowartsresa!
-    <br /><br />
-    Jag älskar flowarts för att det finns oändliga kreativa möjligheter och för att det är underbart att dansa med musik till.
-</p>
-
-<div class="image-grid-container">
-    <div class="small-images">
-        <img  src={lukasImg_1} loading = "lazy" alt="">
-        <img  src={lukasImg_3} loading = "lazy" alt="">
+<section class="section values">
+  <div class="wrap">
+    <div style="text-align:center;max-width:600px;margin:0 auto 48px;">
+      <span class="eyebrow">Vad som driver oss</span>
+      <h2 style="font-size:34px;">Tre saker vi aldrig kompromissar med</h2>
     </div>
-    <img  src={lukasImg_2} loading = "lazy" alt="">
-</div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-head"><span class="value-mark">*</span><h3>Säkerheten</h3></div>
+        <p>Eld är oförlåtande om man slarvar. Säkerhet för både artister och publik är alltid vår högsta prioritet.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-head"><span class="value-mark">*</span><h3>Hantverket</h3></div>
+        <p>Varje rörelse är tränad, upprepad och förfinad. Det som ser farligt och fritt ut på scen är i grunden noggrant kontrollerat.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-head"><span class="value-mark">*</span><h3>Musiken</h3></div>
+        <p>Vi bygger showerna kring musik vi själva brinner för — men anpassar alltid känsla och tempo efter ert tillfälle.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<Devider />
+<section class="section">
+  <div class="wrap">
+    <div class="story-grid reverse">
+      <div class="story-img"><img src={storyImg2} alt="Duo dansar med eldkedjor" /></div>
+      <div class="story-text">
+        <span class="eyebrow">Var vi passar in</span>
+        <h2 style="font-size:34px;margin-bottom:20px;">Från intima fester till stora scener</h2>
+        <p>Vi har uppträtt på allt från bröllop och födelsedagskalas till festivaler och stora företagsevent. Varje uppdrag är olika, och det är precis så vi vill ha det — vi är flexibla med tema, musik och kostym, men aldrig med kvaliteten.</p>
+        <div class="taglist">
+          <span>Bröllop</span><span>Företagsevent</span><span>Festival</span><span>Kulturevenemang</span><span>Kalas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Om Elin -->
-
-<h2 class="h2-title">Mer om Elin</h2>
-<p class="paragraf text-start w-[500px]">
-
-    Jag lärde mig först eldkonsten av min bror 2018 och har sedan dess utforskat olika props (flowredskap). De jag fastnat för mest är rockring och pois. Jag älskar att lära mig tekniska tricks som skapar vackra geometriska mönster och kräver en del träning och skicklighet.
-    <br /><br />
-    Jag inspireras av andra flowartister jag träffar i verkligheten och hittar på instagram you youtube. Min bror Johan och hans partner Caroline som också gör eldshower, Lisen Hertzman med Kompani Error, Selma Berge, Hank Johansson är alla fantastiska eldartister som inspirerar mig.
-    <a target="_blank" class="link-decoration" href="https://www.instagram.com/skyflowartist/">@skyflowartist</a>
-    <a target="_blank" class="link-decoration" href="https://www.instagram.com/mysticchickpeaflow/">@mysticchickpeaflow </a>
-    <a target="_blank" class="link-decoration" href="https://www.instagram.com/lisa_lottie/">@lisa_lottie</a>
-    <a target="_blank" class="link-decoration" href="https://www.instagram.com/lizknights/">@lizknights</a>
-    och
-    <a target="_blank" class="link-decoration" href="https://www.instagram.com/waywardkay/">@waywardkay</a>är några av alla otroligt skickliga tjejer jag hittat på instagram.
-
-    <br /><br />
-    Flowarts hjälper mig skapa så mycket glädje i mitt liv genom rörelse, dans, utmaningar och kreativitet.
-    En av de roligaste sakerna med att hålla på med flowarts är att lära ut och göra tillsammans. Speciellt roligt är att leka med och lära barn och unga. Barn kommer så lätt in i ett utforskande flow bara de får ett redskap i handen, det är härligt att se.
-    <br /><br />
-    Att få skapa och göra shower tillsammans med Lukas är så tacksamt och roligt eftersom han, likt barn, är utforskande och har fullt fokus på vad som känns kul och bra för oss. Det gör inte bara att vi har roligt på scen utan att även publiken smittas av känslan vi skapar tillsammans. Magi.
-</p>
-
-
-<div class="image-grid-container">
-    <img  src={elinImg_1} loading = "lazy" alt="">
-    <img  src={elinImg_2} loading = "lazy" alt="">
-    <img  src={elinImg_3} loading = "lazy" alt="">
-    <img  src={elinImg_4} loading = "lazy" alt="">
-</div>
-
-
-<Devider />
-
-<style>
-
-
-
-    .about-info-container{
-        width: 500px;
-        max-width: 80vw;
-        margin: auto;
-    }
-
-    .about-info-container p{
-        text-align: start;
-    }
-
-    .image-grid-container{
-        width: 500px;
-        max-width: 80vw;
-        margin: 50px auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .image-grid-container img {
-        border-radius: 14px;
-    }
-
-       .small-images{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .text-start{
-        text-align: start;
-    }
-
-</style>
+<section class="section">
+  <div class="wrap">
+    <div class="ctaband">
+      <div>
+        <h2>Vill ni ha oss på ert event?</h2>
+        <p>Berätta om tillfället så hjälper vi er hitta rätt show.</p>
+      </div>
+      <a class="btn-dark" href="/boka">Boka oss</a>
+    </div>
+  </div>
+</section>

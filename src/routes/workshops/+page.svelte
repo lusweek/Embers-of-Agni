@@ -1,38 +1,127 @@
 <script>
-	import { provaPaFlowarts } from '$lib/seo/provaPaFlowartsPage';
+  import { provaPaFlowarts } from "$lib/seo/provaPaFlowartsPage";
 
-	import Devider from '$lib/assets/Devider.svelte';
-	import InfoBox from '$lib/components/InfoBox.svelte';
-
-	import prova_pa_flowartsImg from '$lib/images/Prova på flowarts/prova_pa_flowarts.webp'
-
+  import heroImg from "$lib/images/design-reference/workshop-blured.webp";
 </script>
 
 <!-- SEO -->
 <svelte:head>
-	<script type="application/ld+json">
-        {JSON.stringify(provaPaFlowarts)}
-    </script>
-	<title>Workshops – Prova på Flowarts – Vilda Flammor</title>
-	<meta name="description" content="Prova på flowarts! Lär dig poi, stav, rockring och kreativ rörelse på ett tryggt och roligt sätt. Passar grupper, skolor, event och alla nivåer." />
+  <script type="application/ld+json">
+    {JSON.stringify(provaPaFlowarts)}
+  </script>
+  <title>Workshops – Prova på Flowarts – Vilda Flammor</title>
+  <meta name="description" content="Vi tar med stavar, poi och rockringar och låter era gäster testa på — fritt som mingel-aktivitet eller styrt som workshop. Passar barn, vuxna och team-building." />
 </svelte:head>
 
-<!-- Titel + undertitel -->
-<h1 class="h1-title">Workshops</h1>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Workshops</span>
+      <h1>Prova på flowarts</h1>
+      <p class="lead">Vi tar med oss stavar, poi och rockringar och låter era gäster testa på — antingen fritt som en mingel-aktivitet, eller mer styrt som en workshop.</p>
+      <a class="btn-primary" href="/boka">Boka workshop</a>
+    </div>
+    <div class="hero-img"><img src={heroImg} alt="Workshop med rockring, dagtid" /></div>
+  </div>
+</section>
 
-<p class="undertitle">Visst ser det roligt ut! Vi lär gärna dig, dina vänner, kollegor, barn och ungdomar. Läs mer här under.</p>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Två sätt att köra det</span>
+      <h2>Fritt prova-på eller styrd workshop</h2>
+      <p>Vi anpassar upplägget efter vad som passar ert event bäst.</p>
+    </div>
+    <div class="formats">
+      <div class="format-card">
+        <h3>Prova-på</h3>
+        <p>Vi finns på plats med utrustningen och låter gästerna testa i sin egen takt — en avslappnad, lekfull mingel-aktivitet som passar in var som helst under kvällen.</p>
+      </div>
+      <div class="format-card">
+        <h3>Workshop</h3>
+        <p>Ett mer strukturerat pass där vi guidar gruppen igenom grunderna. För barn blir det lekfull kroppskontroll, för vuxna handlar det om att lära sig grunderna i flowarts och/eller team-building.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<Devider />
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Se det i rörelse</span>
+      <h2>Fyra redskap, fyra korta klipp</h2>
+    </div>
+    <div class="videos">
+      <div class="video-card">
+        <h3>Stav</h3>
+        <div class="video-frame">
+          <span class="play-icon">▶</span>
+          <span class="ph-label">VIDEO: Stav — grundflow</span>
+        </div>
+      </div>
+      <div class="video-card">
+        <h3>Dubbelstav</h3>
+        <div class="video-frame">
+          <span class="play-icon">▶</span>
+          <span class="ph-label">VIDEO: Dubbelstav — grundflow</span>
+        </div>
+      </div>
+      <div class="video-card">
+        <h3>Rockring</h3>
+        <div class="video-frame">
+          <span class="play-icon">▶</span>
+          <span class="ph-label">VIDEO: Rockring — grundflow</span>
+        </div>
+      </div>
+      <div class="video-card">
+        <h3>Poi</h3>
+        <div class="video-frame">
+          <span class="play-icon">▶</span>
+          <span class="ph-label">VIDEO: Poi — grundflow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<InfoBox
-title = "Prova på flowarts"
-image = {prova_pa_flowartsImg}
-fetchpriority = "high"
-imageAlt = "Bild på Elin under workshop"
->
-<p class="paragraf">Vi tar med rockringar, pois och stavar och lär ut hur man kan använda och leka med dessa redskap. Ser vi att någon har bra kontroll kan den personen dessutom få testa med eld (självklart i nyktert tillstånd). Passande antal deltagare till detta är upp till 25 personer.</p>
-<p class="paragraf">Vi lär ut i 90 min och anpassar strukturen efter deltagarna.</p>
-<a class="btn-primary" href="/boka" style="margin-top:12px;">Boka workshop</a>
-</InfoBox>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Utrustning</span>
+      <h2>Detta är träningsutrustningen vi besitter</h2>
+    </div>
+    <div class="equip">
+      <div class="equip-grid">
+        <div><div class="equip-num">15</div><div class="equip-label">Långa stavar</div></div>
+        <div><div class="equip-num">15</div><div class="equip-label">Dubbelstavar</div></div>
+        <div><div class="equip-num">20</div><div class="equip-label">Rockringar</div></div>
+        <div><div class="equip-num">20</div><div class="equip-label">Par poi</div></div>
+      </div>
+      <p class="equip-note">Gott om utrustning för större grupper — hör av er så hjälper vi er räkna ut vad som passar ert antal gäster.</p>
+    </div>
+  </div>
+</section>
 
-<Devider />
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Passar för</span>
+      <h2>En annorlunda mingel-aktivitet</h2>
+    </div>
+    <div class="taglist">
+      <span>Barn</span><span>Vuxna</span><span>Team-building</span><span>Företagsevent</span><span>Kalas</span><span>Festival</span><span>Kulturevent</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="ctaband">
+      <div>
+        <h2>Vill ni prova?</h2>
+        <p>Berätta om ert event så föreslår vi ett upplägg.</p>
+      </div>
+      <a class="btn-dark" href="/boka">Boka workshop</a>
+    </div>
+  </div>
+</section>

@@ -100,8 +100,8 @@
       <div class="call-card">
         <div>
           <span class="eyebrow" style="margin-bottom:6px;">Snabbast</span>
-          <h2>Lättaste sättet att boka — Ring</h2>
-          <p>Berätta kort om ert event så hjälper vi er direkt i telefonen.</p>
+          <h2>Ring oss gärna — även bara för att fråga</h2>
+          <p>Boka, bolla en idé eller ställ en snabb fråga. Vi svarar direkt i telefonen.</p>
         </div>
         <div class="call-card-contact">
           <div class="copy-row">
