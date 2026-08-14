@@ -28,6 +28,15 @@
   import film14 from "$lib/images/design-reference/oss-3.webp";
   import film15 from "$lib/images/design-reference/pxl-20260215-183826396.webp";
 
+  import film16 from "$lib/images/first-camp/lifebym-lukas-009.webp";
+  import film17 from "$lib/images/first-camp/lifebym-lukas-039.webp";
+  import film18 from "$lib/images/first-camp/lifebym-lukas-044.webp";
+  import film19 from "$lib/images/first-camp/lifebym-lukas-076.webp";
+  import film20 from "$lib/images/first-camp/lifebym-lukas-079.webp";
+  import film21 from "$lib/images/first-camp/lifebym-lukas-087.webp";
+  import film22 from "$lib/images/first-camp/lifebym-lukas-095.webp";
+  import film23 from "$lib/images/first-camp/lifebym-lukas-098.webp";
+
   const filmImages = [
     { src: film1, alt: "Eldshow bild" },
     { src: film2, alt: "Eldshow på scen" },
@@ -43,7 +52,15 @@
     { src: film12, alt: "Eldshow bild" },
     { src: film13, alt: "Lukas med eldredskap" },
     { src: film14, alt: "Vilda Flammor porträtt" },
-    { src: film15, alt: "Eldshow bild" }
+    { src: film15, alt: "Eldshow bild" },
+    { src: film16, alt: "Duo krönd med eldkrona på stranden" },
+    { src: film17, alt: "Eldkonstnär med eldkedjor framför publik" },
+    { src: film18, alt: "Eldkonstnär med eldkedjor i solnedgång" },
+    { src: film19, alt: "Eldkonstnär med eldkedjor och publik" },
+    { src: film20, alt: "Eldkonstnär med kryssade eldstavar" },
+    { src: film21, alt: "Eldkonstnär med eldring i rörelse" },
+    { src: film22, alt: "Eldkonstnär balanserar eldstav" },
+    { src: film23, alt: "Eldkonstnär med eldstavar i vinklat kryss" }
   ];
 
   let lightboxImg = null;

@@ -1,13 +1,13 @@
 <script>
   import { mediaPage } from "$lib/seo/mediaPage";
 
-  const imageFiles = import.meta.glob("/src/lib/images/design-reference/*.webp", {
-    eager: true,
-    import: "default"
-  });
+  const imageFiles = import.meta.glob(
+    ["/src/lib/images/design-reference/*.webp", "/src/lib/images/first-camp/*.webp"],
+    { eager: true, import: "default" }
+  );
 
-  function img(name) {
-    return imageFiles[`/src/lib/images/design-reference/${name}.webp`];
+  function img(name, folder = "design-reference") {
+    return imageFiles[`/src/lib/images/${folder}/${name}.webp`];
   }
 
   // Kurerad lista över bilder till biblioteket (samma urval som i designen)
@@ -65,7 +65,29 @@
     { file: "turbostav-bra-1", alt: "Eldkonstnär med turbostav" },
     { file: "turbostav-bra-2", alt: "Eldkonstnär med turbostav" },
     { file: "turbostav-bra-4", alt: "Eldkonstnär med turbostav" },
-    { file: "turbostav-bra-5", alt: "Eldkonstnär med turbostav" }
+    { file: "turbostav-bra-5", alt: "Eldkonstnär med turbostav" },
+
+    // First Camp 2026
+    { file: "lifebym-lukas-006", folder: "first-camp", alt: "Eldkonstnär kastar en eldkrona i luften" },
+    { file: "lifebym-lukas-009", folder: "first-camp", alt: "Duo krönd med eldkrona på stranden" },
+    { file: "lifebym-lukas-012", folder: "first-camp", alt: "Eldkonstnär med eldkrona vid vattnet" },
+    { file: "lifebym-lukas-013", folder: "first-camp", alt: "Eldkonstnär med eldkrona i solnedgång" },
+    { file: "lifebym-lukas-015", folder: "first-camp", alt: "Eldkonstnär med eldkrona i rörelse" },
+    { file: "lifebym-lukas-020", folder: "first-camp", alt: "Eldkonstnär med eldfläkt vid vattnet" },
+    { file: "lifebym-lukas-039", folder: "first-camp", alt: "Eldkonstnär med eldkedjor framför publik" },
+    { file: "lifebym-lukas-044", folder: "first-camp", alt: "Eldkonstnär med eldkedjor i solnedgång" },
+    { file: "lifebym-lukas-060", folder: "first-camp", alt: "Eldkonstnär med turbostav vid vattnet" },
+    { file: "lifebym-lukas-067", folder: "first-camp", alt: "Eldkonstnär med eldstav mot himlen" },
+    { file: "lifebym-lukas-076", folder: "first-camp", alt: "Eldkonstnär med eldkedjor och publik" },
+    { file: "lifebym-lukas-079", folder: "first-camp", alt: "Eldkonstnär med kryssade eldstavar" },
+    { file: "lifebym-lukas-081", folder: "first-camp", alt: "Eldkonstnär med eldring runt halsen" },
+    { file: "lifebym-lukas-082", folder: "first-camp", alt: "Eldkonstnär blåser eld" },
+    { file: "lifebym-lukas-087", folder: "first-camp", alt: "Eldkonstnär med eldring i rörelse" },
+    { file: "lifebym-lukas-095", folder: "first-camp", alt: "Eldkonstnär balanserar eldstav" },
+    { file: "lifebym-lukas-098", folder: "first-camp", alt: "Eldkonstnär med eldstavar i vinklat kryss" },
+    { file: "lifebym-lukas-103", folder: "first-camp", alt: "Eldkonstnär med eldstavar högt över huvudet" },
+    { file: "lifebym-lukas-104", folder: "first-camp", alt: "Vilda Flammor minglar med publik" },
+    { file: "lifebym-lukas-105", folder: "first-camp", alt: "Vilda Flammor med glada gäster" }
   ];
 
   let lightboxItem = null;
@@ -106,7 +128,7 @@
   <div class="masonry">
     {#each gallery as item}
       <figure on:click={() => openLightbox(item)}>
-        <img src={img(item.file)} alt={item.alt} loading="lazy" />
+        <img src={img(item.file, item.folder)} alt={item.alt} loading="lazy" />
       </figure>
     {/each}
   </div>
@@ -115,7 +137,7 @@
 {#if lightboxItem}
   <div class="lightbox open" on:click={closeLightbox}>
     <div class="lightbox-close" on:click|stopPropagation={closeLightbox}>✕</div>
-    <img src={img(lightboxItem.file)} alt={lightboxItem.alt} on:click|stopPropagation />
+    <img src={img(lightboxItem.file, lightboxItem.folder)} alt={lightboxItem.alt} on:click|stopPropagation />
   </div>
 {/if}
 

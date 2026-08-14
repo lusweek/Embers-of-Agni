@@ -3,7 +3,7 @@
 
   import heroImg from "$lib/images/design-reference/eldshow-hero.webp";
   import storaImg from "$lib/images/design-reference/sparcle-blurred-faces.webp";
-  import lillaImg from "$lib/images/design-reference/010a5936.webp";
+  import lillaImg from "$lib/images/first-camp/lifebym-lukas-060.webp";
   import adaptImg from "$lib/images/design-reference/kansla.webp";
 
   import g1 from "$lib/images/design-reference/soloshow-7a2f2d1d.webp";
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="show-card">
-        <div class="show-img"><img src={lillaImg} alt="Duo dansar med eldkedjor" /></div>
+        <div class="show-img"><img src={lillaImg} alt="Eldkonstnär med turbostav vid vattnet" /></div>
         <div class="show-body">
           <span class="show-tag">Kompakt akt</span>
           <h3>Lilla showen</h3>

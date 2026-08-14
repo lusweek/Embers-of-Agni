@@ -2,6 +2,15 @@
   import { provaPaFlowarts } from "$lib/seo/provaPaFlowartsPage";
 
   import heroImg from "$lib/images/design-reference/workshop-blured.webp";
+
+  import stavVideo from "$lib/videos/workshops/stav.mp4";
+  import stavPoster from "$lib/videos/workshops/stav-poster.jpg";
+  import dubbelstavVideo from "$lib/videos/workshops/dubbelstav.mp4";
+  import dubbelstavPoster from "$lib/videos/workshops/dubbelstav-poster.jpg";
+  import rockringVideo from "$lib/videos/workshops/rockring.mp4";
+  import rockringPoster from "$lib/videos/workshops/rockring-poster.jpg";
+  import poiVideo from "$lib/videos/workshops/poi.mp4";
+  import poiPoster from "$lib/videos/workshops/poi-poster.jpg";
 </script>
 
 <!-- SEO -->
@@ -55,29 +64,25 @@
       <div class="video-card">
         <h3>Stav</h3>
         <div class="video-frame">
-          <span class="play-icon">▶</span>
-          <span class="ph-label">VIDEO: Stav — grundflow</span>
+          <video src={stavVideo} poster={stavPoster} autoplay muted loop playsinline preload="auto" aria-label="Grundflow med stav"></video>
         </div>
       </div>
       <div class="video-card">
         <h3>Dubbelstav</h3>
         <div class="video-frame">
-          <span class="play-icon">▶</span>
-          <span class="ph-label">VIDEO: Dubbelstav — grundflow</span>
+          <video src={dubbelstavVideo} poster={dubbelstavPoster} autoplay muted loop playsinline preload="auto" aria-label="Grundflow med dubbelstav"></video>
         </div>
       </div>
       <div class="video-card">
         <h3>Rockring</h3>
         <div class="video-frame">
-          <span class="play-icon">▶</span>
-          <span class="ph-label">VIDEO: Rockring — grundflow</span>
+          <video src={rockringVideo} poster={rockringPoster} autoplay muted loop playsinline preload="auto" aria-label="Grundflow med rockring"></video>
         </div>
       </div>
       <div class="video-card">
         <h3>Poi</h3>
         <div class="video-frame">
-          <span class="play-icon">▶</span>
-          <span class="ph-label">VIDEO: Poi — grundflow</span>
+          <video src={poiVideo} poster={poiPoster} autoplay muted loop playsinline preload="auto" aria-label="Grundflow med poi"></video>
         </div>
       </div>
     </div>
