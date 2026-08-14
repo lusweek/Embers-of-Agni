@@ -687,26 +687,13 @@ a {
   background: var(--bg-alt);
 }
 
-.filmstrip .wrap {
+.filmstrip-cta {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: flex-end;
+  padding-top: 20px;
 }
 
-.filmstrip-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.filmstrip-head span {
-  font-size: 12.5px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-
-.filmstrip-head a {
+.filmstrip-cta a {
   display: inline-block;
   font-size: 13px;
   font-weight: 700;
@@ -721,6 +708,7 @@ a {
 
 .filmstrip-viewport {
   overflow: hidden;
+  width: 100%;
 }
 
 .filmrow {

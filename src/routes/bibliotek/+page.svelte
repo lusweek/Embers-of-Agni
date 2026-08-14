@@ -62,7 +62,6 @@
     { file: "sa106223", alt: "Eldshow på scen" },
     { file: "se-mer-2", alt: "Eldshow closeup" },
     { file: "se-mer-3", alt: "Eldshow closeup" },
-    { file: "till-mail-2", alt: "Eldshow bild" },
     { file: "turbostav-bra-1", alt: "Eldkonstnär med turbostav" },
     { file: "turbostav-bra-2", alt: "Eldkonstnär med turbostav" },
     { file: "turbostav-bra-4", alt: "Eldkonstnär med turbostav" },

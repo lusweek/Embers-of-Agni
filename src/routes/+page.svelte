@@ -91,20 +91,17 @@
 </section>
 
 <section class="filmstrip">
-  <div class="wrap">
-    <div class="filmstrip-head">
-      <span>Från våra shower</span>
-      <a href="/bibliotek">Se hela biblioteket →</a>
+  <div class="filmstrip-viewport">
+    <div class="filmrow animate">
+      {#each [...filmImages, ...filmImages] as img}
+        <figure on:click={() => openLightbox(img)}>
+          <img src={img.src} alt={img.alt} loading="lazy" />
+        </figure>
+      {/each}
     </div>
-    <div class="filmstrip-viewport">
-      <div class="filmrow animate">
-        {#each [...filmImages, ...filmImages] as img}
-          <figure on:click={() => openLightbox(img)}>
-            <img src={img.src} alt={img.alt} loading="lazy" />
-          </figure>
-        {/each}
-      </div>
-    </div>
+  </div>
+  <div class="wrap filmstrip-cta">
+    <a href="/bibliotek">Se hela biblioteket →</a>
   </div>
 </section>
 

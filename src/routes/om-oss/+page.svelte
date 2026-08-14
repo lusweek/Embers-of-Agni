@@ -1,7 +1,7 @@
 <script>
   import { about } from "$lib/seo/about";
 
-  import storyImg1 from "$lib/images/design-reference/embers-of-agni.webp";
+  import storyImg1 from "$lib/images/design-reference/till-mail-2.webp";
   import storyImg2 from "$lib/images/design-reference/010a5936-8061093d.webp";
 </script>
 
@@ -25,7 +25,7 @@
 <section class="section">
   <div class="wrap-wide">
     <div class="story-grid">
-      <div class="story-img"><img src={storyImg1} alt="Eldkonstnär formar ett eldmoln med två eldstavar" /></div>
+      <div class="story-img"><img src={storyImg1} alt="Vilda Flammor formar en eldkrona av facklor" /></div>
       <div class="story-text">
         <span class="eyebrow">Vår historia</span>
         <h2 style="font-size:34px;margin-bottom:20px;">Elden som blev ett hantverk</h2>
