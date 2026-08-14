@@ -37,7 +37,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section-xl">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Två format</span>
@@ -69,7 +69,7 @@
   </div>
 </section>
 
-<section class="section adapt">
+<section class="section section-xl adapt">
   <div class="wrap adapt-grid">
     <div class="adapt-img"><img src={adaptImg} alt="Elin snöar eldstavar själv" /></div>
     <div>
@@ -84,7 +84,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section-xl">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Passar för</span>
@@ -96,7 +96,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section-xl">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Bibliotek</span>
@@ -112,7 +112,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section-xl">
   <div class="wrap">
     <div class="ctaband">
       <div>

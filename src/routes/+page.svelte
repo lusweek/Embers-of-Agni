@@ -61,7 +61,7 @@
   </script>
 </svelte:head>
 
-<section class="hero-full">
+<section class="hero-full hero-home">
   <div class="hero-bg">
     <video
       src={heroVideo}
@@ -141,7 +141,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section section-xl">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Boka in oss</span>

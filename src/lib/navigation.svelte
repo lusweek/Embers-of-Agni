@@ -166,16 +166,24 @@
       {#each menuItems as item}
         {#if item.children}
           <div class="mobile-dropdown-group">
-            <button
-              class="mobile-dropdown-toggle"
-              on:click={() => toggleMobileDropdown(item.label)}
-              aria-expanded={openMobileDropdown === item.label}
-            >
-              <span class:active={isActive(item.href)}>{item.label}</span>
-              <svg class="caret" class:open={openMobileDropdown === item.label} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+            <div class="mobile-dropdown-row">
+              <a href={item.href}
+                 on:click={closeMobileMenu}
+                 class="mobile-dropdown-label"
+                 class:active={isActive(item.href)}>
+                {item.label}
+              </a>
+              <button
+                class="mobile-dropdown-arrow"
+                on:click={() => toggleMobileDropdown(item.label)}
+                aria-expanded={openMobileDropdown === item.label}
+                aria-label="Visa undermeny för {item.label}"
+              >
+                <svg class="caret" class:open={openMobileDropdown === item.label} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
             {#if openMobileDropdown === item.label}
               <div class="mobile-submenu" transition:slide={{ duration: 220, easing: cubicOut }}>
                 {#each item.children as child}
@@ -247,8 +255,7 @@
   .navlinks a:hover,
   .navlinks a.active,
   .dropdown a.active,
-  .mobile-menu-content a.active,
-  .mobile-dropdown-toggle span.active {
+  .mobile-menu-content a.active {
     color: var(--gold);
   }
 
@@ -381,28 +388,41 @@
     flex-direction: column;
   }
 
-  .mobile-dropdown-toggle {
+  .mobile-dropdown-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+    gap: 12px;
+  }
+
+  .mobile-dropdown-label {
+    text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 22px;
     letter-spacing: 0.02em;
     color: var(--ink);
   }
 
-  .mobile-dropdown-toggle .caret {
+  .mobile-dropdown-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    margin: -10px;
+    cursor: pointer;
+  }
+
+  .mobile-dropdown-arrow .caret {
     width: 16px;
     height: 16px;
+    color: var(--ink);
     transition: transform 0.2s ease;
   }
 
-  .mobile-dropdown-toggle .caret.open {
+  .mobile-dropdown-arrow .caret.open {
     transform: rotate(180deg);
   }
 
