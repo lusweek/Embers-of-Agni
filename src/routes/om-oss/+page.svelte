@@ -23,7 +23,7 @@
 </section>
 
 <section class="section">
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="story-grid">
       <div class="story-img"><img src={storyImg1} alt="Eldkonstnär formar ett eldmoln med två eldstavar" /></div>
       <div class="story-text">
@@ -60,7 +60,7 @@
 </section>
 
 <section class="section">
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="story-grid reverse">
       <div class="story-img"><img src={storyImg2} alt="Duo dansar med eldkedjor" /></div>
       <div class="story-text">

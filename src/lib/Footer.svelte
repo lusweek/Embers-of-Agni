@@ -12,32 +12,36 @@
 
 <footer class="vf-footer">
   <div class="wrap">
-    <div class="foot-grid">
-      <a class="brand" href="/">Vilda<span>Flammor</span></a>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/">Vilda<span>Flammor</span></a>
+        <p class="foot-tagline">Eldshow, workshops & elduppträdanden i hela Sverige.</p>
+      </div>
 
-      <ul class="foot-links">
+      <nav class="foot-links" aria-label="Sidfotsnavigering">
         {#each links as link}
-          <li><a href={link.href}>{link.label}</a></li>
+          <a href={link.href}>{link.label}</a>
         {/each}
-      </ul>
+      </nav>
+    </div>
 
+    <div class="foot-bottom">
       <div class="foot-contact">
         <a href="tel:+46738546407">
-          <Phone size="16" />
+          <Phone size="15" />
           <span>073 854 64 07</span>
         </a>
         <a href="https://www.instagram.com/vildaflammor" title="Vilda Flammor" target="_blank" rel="noopener noreferrer">
-          <Instagram size="16" />
-          <span>Vilda Flammor</span>
+          <Instagram size="15" />
+          <span>Instagram</span>
         </a>
         <a href="mailto:vildaflammor@gmail.com">
-          <Mail size="16" />
+          <Mail size="15" />
           <span>vildaflammor@gmail.com</span>
         </a>
-        <span>Vilda Flammor AB</span>
       </div>
-    </div>
 
-    <p class="foot-note">© Vilda Flammor {new Date().getFullYear()} — Eldshow, workshops & elduppträdanden i hela Sverige.</p>
+      <p class="foot-note">© Vilda Flammor AB {new Date().getFullYear()}</p>
+    </div>
   </div>
 </footer>

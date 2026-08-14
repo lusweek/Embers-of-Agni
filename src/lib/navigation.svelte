@@ -2,15 +2,24 @@
   import { page } from "$app/stores";
   import { onMount, onDestroy } from "svelte";
   import { afterNavigate } from "$app/navigation";
-  import { fly, fade } from "svelte/transition";
+  import { fly, fade, slide } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
   // UI-state
   let isMobileMenuOpen = false;
+  let isDesktopDropdownOpen = false;
+  let openMobileDropdown = null;
 
   // Menydata (ändra här i framtiden)
   const menuItems = [
-    { label: "Eldshow", href: "/eldshow" },
+    {
+      label: "Eldshow",
+      href: "/eldshow",
+      children: [
+        { label: "Stora showen", href: "/eldshow/stora-showen" },
+        { label: "Lilla showen", href: "/eldshow/lilla-showen" }
+      ]
+    },
     { label: "Workshops", href: "/workshops" },
     { label: "Om oss", href: "/om-oss" },
     { label: "Bibliotek", href: "/bibliotek" }
@@ -22,12 +31,20 @@
     currentPath = p?.url?.pathname ?? "";
   });
 
+  function parentLabelForPath(path) {
+    const parent = menuItems.find(i => i.children?.some(child => path === child.href || path.startsWith(child.href + "/")));
+    return parent ? parent.label : null;
+  }
+
   afterNavigate(() => {
     isMobileMenuOpen = false;
+    isDesktopDropdownOpen = false;
+    openMobileDropdown = parentLabelForPath(currentPath);
   });
 
   onMount(() => {
     window.addEventListener("scroll", handleDesktopScroll);
+    openMobileDropdown = parentLabelForPath(currentPath);
     return () => {
       window.removeEventListener("scroll", handleDesktopScroll);
     };
@@ -39,6 +56,10 @@
 
   function closeMobileMenu() {
     isMobileMenuOpen = false;
+  }
+
+  function toggleMobileDropdown(label) {
+    openMobileDropdown = openMobileDropdown === label ? null : label;
   }
 
   function isActive(href) {
@@ -68,11 +89,33 @@
 
     <ul class="navlinks hidden lg:flex">
       {#each menuItems as item}
-        <li>
-          <a href={item.href} class:active={isActive(item.href)}>
-            {item.label}
-          </a>
-        </li>
+        {#if item.children}
+          <li class="has-dropdown"
+              on:mouseenter={() => (isDesktopDropdownOpen = true)}
+              on:mouseleave={() => (isDesktopDropdownOpen = false)}>
+            <a href={item.href} class:active={isActive(item.href)}>
+              {item.label}
+              <svg class="caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            {#if isDesktopDropdownOpen}
+              <ul class="dropdown" transition:slide={{ duration: 180, easing: cubicOut }}>
+                {#each item.children as child}
+                  <li>
+                    <a href={child.href} class:active={isActive(child.href)}>{child.label}</a>
+                  </li>
+                {/each}
+              </ul>
+            {/if}
+          </li>
+        {:else}
+          <li>
+            <a href={item.href} class:active={isActive(item.href)}>
+              {item.label}
+            </a>
+          </li>
+        {/if}
       {/each}
     </ul>
 
@@ -121,11 +164,33 @@
 
     <nav class="mobile-menu-content">
       {#each menuItems as item}
-        <a href={item.href}
-           on:click={closeMobileMenu}
-           class:active={isActive(item.href)}>
-          {item.label}
-        </a>
+        {#if item.children}
+          <div class="mobile-dropdown-group">
+            <button
+              class="mobile-dropdown-toggle"
+              on:click={() => toggleMobileDropdown(item.label)}
+              aria-expanded={openMobileDropdown === item.label}
+            >
+              <span class:active={isActive(item.href)}>{item.label}</span>
+              <svg class="caret" class:open={openMobileDropdown === item.label} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {#if openMobileDropdown === item.label}
+              <div class="mobile-submenu" transition:slide={{ duration: 220, easing: cubicOut }}>
+                {#each item.children as child}
+                  <a href={child.href} on:click={closeMobileMenu} class:active={isActive(child.href)}>{child.label}</a>
+                {/each}
+              </div>
+            {/if}
+          </div>
+        {:else}
+          <a href={item.href}
+             on:click={closeMobileMenu}
+             class:active={isActive(item.href)}>
+            {item.label}
+          </a>
+        {/if}
       {/each}
       <a class="nav-cta mobile-cta" href="/boka" on:click={closeMobileMenu}>Boka show</a>
     </nav>
@@ -166,15 +231,84 @@
     font-size: 14.5px;
   }
 
+  .navlinks > li {
+    position: relative;
+  }
+
   .navlinks a {
     text-decoration: none;
     color: var(--ink-dim);
     transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
   }
 
   .navlinks a:hover,
   .navlinks a.active,
-  .mobile-menu-content a.active {
+  .dropdown a.active,
+  .mobile-menu-content a.active,
+  .mobile-dropdown-toggle span.active {
+    color: var(--gold);
+  }
+
+  .caret {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s ease;
+  }
+
+  .has-dropdown:hover .caret {
+    transform: rotate(180deg);
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 14px;
+    list-style: none;
+    margin: 0;
+    z-index: 10;
+  }
+
+  .dropdown::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 14px;
+  }
+
+  .dropdown-inner,
+  .dropdown {
+    background: transparent;
+  }
+
+  .dropdown > li {
+    background: var(--bg-alt);
+    border: 1px solid rgba(255, 201, 74, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .dropdown > li:first-child {
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+  }
+
+  .dropdown > li:last-child {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 11px 18px;
+    white-space: nowrap;
+    color: var(--ink-dim);
+    font-size: 14px;
+  }
+
+  .dropdown a:hover {
+    background: rgba(255, 201, 74, 0.1);
     color: var(--gold);
   }
 
@@ -234,7 +368,7 @@
     gap: 24px;
   }
 
-  .mobile-menu-content a {
+  .mobile-menu-content > a {
     text-decoration: none;
     color: var(--ink);
     font-family: 'Bebas Neue', sans-serif;
@@ -242,10 +376,60 @@
     letter-spacing: 0.02em;
   }
 
+  .mobile-dropdown-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .mobile-dropdown-toggle .caret {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-dropdown-toggle .caret.open {
+    transform: rotate(180deg);
+  }
+
+  .mobile-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 0 0 16px;
+  }
+
+  .mobile-submenu a {
+    text-decoration: none;
+    color: var(--ink-dim);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+  }
+
   .mobile-cta {
     text-align: center;
-    font-family: 'Work Sans', sans-serif;
     margin-top: 12px;
+  }
+
+  .mobile-menu-content a.mobile-cta {
+    color: #1b0800;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
   }
 
   :global(main.padding-top) {

@@ -19,7 +19,7 @@
 <p class="wrap"><span class="breadcrumb"><a href="/eldshow">Eldshow</a> / <span>Stora showen</span></span></p>
 
 <section class="hero-inline">
-  <div class="hero-bg ph">
+  <div class="hero-bg">
     <img src={heroImg} alt="Eldkonstnär med gnistregn" fetchpriority="high" />
   </div>
   <div class="hero-content">
@@ -48,10 +48,10 @@
       <span class="eyebrow">Bibliotek</span>
       <h2>Från tidigare framträdanden</h2>
     </div>
-    <div class="gallery">
-      <div class="ph"><img src={g1} alt="Eldkonstnär med eldstavar framför träd" /></div>
-      <div class="ph"><img src={g2} alt="Duo med eldstavar i stenvalv" /></div>
-      <div class="ph"><img src={g3} alt="Eldkonstnär med eldpoi utomhus" /></div>
+    <div class="gallery-masonry">
+      <figure><img src={g1} alt="Eldkonstnär med eldstavar framför träd" loading="lazy" /></figure>
+      <figure><img src={g2} alt="Duo med eldstavar i stenvalv" loading="lazy" /></figure>
+      <figure><img src={g3} alt="Eldkonstnär med eldpoi utomhus" loading="lazy" /></figure>
     </div>
   </div>
 </section>

@@ -23,7 +23,7 @@
 </svelte:head>
 
 <section class="hero-full">
-  <div class="hero-bg ph">
+  <div class="hero-bg">
     <img src={heroImg} alt="Duon Vilda Flammor dansar med eldkedjor" fetchpriority="high" />
   </div>
   <div class="wrap hero-content">
@@ -102,12 +102,12 @@
       <span class="eyebrow">Bibliotek</span>
       <h2>Bilder från showerna</h2>
     </div>
-    <div class="gallery">
-      <div class="ph"><img src={g1} alt="Eldkonstnär med eldstav framför trumslagare" /></div>
-      <div class="ph"><img src={g2} alt="Eldjonglör med eldpoi framför publik" /></div>
-      <div class="ph"><img src={g3} alt="Eldshow framför Sandra Event-skylten" /></div>
-      <div class="ph wide"><img src={g4} alt="Duo med eldpoi utomhus" /></div>
-      <div class="ph"><img src={g5} alt="Eldkonstnär med eld i klippgrotta" /></div>
+    <div class="gallery-masonry">
+      <figure><img src={g1} alt="Eldkonstnär med eldstav framför trumslagare" loading="lazy" /></figure>
+      <figure><img src={g2} alt="Eldjonglör med eldpoi framför publik" loading="lazy" /></figure>
+      <figure><img src={g3} alt="Eldshow framför Sandra Event-skylten" loading="lazy" /></figure>
+      <figure><img src={g4} alt="Duo med eldpoi utomhus" loading="lazy" /></figure>
+      <figure><img src={g5} alt="Eldkonstnär med eld i klippgrotta" loading="lazy" /></figure>
     </div>
   </div>
 </section>

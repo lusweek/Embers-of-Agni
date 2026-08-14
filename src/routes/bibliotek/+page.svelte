@@ -96,6 +96,13 @@
   </div>
 </section>
 
+<section style="padding:0 0 36px;text-align:center;">
+  <div class="wrap">
+    <p style="color:var(--ink-dim);font-size:16px;margin-bottom:16px;">Fler bilder och klipp hittar du på vårt Instagram.</p>
+    <a href="https://www.instagram.com/vildaflammor/" target="_blank" rel="noopener" class="btn-primary">Följ oss på Instagram →</a>
+  </div>
+</section>
+
 <div class="wrap">
   <div class="masonry">
     {#each gallery as item}
@@ -105,13 +112,6 @@
     {/each}
   </div>
 </div>
-
-<section style="padding:20px 0 70px;text-align:center;">
-  <div class="wrap">
-    <p style="color:var(--ink-dim);font-size:16px;margin-bottom:16px;">Fler bilder och klipp hittar du på vårt Instagram.</p>
-    <a href="https://www.instagram.com/vildaflammor/" target="_blank" rel="noopener" class="btn-primary">Följ oss på Instagram →</a>
-  </div>
-</section>
 
 {#if lightboxItem}
   <div class="lightbox open" on:click={closeLightbox}>

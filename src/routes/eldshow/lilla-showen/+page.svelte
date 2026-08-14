@@ -27,7 +27,7 @@
       <p class="lead">En kortare, mer intim version av vår elddans — samma hantverk, samma känsla, komprimerad till en stark stund. Perfekt när tidsschemat är tight eller ytan mindre.</p>
       <a class="btn-primary" href="/boka">Boka lilla showen</a>
     </div>
-    <div class="hero-photo ph"><img src={heroImg} alt="Duo dansar med eldkedjor" /></div>
+    <div class="hero-photo"><img src={heroImg} alt="Duo dansar med eldkedjor" /></div>
   </div>
 </section>
 
@@ -49,10 +49,10 @@
       <span class="eyebrow">Bibliotek</span>
       <h2>Från tidigare framträdanden</h2>
     </div>
-    <div class="gallery">
-      <div class="ph"><img src={g1} alt="Eldkonstnär med eldpoi i profil" /></div>
-      <div class="ph"><img src={g2} alt="Eldkonstnär med eldfans i rörelse" /></div>
-      <div class="ph"><img src={g3} alt="Eldkonstnär med eldhoop bakifrån" /></div>
+    <div class="gallery-masonry">
+      <figure><img src={g1} alt="Eldkonstnär med eldpoi i profil" loading="lazy" /></figure>
+      <figure><img src={g2} alt="Eldkonstnär med eldfans i rörelse" loading="lazy" /></figure>
+      <figure><img src={g3} alt="Eldkonstnär med eldhoop bakifrån" loading="lazy" /></figure>
     </div>
   </div>
 </section>

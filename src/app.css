@@ -58,6 +58,12 @@ a {
   padding: 0 32px;
 }
 
+.wrap-wide {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
 /* ---- Legacy klasser (äldre sidor), omskinnade till nya tokens ---- */
 
 .h1-title {
@@ -162,7 +168,7 @@ a {
   border: 1px solid rgba(255, 201, 74, 0.22);
 }
 
-.ph img, .hero-bg img, .hero-photo img, .gallery img, .ticket-img img,
+.ph img, .hero-bg img, .hero-bg video, .hero-photo img, .gallery img, .ticket-img img,
 .about-img img, .adapt-img img, .show-img img, .filmrow img {
   display: block;
   width: 100%;
@@ -246,7 +252,7 @@ a {
 }
 
 .section-head h2 {
-  font-size: 36px;
+  font-size: clamp(26px, 6vw, 36px);
   margin-bottom: 12px;
 }
 
@@ -316,14 +322,14 @@ a {
 }
 
 .hero-full h1 {
-  font-size: clamp(44px, 6.5vw, 72px);
+  font-size: clamp(34px, 8vw, 72px);
   line-height: 0.98;
   margin-bottom: 20px;
   max-width: 760px;
 }
 
 .hero-full p.lead {
-  font-size: 18px;
+  font-size: clamp(15px, 3.2vw, 18px);
   color: var(--ink-dim);
   max-width: 520px;
   margin: 0 0 30px;
@@ -343,7 +349,7 @@ a {
 }
 
 .hero-simple h1 {
-  font-size: clamp(40px, 6vw, 60px);
+  font-size: clamp(32px, 8vw, 60px);
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -391,16 +397,16 @@ a {
 }
 
 .hero-inline h1 {
-  font-size: clamp(42px, 6vw, 64px);
+  font-size: clamp(32px, 8vw, 64px);
   line-height: 0.98;
   margin-bottom: 14px;
 }
 
 .hero-meta {
   display: flex;
-  gap: 22px;
+  gap: 12px 22px;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: clamp(12.5px, 3vw, 14px);
   color: var(--ink-dim);
   margin-bottom: 24px;
 }
@@ -432,7 +438,7 @@ a {
 }
 
 .hero-split h1 {
-  font-size: clamp(40px, 5.5vw, 58px);
+  font-size: clamp(30px, 8vw, 58px);
   line-height: 0.98;
   margin-bottom: 16px;
 }
@@ -612,6 +618,38 @@ a {
 .gallery .ph.wide {
   grid-column: span 2;
   aspect-ratio: 8 / 5;
+}
+
+/* Masonry-variant av bildgalleriet ("Bilder från showerna") — inga tomma
+   rutor kvar oavsett hur många bilder eller vilken skärmbredd. */
+.gallery-masonry {
+  column-count: 3;
+  column-gap: 16px;
+}
+
+.gallery-masonry figure {
+  margin: 0 0 16px;
+  break-inside: avoid;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 201, 74, 0.12);
+}
+
+.gallery-masonry img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .gallery-masonry {
+    column-count: 2;
+    column-gap: 12px;
+  }
+
+  .gallery-masonry figure {
+    margin: 0 0 12px;
+  }
 }
 
 /* ---- Filmremsa (horisontell scroll) ---- */
@@ -1307,41 +1345,62 @@ a {
 /* ---- Footer ---- */
 
 .vf-footer {
-  padding: 50px 0 40px;
+  padding: 56px 0 32px;
   border-top: 1px solid rgba(255, 201, 74, 0.1);
 }
 
-.foot-grid {
+.foot-top {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 22px;
-  align-items: center;
+  gap: 32px;
+  padding-bottom: 36px;
+}
+
+.foot-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 340px;
+}
+
+.foot-tagline {
+  color: var(--ink-dim);
+  font-size: 14px;
+  margin: 0;
 }
 
 .foot-links {
   display: flex;
-  gap: 26px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  color: var(--ink-dim);
   flex-wrap: wrap;
+  gap: 12px 28px;
+  font-size: 14px;
 }
 
 .foot-links a {
   color: var(--ink-dim);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .foot-links a:hover {
   color: var(--gold);
 }
 
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 201, 74, 0.1);
+}
+
 .foot-contact {
   display: flex;
-  gap: 22px;
+  gap: 12px 26px;
   flex-wrap: wrap;
   font-size: 14px;
   color: var(--ink-dim);
@@ -1364,21 +1423,34 @@ a {
   font-size: 12.5px;
   color: var(--ink-dim);
   opacity: 0.7;
-  margin-top: 20px;
+  margin: 0;
   font-family: 'Work Sans', sans-serif;
+}
+
+@media (max-width: 640px) {
+  .foot-top {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .foot-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
 }
 
 /* ---- Om oss: story-split + värderingar ---- */
 
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 56px;
   align-items: center;
 }
 
 .story-grid.reverse {
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1.15fr;
 }
 
 .story-grid.reverse .story-img {
@@ -1533,6 +1605,23 @@ a {
 }
 
 /* ---- Workshops: hero-grid, formats, utrustning, video-showcase ---- */
+
+.hero {
+  padding: clamp(32px, 6vw, 52px) 0;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 8vw, 60px);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.hero p.lead {
+  color: var(--ink-dim);
+  font-size: clamp(15px, 3.2vw, 17px);
+  margin: 0 0 26px;
+  max-width: 480px;
+}
 
 .hero-grid {
   display: grid;
@@ -1703,7 +1792,48 @@ a {
   }
 
   .hero-full, .hero-inline {
-    height: 440px;
+    height: auto;
+    min-height: 420px;
+  }
+
+  .hero-full .hero-content,
+  .hero-inline .hero-content {
+    padding-bottom: 32px;
+  }
+
+  .hero-inline .hero-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero-simple {
+    padding: 40px 0 12px;
+  }
+
+  .hero-split {
+    padding-top: 24px;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-ghost {
+    padding: 13px 24px;
+    font-size: 14px;
+  }
+
+  .ctaband, .call-card {
+    padding: 32px 26px;
+  }
+
+  .ctaband h2 {
+    font-size: 26px;
+  }
+
+  .call-card h2 {
+    font-size: 24px;
   }
 
   .ctaband, .call-card {

@@ -1,7 +1,8 @@
 <script>
   import { homePage } from "$lib/seo/homePage.js";
 
-  import heroImg from "$lib/images/design-reference/eldshower.webp";
+  import heroVideo from "$lib/videos/hero-loop.mp4";
+  import heroPoster from "$lib/videos/hero-loop-poster.jpg";
   import eldshowTicket from "$lib/images/design-reference/hero.webp";
   import workshopTicket from "$lib/images/design-reference/workshop-blured.webp";
   import aboutImg from "$lib/images/design-reference/010a5607.webp";
@@ -61,8 +62,17 @@
 </svelte:head>
 
 <section class="hero-full">
-  <div class="hero-bg ph">
-    <img src={heroImg} alt="Vilda Flammor - eldshow" fetchpriority="high" />
+  <div class="hero-bg">
+    <video
+      src={heroVideo}
+      poster={heroPoster}
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    ></video>
   </div>
   <div class="wrap hero-content">
     <span class="eyebrow">Eldshow · workshops</span>
