@@ -319,6 +319,9 @@ a {
   z-index: 1;
   padding-bottom: 56px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .hero-full h1 {
@@ -415,6 +418,10 @@ a {
   z-index: 1;
   padding: 0 44px 40px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  
 }
 
 .hero-inline h1 {
@@ -860,16 +867,33 @@ a {
 
 .logo-slot {
   width: 150px;
-  height: 56px;
-  border: 1px dashed rgba(255, 201, 74, 0.3);
+  height: 64px;
+  background: #fff;
+  border: 1px solid rgba(255, 201, 74, 0.15);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 14px;
   color: var(--ink-dim);
   font-size: 11.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.logo-slot:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.logo-slot img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* ---- Erbjudande-kort ("ticket") ---- */

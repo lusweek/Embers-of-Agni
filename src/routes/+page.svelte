@@ -7,6 +7,11 @@
   import workshopTicket from "$lib/images/design-reference/workshop-blured.webp";
   import aboutImg from "$lib/images/design-reference/010a5607.webp";
 
+  import logoSandra from "$lib/images/logos/sandra.jpeg";
+  import logoOldergarden from "$lib/images/logos/oldergarden.png";
+  import logoFirstCamp from "$lib/images/logos/first-camp.png";
+  import logoKalmarCity from "$lib/images/logos/kalmar-city.png";
+
   import film1 from "$lib/images/design-reference/till-mail-2.webp";
   import film2 from "$lib/images/design-reference/sa106203.webp";
   import film3 from "$lib/images/design-reference/turbostav-bra-5.webp";
@@ -132,10 +137,18 @@
     <div class="proof-strip">
       <div class="proof-strip-label">Har synts på</div>
       <div class="logos">
-        <div class="logo-slot">Sandra Event, Kalmar</div>
-        <div class="logo-slot">Robert Oldergårdens Glashytta, Öland</div>
-        <div class="logo-slot">First Camp</div>
-        <div class="logo-slot">Kalmar City</div>
+        <a class="logo-slot" href="https://sandraevent.se/" target="_blank" rel="noopener noreferrer">
+          <img src={logoSandra} alt="Sandra Event, Kalmar" />
+        </a>
+        <a class="logo-slot" href="https://oldergaard.se/" target="_blank" rel="noopener noreferrer">
+          <img src={logoOldergarden} alt="Robert Oldergårdens Glashytta, Öland" />
+        </a>
+        <a class="logo-slot" href="https://firstcamp.se/" target="_blank" rel="noopener noreferrer">
+          <img src={logoFirstCamp} alt="First Camp" />
+        </a>
+        <a class="logo-slot" href="https://kalmarcity.com/" target="_blank" rel="noopener noreferrer">
+          <img src={logoKalmarCity} alt="Kalmar City" />
+        </a>
       </div>
     </div>
   </div>
