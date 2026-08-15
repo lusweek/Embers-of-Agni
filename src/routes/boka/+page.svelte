@@ -1,6 +1,10 @@
 <script>
+  import { onMount } from "svelte";
+  import { page } from "$app/stores";
   import { bokaPage } from "$lib/seo/bokaPage";
   import Loader from "$lib/assets/Loader.svelte";
+
+  const MAX_FILE_BYTES = 10 * 1024 * 1024; // formsubmit.co:s gräns är 10MB
 
   let namn = "";
   let epost = "";
@@ -14,8 +18,21 @@
   let meddelande = "";
   let status = "";
   let submitSuccess = false;
+  let fileError = "";
 
   let copiedField = "";
+
+  // Absolut URL som formsubmit.co skickar tillbaka besökaren till efter en
+  // "riktig" (icke-AJAX) inskickning — krävs när en bilaga finns med.
+  $: nextUrl = `${$page.url.origin}/boka?sent=1`;
+
+  onMount(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("sent") === "1") {
+      submitSuccess = true;
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+  });
 
   function copyToClipboard(text, field) {
     navigator.clipboard.writeText(text).then(() => {
@@ -25,10 +42,28 @@
   }
 
   function handleFile(event) {
-    bild = event.target.files?.[0] ?? null;
+    const file = event.target.files?.[0] ?? null;
+    if (file && file.size > MAX_FILE_BYTES) {
+      fileError = "Bilden är för stor (max 10MB). Välj en mindre bild.";
+      bild = null;
+      event.target.value = "";
+      return;
+    }
+    fileError = "";
+    bild = file;
   }
 
+  // Bilagor kräver en riktig (icke-AJAX) formulärinskickning med
+  // enctype="multipart/form-data" — formsubmit.co:s /ajax/-endpoint tar
+  // inte emot filer. Utan bild använder vi AJAX för snabbare, kvarvarande
+  // bekräftelse utan sidladdning.
   async function handleSubmit(event) {
+    if (bild) {
+      // Låt webbläsaren sköta en vanlig multipart-POST (ingen preventDefault).
+      status = "loading";
+      return;
+    }
+
     event.preventDefault();
     status = "loading";
 
@@ -43,9 +78,7 @@
     formData.append("antal_gaster", gaster);
     formData.append("meddelande", meddelande);
     formData.append("_captcha", "false");
-    // OBS: formsubmit.co kräver att bilagan heter just "attachment" för
-    // att den ska följa med i mejlet.
-    if (bild) formData.append("attachment", bild);
+    formData.append("_subject", "Ny bokningsförfrågan – Vilda Flammor");
 
     try {
       const res = await fetch("https://formsubmit.co/ajax/vildaflammor@gmail.com", {
@@ -64,7 +97,6 @@
         show = "";
         plats = "";
         gaster = "";
-        bild = null;
         meddelande = "";
       } else {
         status = "error";
@@ -131,7 +163,16 @@
       </div>
 
       <div class="form-card">
-        <form on:submit={handleSubmit}>
+        <form
+          method="POST"
+          action="https://formsubmit.co/vildaflammor@gmail.com"
+          enctype="multipart/form-data"
+          on:submit={handleSubmit}
+        >
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Ny bokningsförfrågan – Vilda Flammor" />
+          <input type="hidden" name="_next" value={nextUrl} />
+
           <div class="form-row">
             <div class="field">
               <label for="namn">Namn <span class="req">*</span></label>
@@ -178,7 +219,7 @@
             </div>
             <div class="field">
               <label for="gaster">Ungefärligt antal gäster</label>
-              <input type="text" id="gaster" name="gaster" bind:value={gaster} />
+              <input type="text" id="gaster" name="antal_gaster" bind:value={gaster} />
             </div>
           </div>
 
@@ -187,7 +228,7 @@
               <label for="bild">Bild på plats <span class="optional">(valfritt)</span></label>
               <div class="file-input-row">
                 <label for="bild" class="file-btn">Välj fil</label>
-                <input type="file" id="bild" name="bild" accept="image/*" class="file-input-hidden" on:change={handleFile} />
+                <input type="file" id="bild" name="attachment" accept="image/*" class="file-input-hidden" on:change={handleFile} />
                 {#if bild}
                   <span class="file-chosen">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
@@ -197,7 +238,11 @@
                   <span class="file-chosen file-chosen-empty">Ingen fil vald</span>
                 {/if}
               </div>
-              <span class="helper">Inget måste just nu — men har ni redan en bild på scenen eller platsen hjälper det oss planera.</span>
+              {#if fileError}
+                <span class="helper file-error">{fileError}</span>
+              {:else}
+                <span class="helper">Inget måste just nu — men har ni redan en bild på scenen eller platsen hjälper det oss planera.</span>
+              {/if}
             </div>
           </div>
 

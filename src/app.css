@@ -1433,6 +1433,11 @@ a.logo-slot:hover {
   margin-top: 2px;
 }
 
+.helper.file-error {
+  color: #ff6b6b;
+  opacity: 1;
+}
+
 .submit-row {
   display: flex;
   align-items: center;
