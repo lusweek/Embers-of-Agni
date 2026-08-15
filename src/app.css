@@ -1323,6 +1323,14 @@ a.logo-slot:hover {
   color-scheme: dark;
 }
 
+/* Större klickyta på kalenderikonen (själva ikonen förblir samma storlek) */
+.field input[type='date']::-webkit-calendar-picker-indicator {
+  padding: 8px;
+  margin-right: -8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 /* ---- Dropdown: egen pil (Tailwind forms nollställer annars appearance) ---- */
 
 .field select.select-arrow {

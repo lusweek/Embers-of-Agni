@@ -15,7 +15,7 @@
     <div class="foot-top">
       <div class="foot-brand">
         <a class="brand" href="/">Vilda<span>Flammor</span></a>
-        <p class="foot-tagline">Eldshow, workshops & elduppträdanden i hela Sverige.</p>
+        <p class="foot-tagline">Elduppträdanden & workshops i hela södra sverige.</p>
       </div>
 
       <nav class="foot-links" aria-label="Sidfotsnavigering">
