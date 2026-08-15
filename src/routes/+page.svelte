@@ -12,55 +12,56 @@
   import logoFirstCamp from "$lib/images/logos/first-camp.png";
   import logoKalmarCity from "$lib/images/logos/kalmar-city.png";
 
+  // Filmremsans bilder är medvetet blandade (natt/dag, olika miljöer om vartannat)
+  // istället för grupperade efter serie, för maximal kontrast mellan grannbilder.
   import film1 from "$lib/images/design-reference/till-mail-2.webp";
-  import film2 from "$lib/images/design-reference/sa106203.webp";
-  import film3 from "$lib/images/design-reference/turbostav-bra-5.webp";
-  import film4 from "$lib/images/design-reference/7r406884.webp";
-  import film5 from "$lib/images/design-reference/7r407277.webp";
-  import film6 from "$lib/images/design-reference/010a5625.webp";
-  import film7 from "$lib/images/design-reference/010a5913.webp";
-  import film8 from "$lib/images/design-reference/010a5977.webp";
-  import film9 from "$lib/images/design-reference/att-tm-43zde44nan2aiy9zeg-xlhfjqap2dcfeakv6c4z0.webp";
+  import film2 from "$lib/images/first-camp/lifebym-lukas-009.webp";
+  import film3 from "$lib/images/design-reference/7r407277.webp";
+  import film4 from "$lib/images/design-reference/att-tm-43zde44nan2aiy9zeg-xlhfjqap2dcfeakv6c4z0.webp";
+  import film5 from "$lib/images/first-camp/lifebym-lukas-076.webp";
+  import film6 from "$lib/images/design-reference/lukas-karna-spin.webp";
+  import film7 from "$lib/images/design-reference/sa106203.webp";
+  import film8 from "$lib/images/first-camp/lifebym-lukas-095.webp";
+  import film9 from "$lib/images/design-reference/010a5625.webp";
   import film10 from "$lib/images/design-reference/dubbelstaw.webp";
-  import film11 from "$lib/images/design-reference/elin-1.webp";
-  import film12 from "$lib/images/design-reference/img-1913.webp";
-  import film13 from "$lib/images/design-reference/lukas-karna-spin.webp";
-  import film14 from "$lib/images/design-reference/oss-3.webp";
-  import film15 from "$lib/images/design-reference/pxl-20260215-183826396.webp";
-
-  import film16 from "$lib/images/first-camp/lifebym-lukas-009.webp";
-  import film17 from "$lib/images/first-camp/lifebym-lukas-039.webp";
-  import film18 from "$lib/images/first-camp/lifebym-lukas-044.webp";
-  import film19 from "$lib/images/first-camp/lifebym-lukas-076.webp";
-  import film20 from "$lib/images/first-camp/lifebym-lukas-079.webp";
-  import film21 from "$lib/images/first-camp/lifebym-lukas-087.webp";
-  import film22 from "$lib/images/first-camp/lifebym-lukas-095.webp";
-  import film23 from "$lib/images/first-camp/lifebym-lukas-098.webp";
+  import film11 from "$lib/images/first-camp/lifebym-lukas-039.webp";
+  import film12 from "$lib/images/design-reference/oss-3.webp";
+  import film13 from "$lib/images/first-camp/lifebym-lukas-079.webp";
+  import film14 from "$lib/images/design-reference/turbostav-bra-5.webp";
+  import film15 from "$lib/images/design-reference/010a5913.webp";
+  import film16 from "$lib/images/first-camp/lifebym-lukas-098.webp";
+  import film17 from "$lib/images/design-reference/elin-1.webp";
+  import film18 from "$lib/images/design-reference/pxl-20260215-183826396.webp";
+  import film19 from "$lib/images/first-camp/lifebym-lukas-044.webp";
+  import film20 from "$lib/images/design-reference/7r406884.webp";
+  import film21 from "$lib/images/design-reference/010a5977.webp";
+  import film22 from "$lib/images/first-camp/lifebym-lukas-087.webp";
+  import film23 from "$lib/images/design-reference/img-1913.webp";
 
   const filmImages = [
     { src: film1, alt: "Eldshow bild" },
-    { src: film2, alt: "Eldshow på scen" },
-    { src: film3, alt: "Eldkonstnär med turbostav" },
-    { src: film4, alt: "Eldkonstnär med eldredskap" },
-    { src: film5, alt: "Eldkonstnär med eldredskap" },
-    { src: film6, alt: "Eldkonstnär med eldredskap" },
-    { src: film7, alt: "Eldkonstnär med eldredskap" },
-    { src: film8, alt: "Eldkonstnär med eldredskap" },
-    { src: film9, alt: "Eldshow bild" },
+    { src: film2, alt: "Duo krönd med eldkrona på stranden" },
+    { src: film3, alt: "Eldkonstnär med eldredskap" },
+    { src: film4, alt: "Eldshow bild" },
+    { src: film5, alt: "Eldkonstnär med eldkedjor och publik" },
+    { src: film6, alt: "Lukas med eldredskap" },
+    { src: film7, alt: "Eldshow på scen" },
+    { src: film8, alt: "Eldkonstnär balanserar eldstav" },
+    { src: film9, alt: "Eldkonstnär med eldredskap" },
     { src: film10, alt: "Duon med dubbelstav" },
-    { src: film11, alt: "Elin med eldredskap" },
-    { src: film12, alt: "Eldshow bild" },
-    { src: film13, alt: "Lukas med eldredskap" },
-    { src: film14, alt: "Vilda Flammor porträtt" },
-    { src: film15, alt: "Eldshow bild" },
-    { src: film16, alt: "Duo krönd med eldkrona på stranden" },
-    { src: film17, alt: "Eldkonstnär med eldkedjor framför publik" },
-    { src: film18, alt: "Eldkonstnär med eldkedjor i solnedgång" },
-    { src: film19, alt: "Eldkonstnär med eldkedjor och publik" },
-    { src: film20, alt: "Eldkonstnär med kryssade eldstavar" },
-    { src: film21, alt: "Eldkonstnär med eldring i rörelse" },
-    { src: film22, alt: "Eldkonstnär balanserar eldstav" },
-    { src: film23, alt: "Eldkonstnär med eldstavar i vinklat kryss" }
+    { src: film11, alt: "Eldkonstnär med eldkedjor framför publik" },
+    { src: film12, alt: "Vilda Flammor porträtt" },
+    { src: film13, alt: "Eldkonstnär med kryssade eldstavar" },
+    { src: film14, alt: "Eldkonstnär med turbostav" },
+    { src: film15, alt: "Eldkonstnär med eldredskap" },
+    { src: film16, alt: "Eldkonstnär med eldstavar i vinklat kryss" },
+    { src: film17, alt: "Elin med eldredskap" },
+    { src: film18, alt: "Eldshow bild" },
+    { src: film19, alt: "Eldkonstnär med eldkedjor i solnedgång" },
+    { src: film20, alt: "Eldkonstnär med eldredskap" },
+    { src: film21, alt: "Eldkonstnär med eldredskap" },
+    { src: film22, alt: "Eldkonstnär med eldring i rörelse" },
+    { src: film23, alt: "Eldshow bild" }
   ];
 
   let lightboxImg = null;
