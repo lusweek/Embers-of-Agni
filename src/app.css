@@ -791,11 +791,20 @@ a {
   background: var(--bg-alt);
 }
 
+/* Flex istället för grid: citaten centreras som grupp oavsett hur
+   många som är aktiva (1, 2, 3, ...) och håller samma storlek. Lägg
+   till/ta bort .quote-block i markupen — layouten anpassar sig själv. */
 .proof-quotes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 26px;
   margin-bottom: 56px;
+}
+
+.proof-quotes .quote {
+  flex: 1 1 320px;
+  max-width: 380px;
 }
 
 .quote {
@@ -1850,7 +1859,6 @@ a.logo-slot:hover {
   overflow: hidden;
   position: relative;
   background: repeating-linear-gradient(135deg, rgba(255, 122, 0, 0.08) 0 3px, transparent 3px 18px);
-  border: 1px solid rgba(255, 201, 74, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;

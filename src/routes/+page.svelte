@@ -135,18 +135,18 @@
         <div class="quote-name">Robert Oldergarden</div>
         <div class="quote-role">Glaskonstnär samt ägare av Oldergaard GlasHytta &amp; Atelje</div>
       </div>
-      <div class="quote">
+      <!-- <div class="quote">
         <span class="quote-mark">"</span>
         <p>Klistra in ett andra citat här — t.ex. från en företagskund om professionalism och leverans.</p>
         <div class="quote-name">Namn Efternamn</div>
         <div class="quote-role">Roll, företag eller typ av event</div>
-      </div>
-      <div class="quote">
+      </div> -->
+      <!-- <div class="quote">
         <span class="quote-mark">"</span>
         <p>Klistra in ett tredje citat här — gärna från ett bröllop, kalas eller festival.</p>
         <div class="quote-name">Namn Efternamn</div>
         <div class="quote-role">Roll, företag eller typ av event</div>
-      </div>
+      </div> -->
     </div>
     <div class="proof-strip">
       <div class="proof-strip-label">Har synts på</div>
@@ -160,9 +160,9 @@
         <a class="logo-slot" href="https://firstcamp.se/" target="_blank" rel="noopener noreferrer">
           <img src={logoFirstCamp} alt="First Camp" />
         </a>
-        <a class="logo-slot" href="https://kalmarcity.com/" target="_blank" rel="noopener noreferrer">
+        <!-- <a class="logo-slot" href="https://kalmarcity.com/" target="_blank" rel="noopener noreferrer">
           <img src={logoKalmarCity} alt="Kalmar City" />
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
