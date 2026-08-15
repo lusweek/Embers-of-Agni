@@ -22,7 +22,7 @@
   </script>
 </svelte:head>
 
-<section class="hero-full">
+<section class="hero-full hero-eldshow">
   <div class="hero-bg">
     <img src={heroImg} alt="Duon Vilda Flammor dansar med eldkedjor" fetchpriority="high" />
   </div>

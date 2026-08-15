@@ -314,6 +314,14 @@ a {
   background: linear-gradient(0deg, rgba(13, 8, 6, 0.95) 10%, rgba(13, 8, 6, 0.55) 55%, rgba(13, 8, 6, 0.25) 100%);
 }
 
+/* Eldshow-sidans hero-bild har ljusa partier som gör ljus text svårläst —
+   något mörkare överlag rakt över hela bilden, utöver den vanliga gradienten. */
+.hero-full.hero-eldshow .hero-bg::after {
+  background:
+    linear-gradient(0deg, rgba(13, 8, 6, 0.95) 10%, rgba(13, 8, 6, 0.68) 55%, rgba(13, 8, 6, 0.4) 100%),
+    rgba(13, 8, 6, 0.25);
+}
+
 .hero-full .hero-content {
   position: relative;
   z-index: 1;
@@ -993,7 +1001,8 @@ a.logo-slot:hover {
   grid-template-columns: 1fr 1.1fr;
   gap: 60px;
   align-items: center;
-  padding: 64px 0 96px;
+  padding-top: 64px;
+  padding-bottom: 96px;
 }
 
 .about-img {
@@ -1176,7 +1185,7 @@ a.logo-slot:hover {
 .call-card-contact {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   align-items: flex-start;
 }
 
@@ -2009,5 +2018,16 @@ a.logo-slot:hover {
 
   .logistics {
     padding: 40px 28px;
+  }
+
+  /* Loggor: 2 och 2 istället för 1 per rad på smala skärmar */
+  .logos {
+    gap: 14px;
+  }
+
+  .logo-slot {
+    width: calc(50% - 7px);
+    max-width: 150px;
+    height: 56px;
   }
 }
