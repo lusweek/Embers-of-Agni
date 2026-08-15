@@ -13,6 +13,7 @@
   let bild = null;
   let meddelande = "";
   let status = "";
+  let submitSuccess = false;
 
   let copiedField = "";
 
@@ -42,7 +43,9 @@
     formData.append("antal_gaster", gaster);
     formData.append("meddelande", meddelande);
     formData.append("_captcha", "false");
-    if (bild) formData.append("bild", bild);
+    // OBS: formsubmit.co kräver att bilagan heter just "attachment" för
+    // att den ska följa med i mejlet.
+    if (bild) formData.append("attachment", bild);
 
     try {
       const res = await fetch("https://formsubmit.co/ajax/vildaflammor@gmail.com", {
@@ -52,6 +55,7 @@
 
       if (res.ok) {
         status = "success";
+        submitSuccess = true;
         namn = "";
         epost = "";
         telefon = "";
@@ -146,7 +150,7 @@
             </div>
             <div class="field">
               <label for="datum">Datum</label>
-              <input type="date" id="datum" name="datum" bind:value={datum} />
+              <input type="date" id="datum" name="datum" lang="en-GB" bind:value={datum} />
               <span class="helper">Inte spikat än? Skriv ett ungefärligt datum i meddelandet i stället.</span>
             </div>
           </div>
@@ -157,8 +161,8 @@
               <input type="text" id="eventtyp" name="eventtyp" bind:value={eventtyp} placeholder="T.ex. 40-årskalas / Företagsfest / Bröllop" required />
             </div>
             <div class="field">
-              <label for="show">Vilken show?</label>
-              <select id="show" name="show" bind:value={show}>
+              <label for="show">Vad intresserar er?</label>
+              <select id="show" name="show" class="select-arrow" bind:value={show}>
                 <option value="">Vet inte än — ge mig förslag</option>
                 <option>Stora showen (15 min)</option>
                 <option>Lilla showen (8 min)</option>
@@ -181,7 +185,18 @@
           <div class="form-row">
             <div class="field full">
               <label for="bild">Bild på plats <span class="optional">(valfritt)</span></label>
-              <input type="file" id="bild" name="bild" accept="image/*" on:change={handleFile} />
+              <div class="file-input-row">
+                <label for="bild" class="file-btn">Välj fil</label>
+                <input type="file" id="bild" name="bild" accept="image/*" class="file-input-hidden" on:change={handleFile} />
+                {#if bild}
+                  <span class="file-chosen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    {bild.name}
+                  </span>
+                {:else}
+                  <span class="file-chosen file-chosen-empty">Ingen fil vald</span>
+                {/if}
+              </div>
               <span class="helper">Inget måste just nu — men har ni redan en bild på scenen eller platsen hjälper det oss planera.</span>
             </div>
           </div>
@@ -197,6 +212,13 @@
             <button type="submit" class="btn-primary">Skicka förfrågan</button>
             <span class="submit-note">Vi återkommer vanligtvis inom 24–48 timmar.</span>
           </div>
+
+          {#if submitSuccess}
+            <p class="success-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Tack för ditt meddelande
+            </p>
+          {/if}
         </form>
       </div>
 

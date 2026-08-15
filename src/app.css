@@ -690,6 +690,7 @@ a {
 .filmstrip-cta {
   display: flex;
   justify-content: flex-end;
+  justify-content: center;
   padding-top: 20px;
 }
 
@@ -1302,15 +1303,113 @@ a.logo-slot:hover {
   font-size: 15px;
 }
 
-.field input[type='file'] {
-  padding: 10px 14px;
-  font-size: 13.5px;
-  color: var(--ink-dim);
-}
-
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: 2px solid var(--orange);
   outline-offset: 1px;
+}
+
+/* ---- Datumfält: tydlig, ljus kalenderikon mot mörk bakgrund ---- */
+
+.field input[type='date'] {
+  color-scheme: dark;
+}
+
+/* ---- Dropdown: egen pil (Tailwind forms nollställer annars appearance) ---- */
+
+.field select.select-arrow {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFC94A' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+/* ---- Filfält: eget "Välj fil"-knapp + status ---- */
+
+.file-input-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.file-input-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.file-input-hidden:focus-visible + .file-chosen,
+.file-btn:has(+ .file-input-hidden:focus-visible) {
+  outline: 2px solid var(--orange);
+  outline-offset: 1px;
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 201, 74, 0.14);
+  border: 1px solid rgba(255, 201, 74, 0.3);
+  border-radius: 10px;
+  padding: 11px 18px;
+  color: var(--gold);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.file-btn:hover {
+  background: rgba(255, 201, 74, 0.24);
+}
+
+.file-chosen {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold);
+  font-size: 13.5px;
+  word-break: break-all;
+}
+
+.file-chosen svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #3ddc84;
+}
+
+.file-chosen-empty {
+  color: var(--ink-dim);
+}
+
+/* ---- Bekräftelse efter skickat formulär ---- */
+
+.success-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3ddc84;
+  font-size: 14.5px;
+  font-weight: 600;
+  margin: 16px 0 0;
+}
+
+.success-note svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .field textarea {
