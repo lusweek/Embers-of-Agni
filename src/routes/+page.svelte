@@ -135,18 +135,18 @@
         <div class="quote-name">Robert Oldergarden</div>
         <div class="quote-role">Glaskonstnär samt ägare av Oldergaard GlasHytta &amp; Atelje</div>
       </div>
-      <!-- <div class="quote">
+      <div class="quote">
         <span class="quote-mark">"</span>
-        <p>Klistra in ett andra citat här — t.ex. från en företagskund om professionalism och leverans.</p>
-        <div class="quote-name">Namn Efternamn</div>
-        <div class="quote-role">Roll, företag eller typ av event</div>
-      </div> -->
-      <!-- <div class="quote">
+        <p>Fler recensioner kommer</p>
+        <div class="quote-name"></div>
+        <div class="quote-role"></div>
+      </div>
+      <div class="quote">
         <span class="quote-mark">"</span>
-        <p>Klistra in ett tredje citat här — gärna från ett bröllop, kalas eller festival.</p>
-        <div class="quote-name">Namn Efternamn</div>
-        <div class="quote-role">Roll, företag eller typ av event</div>
-      </div> -->
+        <p>Fler recensioner kommer</p>
+        <div class="quote-name"></div>
+        <div class="quote-role"></div>
+      </div>
     </div>
     <div class="proof-strip">
       <div class="proof-strip-label">Har synts på</div>
