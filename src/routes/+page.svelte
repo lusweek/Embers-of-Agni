@@ -138,9 +138,9 @@
       </div>
       <div class="quote">
         <span class="quote-mark">"</span>
-        <p>Fler recensioner kommer</p>
-        <div class="quote-name"></div>
-        <div class="quote-role"></div>
+        <p>Vilda Flammor bjöd på en otroligt häftig eldshow hos oss på First Camp Stensö. Det blev verkligen en uppskattad kväll och gästerna pratade om showen även dagen efter! Superhärliga, engagerade och professionella personer att ha att göra med.</p>
+        <div class="quote-name">My Delborn</div>
+        <div class="quote-role">Receptionistansvarig First Camp Stensö</div>
       </div>
       <div class="quote">
         <span class="quote-mark">"</span>
