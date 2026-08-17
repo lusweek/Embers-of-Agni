@@ -1,17 +1,17 @@
 <script>
+    import Seo from "$lib/components/Seo.svelte";
     import { innanBokning } from "$lib/seo/innanBokning";
 
 	import Devider from "$lib/assets/Devider.svelte";
 </script>
 
-<!-- SEO -->
-<svelte:head>
-    <title>Info inför bokning av Eldshow – Vilda Flammor</title>
-    <meta name="description" content="All viktig information inför bokning av eldshow: säkerhet, platskrav, förberedelser och vad du behöver tänka på innan eventet." />
-    <script type="application/ld+json">
-        {JSON.stringify(innanBokning)}
-    </script>
-</svelte:head>
+<Seo
+    title="Info inför bokning av Eldshow – Vilda Flammor"
+    description="All viktig information inför bokning av eldshow: säkerhet, platskrav, förberedelser och vad du behöver tänka på innan eventet."
+    path="/info-innan-bokning"
+    image="/og/boka.jpg"
+    jsonLd={innanBokning}
+/>
 
 <h1 class="h1-title">Info innan bokning</h1>
 <Devider />
@@ -37,7 +37,7 @@
     <div class="ctaband" style="margin-top:48px;">
       <div>
         <h2>Redo att boka?</h2>
-        <p>Nu vet ni vad som gäller — skicka in er förfrågan.</p>
+        <p>Nu vet ni vad som gäller-skicka in er förfrågan.</p>
       </div>
       <a class="btn-dark" href="/boka">Boka nu</a>
     </div>

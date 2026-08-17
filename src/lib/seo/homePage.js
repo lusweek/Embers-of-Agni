@@ -6,16 +6,27 @@ export const homePage =
 
   "name": "Vilda Flammor",
   "url": "https://vildaflammor.se/",
-  "description": "Vilda Flammor bjuder på koreograferad elddans till folkmusik samt workshops i flowarts med stav, poi och rockring, i hela Sverige.",
-
-  // När logga är klar:
-  // "logo": "https://vildaflammor.se/images/logo.webp",
+  "description": "Vilda Flammor bjuder på koreograferad elddans till musik samt workshops i flowarts med stav, poi och rockring – vi bokas i hela Sverige, från Kalmar och Öland till Göteborg och Stockholm.",
 
   "image": [
-    "https://vildaflammor.se/images/home/hero.webp"
+    "https://vildaflammor.se/og/home.jpg"
   ],
 
-  "areaServed": "SE",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kalmar",
+    "addressRegion": "Kalmar län",
+    "addressCountry": "SE"
+  },
+
+  "areaServed": [
+    { "@type": "City", "name": "Kalmar" },
+    { "@type": "Place", "name": "Öland" },
+    { "@type": "City", "name": "Göteborg" },
+    { "@type": "City", "name": "Stockholm" },
+    { "@type": "Country", "name": "Sverige" }
+  ],
+
   "sameAs": [
     "https://www.instagram.com/vildaflammor"
   ],
@@ -41,6 +52,10 @@ export const homePage =
     "Rockring",
     "Workshop",
     "Elddans",
-    "Cirkuskonst"
+    "Cirkuskonst",
+    "Skapande skola",
+    "Firmafest",
+    "Bröllop",
+    "Festival"
   ]
 }

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { page } from "$app/stores";
+  import Seo from "$lib/components/Seo.svelte";
   import { bokaPage } from "$lib/seo/bokaPage";
   import Loader from "$lib/assets/Loader.svelte";
 
@@ -23,7 +24,7 @@
   let copiedField = "";
 
   // Absolut URL som formsubmit.co skickar tillbaka besökaren till efter en
-  // "riktig" (icke-AJAX) inskickning — krävs när en bilaga finns med.
+  // "riktig" (icke-AJAX) inskickning-krävs när en bilaga finns med.
   $: nextUrl = `${$page.url.origin}/boka?sent=1`;
 
   onMount(() => {
@@ -54,7 +55,7 @@
   }
 
   // Bilagor kräver en riktig (icke-AJAX) formulärinskickning med
-  // enctype="multipart/form-data" — formsubmit.co:s /ajax/-endpoint tar
+  // enctype="multipart/form-data"-formsubmit.co:s /ajax/-endpoint tar
   // inte emot filer. Utan bild använder vi AJAX för snabbare, kvarvarande
   // bekräftelse utan sidladdning.
   async function handleSubmit(event) {
@@ -112,20 +113,19 @@
   }
 </script>
 
-<!-- SEO -->
-<svelte:head>
-  <title>Boka Eldshow – Vilda Flammor</title>
-  <meta name="description" content="Boka eldshow eller workshop med Vilda Flammor. Ring, mejla eller fyll i formuläret så återkommer vi med förslag på show och upplägg." />
-  <script type="application/ld+json">
-    {JSON.stringify(bokaPage)}
-  </script>
-</svelte:head>
+<Seo
+  title="Boka Eldshow – Kalmar, Göteborg & Sverige – Vilda Flammor"
+  description="Boka eldshow eller flowarts-workshop med Vilda Flammor i Kalmar, Göteborg eller övriga Sverige. Ring, mejla eller fyll i formuläret så återkommer vi med förslag på show och upplägg."
+  path="/boka"
+  image="/og/boka.jpg"
+  jsonLd={bokaPage}
+/>
 
 <section class="hero-simple">
   <div class="wrap">
     <span class="eyebrow">Boka</span>
     <h1>Boka er eldshow</h1>
-    <p class="lead">Fyll i formuläret så återkommer vi med förslag på show och upplägg — eller ring oss direkt om ni redan vet vad ni vill ha.</p>
+    <p class="lead">Fyll i formuläret så återkommer vi med förslag på show och upplägg - eller ring oss direkt om ni redan vet vad ni vill ha. Vi bokas i Kalmar, Göteborg och i hela Sverige.</p>
   </div>
 </section>
 
@@ -136,7 +136,7 @@
       <div class="call-card">
         <div>
           <span class="eyebrow" style="margin-bottom:6px;">Snabbast</span>
-          <h2>Ring oss gärna — även bara för att fråga</h2>
+          <h2>Ring oss gärna - även bara för att fråga</h2>
           <p>Boka, bolla en idé eller ställ en snabb fråga. Vi svarar direkt i telefonen.</p>
         </div>
         <div class="call-card-contact">
@@ -204,7 +204,7 @@
             <div class="field">
               <label for="show">Vad intresserar er?</label>
               <select id="show" name="show" class="select-arrow" bind:value={show}>
-                <option value="">Vet inte än — ge mig förslag</option>
+                <option value="">Vet inte än - ge mig förslag</option>
                 <option>Stora showen (15 min)</option>
                 <option>Lilla showen (8 min)</option>
                 <option>Workshop</option>
@@ -241,7 +241,7 @@
               {#if fileError}
                 <span class="helper file-error">{fileError}</span>
               {:else}
-                <span class="helper">Inget måste just nu — men har ni redan en bild på scenen eller platsen hjälper det oss planera.</span>
+                <span class="helper">Inget måste just nu - men har ni redan en bild på scenen eller platsen hjälper det oss planera.</span>
               {/if}
             </div>
           </div>
@@ -269,7 +269,7 @@
 
       <div class="response-note">
         <span>*</span>
-        <span>Ingen betalning eller bindande bokning i det här steget — bara en förfrågan. <b>Vi hör av oss</b> för att bekräfta detaljerna.</span>
+        <span>Ingen betalning eller bindande bokning i det här steget - bara en förfrågan. <b>Vi hör av oss</b> för att bekräfta detaljerna.</span>
       </div>
 
     </div>

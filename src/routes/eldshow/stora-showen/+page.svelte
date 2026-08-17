@@ -1,4 +1,5 @@
 <script>
+  import Seo from "$lib/components/Seo.svelte";
   import { storaShowenPage } from "$lib/seo/storaShowenPage";
   import BookingLogistics from "$lib/components/BookingLogistics.svelte";
 
@@ -8,14 +9,13 @@
   import g3 from "$lib/images/design-reference/7r408184.webp";
 </script>
 
-<!-- SEO -->
-<svelte:head>
-  <title>Stora showen – 15 min Eldshow – Vilda Flammor</title>
-  <meta name="description" content="Stora showen är vår signaturupplevelse: 15 minuter fullständigt koreograferad elddans till musik. Kvällens klimax för event, bröllop och festivaler." />
-  <script type="application/ld+json">
-    {JSON.stringify(storaShowenPage)}
-  </script>
-</svelte:head>
+<Seo
+  title="Stora showen – 15 min Eldshow i Sverige – Vilda Flammor"
+  description="Stora showen är vår signaturupplevelse: 15 minuter fullständigt koreograferad elddans till musik. Kvällens klimax för event, bröllop och festivaler i Kalmar, Göteborg och hela Sverige."
+  path="/eldshow/stora-showen"
+  image="/og/stora-showen.jpg"
+  jsonLd={storaShowenPage}
+/>
 
 <p class="wrap"><span class="breadcrumb"><a href="/eldshow">Eldshow</a> / <span>Stora showen</span></span></p>
 
@@ -37,7 +37,7 @@
       <span class="eyebrow">Om showen</span>
       <h2>Kvällens klimax</h2>
     </div>
-    <p>Stora showen är vår signaturupplevelse — <b>15 minuter</b> fullständigt koreograferad elddans till musik i olika tempon. Det här är showen vi rekommenderar när ni vill att elden ska vara kvällens huvudnummer.</p>
+    <p>Stora showen är vår signaturupplevelse-<b>15 minuter</b> fullständigt koreograferad elddans till musik i olika tempon. Det här är showen vi rekommenderar när ni vill att elden ska vara kvällens huvudnummer.</p>
     <p>Dessa 15 minuter tillåter oss att använda ett stort antal av våra eldredskap på scen vilket skapar en dynamisk upplevelse för publiken. Man vet aldrig vad som kan komma ut på scen härnäst. Vårt mål är att leverera en upplevelse gästerna minns långt efter att elden har slocknat.</p>
     <p>Musik, tempo och kostym anpassas efter stämningen ni önskar. Showen fungerar lika bra till en invigning som ett dramatiskt avbrott mitt i festen eller en tydlig final mot slutet av kvällen.</p>
   </div>

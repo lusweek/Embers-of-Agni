@@ -1,4 +1,5 @@
 <script>
+  import Seo from "$lib/components/Seo.svelte";
   import { mediaPage } from "$lib/seo/mediaPage";
 
   const imageFiles = import.meta.glob(
@@ -116,13 +117,13 @@
   }
 </script>
 
-<svelte:head>
-  <script type="application/ld+json">
-    {JSON.stringify(mediaPage)}
-  </script>
-  <title>Bibliotek – Bilder från tidigare shower – Vilda Flammor</title>
-  <meta name="description" content="Se bilder från våra eldshower och eldartister i action. Biblioteket visar upp eldperformance, flowarts och spektakulära shower från olika event." />
-</svelte:head>
+<Seo
+  title="Bilder från eldshower – Bibliotek – Vilda Flammor"
+  description="Se bilder från våra eldshower i Kalmar, Göteborg och övriga Sverige. Biblioteket visar upp eldperformance, flowarts och spektakulära shower från olika event."
+  path="/bibliotek"
+  image="/og/bibliotek.jpg"
+  jsonLd={mediaPage}
+/>
 
 <section class="hero-simple">
   <div class="wrap">

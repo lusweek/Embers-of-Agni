@@ -1,4 +1,5 @@
 <script>
+  import Seo from "$lib/components/Seo.svelte";
   import { fireshowOffer } from "$lib/seo/fireshowOfferPage";
 
   import heroImg from "$lib/images/design-reference/eldshow-hero.webp";
@@ -13,23 +14,22 @@
   import g5 from "$lib/images/design-reference/elin-karna-serupp.webp";
 </script>
 
-<!-- SEO -->
-<svelte:head>
-  <title>Eldshow för Event & Festivaler – Vilda Flammor</title>
-  <meta name="description" content="Koreograferad elddans till musik. Läs om stora showen och lilla showen och boka en eldshow för event, bröllop, festivaler och företagsevent." />
-  <script type="application/ld+json">
-    {JSON.stringify(fireshowOffer)}
-  </script>
-</svelte:head>
+<Seo
+  title="Eldshow – Kalmar, Göteborg & hela Sverige – Vilda Flammor"
+  description="Koreograferad elddans till musik för bröllop, festival, firmafest och företagsevent. Vi bokas i Kalmar, Göteborg och i hela Sverige – läs om stora och lilla showen."
+  path="/eldshow"
+  image="/og/eldshow.jpg"
+  jsonLd={fireshowOffer}
+/>
 
 <section class="hero-full hero-eldshow">
   <div class="hero-bg">
     <img src={heroImg} alt="Duon Vilda Flammor dansar med eldkedjor" fetchpriority="high" />
   </div>
   <div class="wrap hero-content">
-    <span class="eyebrow">Eldshow</span>
+    <span class="eyebrow">Eldshow · Kalmar, Göteborg & hela Sverige</span>
     <h1>Elden dansar till musiken</h1>
-    <p class="lead">Koreograferad elddans, byggd kring folk- och elektronisk musik med rytmer vi själva brinner för. Musik, tempo och känsla kan alltid anpassas efter ert tillfälle.</p>
+    <p class="lead">Koreograferad elddans, byggd kring folk- och elektronisk musik med rytmer vi själva brinner för. Musik, tempo och känsla kan alltid anpassas efter ert tillfälle – vi bokas i hela Sverige.</p>
     <div class="hero-ctas">
       <a class="btn-primary" href="/boka">Boka vår eldshow</a>
       <a class="btn-ghost" href="/bibliotek">Se bibliotek</a>
@@ -42,7 +42,7 @@
     <div class="section-head">
       <span class="eyebrow">Två format</span>
       <h2>Stora och lilla showen</h2>
-      <p>Samma hantverk, samma känsla — skalat efter hur mycket scen och tid ni har.</p>
+      <p>Samma hantverk, samma känsla-skalat efter hur mycket scen och tid ni har.</p>
     </div>
     <div class="shows">
       <div class="show-card">
@@ -51,7 +51,7 @@
           <span class="show-tag">Huvudakt</span>
           <h3>Stora showen</h3>
           <span class="show-meta">15 minuter</span>
-          <p>Vår signaturshow — en fullständig koreograferad elddans till musik i olika tempon. Kvällens klimax, byggd för scen och stor publik. Passar företagsevent, bröllop och festivaler där showen ska vara huvudnumret.</p>
+          <p>Vår signaturshow-en fullständig koreograferad elddans till musik i olika tempon. Kvällens klimax, byggd för scen och stor publik. Passar företagsevent, bröllop och festivaler där showen ska vara huvudnumret.</p>
           <a href="/eldshow/stora-showen">Läs mer om stora showen →</a>
         </div>
       </div>
@@ -61,7 +61,7 @@
           <span class="show-tag">Kompakt akt</span>
           <h3>Lilla showen</h3>
           <span class="show-meta">8 minuter</span>
-          <p>En kortare, mer intim version av vår elddans — perfekt när tidsschemat är tightare eller platsen mindre. Samma känsla och kvalitet, komprimerad till en stark, minnesvärd stund.</p>
+          <p>En kortare, mer intim version av vår elddans-perfekt när tidsschemat är tightare eller platsen mindre. Samma känsla och kvalitet, komprimerad till en stark, minnesvärd stund.</p>
           <a href="/eldshow/lilla-showen">Läs mer om lilla showen →</a>
         </div>
       </div>
@@ -76,9 +76,9 @@
       <span class="eyebrow">Skräddarsytt för tillfället</span>
       <h2 style="font-size:36px;">Anpassat efter er känsla</h2>
       <ul class="adapt-list">
-        <li><span class="adapt-num">*</span><p><b>Musik</b> — vi väljer eller kombinerar spår efter eventets stämning, från lugnt och stämningsfullt till högtempo.</p></li>
-        <li><span class="adapt-num">*</span><p><b>Känsla</b> — samma koreografi kan kännas högtidlig, lekfull eller dramatisk beroende på vad tillfället kräver.</p></li>
-        <li><span class="adapt-num">*</span><p><b>Kostym</b> — vi anpassar kostym och uttryck så att showen passar in i eventets helhet.</p></li>
+        <li><span class="adapt-num">*</span><p><b>Musik</b>-vi väljer eller kombinerar spår efter eventets stämning, från lugnt och stämningsfullt till högtempo.</p></li>
+        <li><span class="adapt-num">*</span><p><b>Känsla</b>-samma koreografi kan kännas högtidlig, lekfull eller dramatisk beroende på vad tillfället kräver.</p></li>
+        <li><span class="adapt-num">*</span><p><b>Kostym</b>-vi anpassar kostym och uttryck så att showen passar in i eventets helhet.</p></li>
       </ul>
     </div>
   </div>

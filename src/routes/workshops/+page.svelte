@@ -1,4 +1,5 @@
 <script>
+  import Seo from "$lib/components/Seo.svelte";
   import { provaPaFlowarts } from "$lib/seo/provaPaFlowartsPage";
 
   import heroImg from "$lib/images/design-reference/workshop-blured.webp";
@@ -13,21 +14,20 @@
   import poiPoster from "$lib/videos/workshops/poi-poster.jpg";
 </script>
 
-<!-- SEO -->
-<svelte:head>
-  <script type="application/ld+json">
-    {JSON.stringify(provaPaFlowarts)}
-  </script>
-  <title>Workshops – Prova på Flowarts – Vilda Flammor</title>
-  <meta name="description" content="Vi tar med stavar, poi och rockringar och låter era gäster testa på — fritt som mingel-aktivitet eller styrt som workshop. Passar barn, vuxna och team-building." />
-</svelte:head>
+<Seo
+  title="Workshops & Skapande skola-aktivitet – Vilda Flammor"
+  description="Flowarts-workshop med stav, poi och rockring – perfekt som skapande skola-aktivitet, teambuilding på firmafest eller mingel-aktivitet på event. Vi bokas i hela Sverige."
+  path="/workshops"
+  image="/og/workshops.jpg"
+  jsonLd={provaPaFlowarts}
+/>
 
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Workshops</span>
+      <span class="eyebrow">Workshops · Skapande skola · Firmafest</span>
       <h1>Prova på flowarts</h1>
-      <p class="lead">Vi tar med oss stavar, poi och rockringar och låter era gäster testa på — antingen fritt som en mingel-aktivitet, eller mer styrt som en workshop.</p>
+      <p class="lead">Vi tar med oss stavar, poi och rockringar och låter era gäster testa på-antingen fritt som en mingel-aktivitet, eller mer styrt som en workshop. Ett populärt val som skapande skola-aktivitet och teambuilding på firmafest, i hela Sverige.</p>
       <a class="btn-primary" href="/boka">Boka workshop</a>
     </div>
     <div class="hero-img"><img src={heroImg} alt="Workshop med rockring, dagtid" /></div>
@@ -44,7 +44,7 @@
     <div class="formats">
       <div class="format-card">
         <h3>Prova-på</h3>
-        <p>Vi finns på plats med utrustningen och låter gästerna testa i sin egen takt — en avslappnad, lekfull mingel-aktivitet som passar in var som helst under kvällen.</p>
+        <p>Vi finns på plats med utrustningen och låter gästerna testa i sin egen takt-en avslappnad, lekfull mingel-aktivitet som passar in var som helst under kvällen.</p>
       </div>
       <div class="format-card">
         <h3>Workshop</h3>
@@ -102,7 +102,7 @@
         <div><div class="equip-num">20</div><div class="equip-label">Rockringar</div></div>
         <div><div class="equip-num">20</div><div class="equip-label">Par poi</div></div>
       </div>
-      <p class="equip-note">Gott om utrustning för större grupper — hör av er så hjälper vi er räkna ut vad som passar ert antal gäster.</p>
+      <p class="equip-note">Gott om utrustning för större grupper-hör av er så hjälper vi er räkna ut vad som passar ert antal gäster.</p>
     </div>
   </div>
 </section>
@@ -114,7 +114,7 @@
       <h2>En annorlunda mingel-aktivitet</h2>
     </div>
     <div class="taglist">
-      <span>Barn</span><span>Vuxna</span><span>Team-building</span><span>Företagsevent</span><span>Kalas</span><span>Festival</span><span>Kulturevent</span>
+      <span>Barn</span><span>Vuxna</span><span>Skapande skola</span><span>Team-building</span><span>Firmafest</span><span>Kalas</span><span>Festival</span>
     </div>
   </div>
 </section>

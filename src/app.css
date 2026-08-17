@@ -9,7 +9,7 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   VILDA FLAMMOR — designsystem
+   VILDA FLAMMOR-designsystem
    Tokens och komponentklasser portade från de godkända HTML-mockuperna
    (startsida, eldshow, stora showen, lilla showen, boka).
    ========================================================================== */
@@ -310,7 +310,11 @@ a {
 .hero-full .hero-bg::after {
   content: '';
   position: absolute;
-  inset: 0;
+  /* Överlappar 2px utanför hero-bg åt alla håll (klipps ändå av .hero-full:s
+     overflow:hidden) — täcker en känd rendering-glipa på mobil där videon
+     komponeras på ett eget lager som kan avrundas annorlunda än overlayen,
+     vilket annars kan lämna en tunn oskuggad kant längs botten/högerkanten. */
+  inset: -2px;
   background: linear-gradient(0deg, rgba(13, 8, 6, 0.95) 10%, rgba(13, 8, 6, 0.55) 55%, rgba(13, 8, 6, 0.25) 100%);
 }
 
@@ -373,7 +377,7 @@ a {
   flex-wrap: wrap;
 }
 
-/* ---- Hero (enkel, centrerad text — boka-sidan) ---- */
+/* ---- Hero (enkel, centrerad text-boka-sidan) ---- */
 
 .hero-simple {
   padding: 56px 0 20px;
@@ -393,7 +397,7 @@ a {
   margin: 0 auto;
 }
 
-/* ---- Hero (inline, split-grid — stora/lilla showen) ---- */
+/* ---- Hero (inline, split-grid-stora/lilla showen) ---- */
 
 .hero-inline {
   position: relative;
@@ -451,7 +455,7 @@ a {
   color: var(--gold);
 }
 
-/* ---- Hero (split, foto vid sidan — lilla showen) ---- */
+/* ---- Hero (split, foto vid sidan-lilla showen) ---- */
 
 .hero-split {
   padding: 44px 0 0;
@@ -656,7 +660,7 @@ a {
   aspect-ratio: 8 / 5;
 }
 
-/* Masonry-variant av bildgalleriet ("Bilder från showerna") — inga tomma
+/* Masonry-variant av bildgalleriet ("Bilder från showerna")-inga tomma
    rutor kvar oavsett hur många bilder eller vilken skärmbredd. */
 .gallery-masonry {
   column-count: 3;
@@ -801,7 +805,7 @@ a {
 
 /* Flex istället för grid: citaten centreras som grupp oavsett hur
    många som är aktiva (1, 2, 3, ...) och håller samma storlek. Lägg
-   till/ta bort .quote-block i markupen — layouten anpassar sig själv. */
+   till/ta bort .quote-block i markupen-layouten anpassar sig själv. */
 .proof-quotes {
   display: flex;
   flex-wrap: wrap;
@@ -1762,7 +1766,7 @@ a.logo-slot:hover {
   z-index: 3;
 }
 
-/* Tryck-/klickytor för föregående/nästa bild — 20% av bredden på var sida,
+/* Tryck-/klickytor för föregående/nästa bild-20% av bredden på var sida,
    över hela höjden (även över bildens egna kanter) så det fungerar bra på
    mobil utan att man behöver träffa en liten pil exakt. */
 .lightbox-zone {
@@ -2098,4 +2102,59 @@ a.logo-slot:hover {
     max-width: 150px;
     height: 56px;
   }
+}
+
+/* ---- FAQ (startsidan) ---- */
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--bg-alt);
+  border: 1px solid rgba(255, 201, 74, 0.15);
+  border-radius: 16px;
+  padding: 4px 26px;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--gold);
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  color: var(--ink-dim);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 0 0 22px;
+  font-family: 'Work Sans', sans-serif;
 }

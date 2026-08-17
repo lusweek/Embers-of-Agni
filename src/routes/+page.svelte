@@ -1,5 +1,8 @@
 <script>
+  import Seo from "$lib/components/Seo.svelte";
   import { homePage } from "$lib/seo/homePage.js";
+  import { faqSchema } from "$lib/seo/faq.js";
+  import FaqSection from "$lib/components/FaqSection.svelte";
 
   import heroVideo from "$lib/videos/hero-loop.mp4";
   import heroPoster from "$lib/videos/hero-loop-poster.jpg";
@@ -75,14 +78,13 @@
   }
 </script>
 
-<!-- SEO -->
-<svelte:head>
-  <title>Eldshow, workshops & elduppträdanden – Vilda Flammor</title>
-  <meta name="description" content="Vilda Flammor bjuder på koreograferad elddans till musik och workshops i flowarts. Eldshow och upplevelser för bröllop, företagsevent och festivaler." />
-  <script type="application/ld+json">
-    {JSON.stringify(homePage)}
-  </script>
-</svelte:head>
+<Seo
+  title="Eldshow i Kalmar, Göteborg & hela Sverige – Vilda Flammor"
+  description="Vilda Flammor bokar eldshow och flowarts-workshops i Kalmar, Göteborg och hela Sverige. Koreograferad elddans för bröllop, firmafest, festival och skapande skola."
+  path="/"
+  image="/og/home.jpg"
+  jsonLd={[homePage, faqSchema]}
+/>
 
 <section class="hero-full hero-home">
   <div class="hero-bg">
@@ -98,9 +100,9 @@
     ></video>
   </div>
   <div class="wrap hero-content">
-    <span class="eyebrow">Eldshow · workshops</span>
+    <span class="eyebrow">Eldshow · workshops · Kalmar, Göteborg & hela Sverige</span>
     <h1>Vi sätter scenen i brand</h1>
-    <p class="lead">15 minuter koreograferad elddans — byggd för scenen, festen och festivalen.</p>
+    <p class="lead">15 minuter koreograferad elddans — byggd för scenen, festen och festivalen. Vi är baserade i Kalmar/Öland och bokas i hela Sverige.</p>
     <div class="hero-ctas">
       <a class="btn-primary" href="/boka">Boka vår show</a>
       <a class="btn-ghost" href="/bibliotek">Se biblioteket</a>
@@ -203,14 +205,16 @@
     <div class="about-text">
       <span class="eyebrow">Vilka vi är</span>
       <h2>Duon Vilda Flammor</h2>
-      <p>Vi bygger varje show kring musiken och elden vi själva brinner för — sen formar vi den för scenen ni ger oss, från intim bröllopsfest till stor festivalscen.</p>
+      <p>Vi bygger varje show kring musiken och elden vi själva brinner för - sen formar vi den för scenen ni ger oss, från intim bröllopsfest till stor festivalscen.</p>
       <div class="taglist">
-        <span>Bröllop</span><span>Företagsevent</span><span>Festival</span><span>Kulturevenemang</span><span>Kalas</span>
+        <span>Bröllop</span><span>Företagsevent</span><span>Firmafest</span><span>Festival</span><span>Skapande skola</span><span>Kalas</span>
       </div>
       <a class="btn-primary" href="/om-oss" style="display:inline-block;margin-top:26px;">Läs mer om oss</a>
     </div>
   </div>
 </section>
+
+<FaqSection />
 
 {#if lightboxImg}
   <div class="film-lightbox open" on:click={closeLightbox}>

@@ -1,12 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#0d0806" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<!-- Reservtitel/beskrivning ifall en sida saknar egen <Seo>-tagg. Varje
+		     riktig sida sätter sin egen via src/lib/components/Seo.svelte, som
+		     renderas in via %sveltekit.head% ovanför och vinner (första title/
+		     meta-taggen i dokumentet gäller). -->
 		%sveltekit.head%
-		<title>Eldshow, eldartister & stav, poi och hoop workshop – Vilda Flammor</title>
-		<meta name="description" content="Vilda Flammor – Eldshower och flowarts i Sverige.">
-		<link rel="icon" href="data:,">
+		<title>Eldshow i hela Sverige – Vilda Flammor</title>
+		<meta name="description" content="Vilda Flammor bokar eldshow, elduppträdanden och flowarts-workshops i hela Sverige – baserade i Kalmar/Öland.">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
