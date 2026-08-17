@@ -1735,6 +1735,8 @@ a.logo-slot:hover {
 }
 
 .lightbox img {
+  position: relative;
+  z-index: 1;
   max-width: 90vw;
   max-height: 86vh;
   width: auto;
@@ -1757,6 +1759,72 @@ a.logo-slot:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 3;
+}
+
+/* Tryck-/klickytor för föregående/nästa bild — 20% av bredden på var sida,
+   över hela höjden (även över bildens egna kanter) så det fungerar bra på
+   mobil utan att man behöver träffa en liten pil exakt. */
+.lightbox-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox-zone-prev {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 14px;
+}
+
+.lightbox-zone-next {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 14px;
+}
+
+.lightbox-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 201, 74, 0.15);
+  border: 1px solid rgba(255, 201, 74, 0.3);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.2s, background 0.2s;
+  pointer-events: none;
+}
+
+.lightbox-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.lightbox-zone:hover .lightbox-arrow,
+.lightbox-zone:active .lightbox-arrow {
+  opacity: 1;
+  background: rgba(255, 201, 74, 0.28);
+}
+
+@media (max-width: 700px) {
+  .lightbox-zone {
+    width: 20%;
+  }
+
+  .lightbox-arrow {
+    width: 38px;
+    height: 38px;
+    opacity: 0.85;
+  }
 }
 
 @media (max-width: 1000px) {

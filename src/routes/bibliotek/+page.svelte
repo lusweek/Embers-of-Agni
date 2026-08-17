@@ -90,14 +90,29 @@
     { file: "pxl-20260215-183919821", alt: "Eldshow bild" }
   ];
 
-  let lightboxItem = null;
+  let lightboxIndex = null;
 
-  function openLightbox(item) {
-    lightboxItem = item;
+  function openLightbox(index) {
+    lightboxIndex = index;
   }
 
   function closeLightbox() {
-    lightboxItem = null;
+    lightboxIndex = null;
+  }
+
+  function showPrev() {
+    lightboxIndex = (lightboxIndex - 1 + gallery.length) % gallery.length;
+  }
+
+  function showNext() {
+    lightboxIndex = (lightboxIndex + 1) % gallery.length;
+  }
+
+  function handleKeydown(e) {
+    if (lightboxIndex === null) return;
+    if (e.key === "Escape") closeLightbox();
+    else if (e.key === "ArrowLeft") showPrev();
+    else if (e.key === "ArrowRight") showNext();
   }
 </script>
 
@@ -126,19 +141,32 @@
 
 <div class="wrap">
   <div class="masonry">
-    {#each gallery as item}
-      <figure on:click={() => openLightbox(item)}>
+    {#each gallery as item, i}
+      <figure on:click={() => openLightbox(i)}>
         <img src={img(item.file, item.folder)} alt={item.alt} loading="lazy" />
       </figure>
     {/each}
   </div>
 </div>
 
-{#if lightboxItem}
+{#if lightboxIndex !== null}
   <div class="lightbox open" on:click={closeLightbox}>
-    <div class="lightbox-close" on:click|stopPropagation={closeLightbox}>✕</div>
-    <img src={img(lightboxItem.file, lightboxItem.folder)} alt={lightboxItem.alt} on:click|stopPropagation />
+    <div class="lightbox-close" on:click|stopPropagation={closeLightbox} aria-label="Stäng">✕</div>
+
+    <div class="lightbox-zone lightbox-zone-prev" on:click|stopPropagation={showPrev} role="button" tabindex="0" aria-label="Föregående bild" on:keydown|stopPropagation={(e) => { if (e.key === 'Enter' || e.key === ' ') showPrev(); }}>
+      <span class="lightbox-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </span>
+    </div>
+
+    <img src={img(gallery[lightboxIndex].file, gallery[lightboxIndex].folder)} alt={gallery[lightboxIndex].alt} on:click|stopPropagation />
+
+    <div class="lightbox-zone lightbox-zone-next" on:click|stopPropagation={showNext} role="button" tabindex="0" aria-label="Nästa bild" on:keydown|stopPropagation={(e) => { if (e.key === 'Enter' || e.key === ' ') showNext(); }}>
+      <span class="lightbox-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </span>
+    </div>
   </div>
 {/if}
 
-<svelte:window on:keydown={(e) => { if (e.key === "Escape") closeLightbox(); }} />
+<svelte:window on:keydown={handleKeydown} />
