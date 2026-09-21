@@ -354,6 +354,11 @@ a {
    .hero-full-sidor (eldshow), med en något större rubrik. */
 .hero-full.hero-home {
   height: 640px;
+  /* Main har global padding-top (för navbarens höjd, se navigation.svelte)
+     så att innehåll inte hamnar under den fasta navbaren på alla sidor.
+     Bara på startsidan ska hero-videon gå ända upp mot navbaren utan
+     mellanrum, så vi drar upp den igen exakt lika mycket här. */
+  margin-top: -78px;
 }
 
 .hero-full.hero-home h1 {
