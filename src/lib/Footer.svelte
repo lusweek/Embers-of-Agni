@@ -14,7 +14,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <a class="brand" href="/">Vilda<span>Flammor</span></a>
+        <a class="brand" href="/"><img class="brand-icon" src="/logo-icon.png" alt="" width="22" height="38" />Vilda<span>Flammor</span></a>
         <p class="foot-tagline">Eldshow & workshops i Kalmar, Göteborg och i hela Sverige.</p>
       </div>
 

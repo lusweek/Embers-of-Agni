@@ -2001,6 +2001,16 @@ a.logo-slot:hover {
   letter-spacing: 0.04em;
   text-decoration: none;
   color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Max 38px så navbarens höjd (78px, se main.padding-top) inte ändras */
+.brand-icon {
+  height: 38px;
+  width: auto;
+  flex-shrink: 0;
 }
 
 .brand span {

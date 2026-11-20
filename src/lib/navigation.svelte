@@ -93,7 +93,7 @@
 
 <nav class="vf-nav {hideDesktopNavbar ? 'is-hidden' : ''}">
   <div class="wrap vf-nav-inner">
-    <a class="brand" href="/">Vilda<span>Flammor</span></a>
+    <a class="brand" href="/"><img class="brand-icon" src="/logo-icon.png" alt="" width="22" height="38" />Vilda<span>Flammor</span></a>
 
     <ul class="navlinks hidden lg:flex">
       {#each menuItems as item}
@@ -166,7 +166,7 @@
     out:fly={{ x: 300, duration: 400, easing: cubicOut }}>
 
     <div class="mobile-aside-head">
-      <a class="brand" href="/" on:click={closeMobileMenu}>Vilda<span>Flammor</span></a>
+      <a class="brand" href="/" on:click={closeMobileMenu}><img class="brand-icon" src="/logo-icon.png" alt="" width="22" height="38" />Vilda<span>Flammor</span></a>
       <button on:click={closeMobileMenu} class="mobile-close" aria-label="Stäng meny">✕</button>
     </div>
 

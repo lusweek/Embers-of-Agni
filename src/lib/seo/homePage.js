@@ -8,6 +8,8 @@ export const homePage =
   "url": "https://vildaflammor.se/",
   "description": "Vilda Flammor bjuder på koreograferad elddans till musik samt workshops i flowarts med stav, poi och rockring – vi bokas i hela Sverige, från Kalmar och Öland till Göteborg och Stockholm.",
 
+  "logo": "https://vildaflammor.se/logo.png",
+
   "image": [
     "https://vildaflammor.se/og/home.jpg"
   ],
