@@ -144,12 +144,6 @@
         <div class="quote-name">My Delborn</div>
         <div class="quote-role">Receptionistansvarig First Camp Stensö</div>
       </div>
-      <div class="quote">
-        <span class="quote-mark">"</span>
-        <p>Fler recensioner kommer</p>
-        <div class="quote-name"></div>
-        <div class="quote-role"></div>
-      </div>
     </div>
     <div class="proof-strip">
       <div class="proof-strip-label">Har synts på</div>
