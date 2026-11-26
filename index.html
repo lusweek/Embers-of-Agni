@@ -1191,6 +1191,12 @@ html.menu-enter .mobile-backdrop,html.menu-closing .mobile-backdrop{opacity:0}
 html.menu-closing .mobile-menu.open{transition-duration:.28s;transition-timing-function:cubic-bezier(.4,0,1,1)}
 html.menu-open .vf-nav{overflow-x:clip}
 
+
+/* Eldbakgrund bakom hero på eldshow-sidorna (bara dator: på mobil fyller hero-bilden redan bredden) */
+@media (min-width:1024px){
+.hero-eld-ram{display:flow-root;padding-bottom:28px;background:linear-gradient(rgba(13,8,6,.35),rgba(13,8,6,.5) 65%,#0d0806 100%),url("bilder/eldpelare-liggande-utan-mitt.webp") center/cover}
+.hero-split.hero-eld{padding-bottom:44px;background:linear-gradient(90deg,rgba(13,8,6,.88) 0%,rgba(13,8,6,.6) 45%,rgba(13,8,6,.35) 100%),linear-gradient(rgba(13,8,6,0) 70%,#0d0806 100%),url("bilder/eldpelare-liggande-utan-mitt.webp") center/cover}
+}
 </style>
 <style>.lightbox[hidden]{display:none}.form-status{margin:14px 0 0;font-size:15px}.form-status-error{color:#ff9a7a}.form-status a{color:inherit;text-decoration:underline}.form-thanks{padding:28px 0;text-align:center}.form-thanks h3{font-size:26px;margin:0 0 10px}.form-thanks p{color:#e8dfd3;margin:0}button[disabled]{opacity:.6;cursor:wait}</style>
 </head>
