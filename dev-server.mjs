@@ -1,10 +1,11 @@
-// Enkel lokal förhandsvisning av build/ på http://localhost:5173
+// Enkel lokal förhandsvisning på http://localhost:5173 – visar filerna direkt,
+// så ändringar syns när man laddar om sidan (ingen omstart behövs).
 // Hanterar "fina" adresser (/boka -> boka.html) och _redirects som Cloudflare gör.
 import { createServer } from "node:http";
 import { readFileSync, existsSync, statSync } from "node:fs";
 import { join, extname } from "node:path";
 
-const rot = "build";
+const rot = ".";
 const typer = {
   ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript",
   ".webp": "image/webp", ".jpg": "image/jpeg", ".png": "image/png", ".svg": "image/svg+xml",
@@ -23,7 +24,7 @@ createServer((req, res) => {
   for (const k of kandidater) {
     const fil = join(rot, k);
     if (existsSync(fil) && statSync(fil).isFile()) {
-      res.writeHead(200, { "Content-Type": typer[extname(fil)] || "application/octet-stream" });
+      res.writeHead(200, { "Content-Type": typer[extname(fil)] || "application/octet-stream", "Cache-Control": "no-store" });
       return res.end(readFileSync(fil));
     }
   }
